@@ -19,5 +19,26 @@
         "quedastorage": {}
       }
     }
+  },
+  "ksrmacbook": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-queda-ksrmacbook-31645-authRole",
+      "UnauthRoleArn": "arn:aws:iam::242014611427:role/amplify-queda-ksrmacbook-31645-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::242014611427:role/amplify-queda-ksrmacbook-31645-authRole",
+      "Region": "ap-northeast-2",
+      "DeploymentBucketName": "amplify-queda-ksrmacbook-31645-deployment",
+      "UnauthRoleName": "amplify-queda-ksrmacbook-31645-unauthRole",
+      "StackName": "amplify-queda-ksrmacbook-31645",
+      "StackId": "arn:aws:cloudformation:ap-northeast-2:242014611427:stack/amplify-queda-ksrmacbook-31645/8f1e18b0-b9ef-11ed-9f33-0a13c8f50ac4",
+      "AmplifyAppId": "d2jzhf9mfst3bn"
+    },
+    "categories": {
+      "auth": {
+        "quedabebe2bcf": {}
+      },
+      "storage": {
+        "quedastorage": {}
+      }
+    }
   }
 }
