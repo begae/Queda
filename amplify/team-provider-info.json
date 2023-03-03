@@ -22,29 +22,5 @@
         }
       }
     }
-  },
-  "test": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-queda-test-153449-authRole",
-      "UnauthRoleArn": "arn:aws:iam::242014611427:role/amplify-queda-test-153449-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::242014611427:role/amplify-queda-test-153449-authRole",
-      "Region": "ap-northeast-2",
-      "DeploymentBucketName": "amplify-queda-test-153449-deployment",
-      "UnauthRoleName": "amplify-queda-test-153449-unauthRole",
-      "StackName": "amplify-queda-test-153449",
-      "StackId": "arn:aws:cloudformation:ap-northeast-2:242014611427:stack/amplify-queda-test-153449/800bfcf0-b98d-11ed-9473-06b09eeb042e",
-      "AmplifyAppId": "d1zopwrrhj0byk"
-    },
-    "categories": {
-      "auth": {
-        "queda5db06d0b": {}
-      },
-      "storage": {
-        "quedaaa3549f4": {
-          "bucketName": "whoasys",
-          "region": "ap-northeast-2"
-        }
-      }
-    }
   }
 }
