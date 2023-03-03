@@ -52,11 +52,6 @@ object NetworkService {
             @Path("author") author: String
         ): Call<Iterable<Post>?>
 
-        @GET("/api/user/store")
-        fun getStoreName(
-            @Field("managerId") managerId: String
-        ): Call<String?>
-
         @POST("/api/user/join")
         fun join(
             @Body user: User

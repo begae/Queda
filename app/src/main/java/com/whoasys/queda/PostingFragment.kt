@@ -193,14 +193,14 @@ class PostingFragment : Fragment() {
     private suspend fun uploadFile(key: String, file: File): URL? {
 
         Amplify.Storage.uploadFile(key, file,
-            { println("Successfully uploaded: ${it.key}") },
-            { println("Upload failed: $it") }
+            { println("업로드에 성공했습니다: ${it.key}") },
+            { println("업로드에 실패했습니다: $it") }
         )
 
         var url: URL? = null
         Amplify.Storage.getUrl(key,
             { url = it.url },
-            { println("Fetch failed.") }
+            { println("URL을 가져오지 못했습니다.") }
         )
 
         return url

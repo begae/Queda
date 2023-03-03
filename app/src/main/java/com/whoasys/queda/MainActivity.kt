@@ -43,9 +43,9 @@ class MainActivity : AppCompatActivity() {
             Amplify.addPlugin(AWSS3StoragePlugin())
             Amplify.configure(applicationContext)
 
-            println("Initialized Amplify")
+            println("앰플리파이를 기동했습니다.")
         } catch (error: AmplifyException) {
-            println("Could not initialize Amplify: $error")
+            println("앰플리파이를 기동하지 못했습니다: $error")
         }
     }
 }
