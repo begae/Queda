@@ -14,9 +14,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import com.amplifyframework.core.Amplify
 import com.whoasys.queda.databinding.FragmentPostingBinding
-import com.whoasys.queda.entities.Post
-import com.whoasys.queda.entities.Store
-import com.whoasys.queda.entities.User
 import getPath
 import kotlinx.coroutines.launch
 import java.io.File
@@ -25,18 +22,20 @@ import java.net.URL
 class PostingFragment : Fragment() {
 
     private lateinit var pickImages: ActivityResultLauncher<PickVisualMediaRequest>
-    //private var idFromLogin: String? = null
+    private var userId: String? = null
     private lateinit var networkThread: Thread
-    var urls: Array<URL?> = emptyArray()
-
-    lateinit var b: FragmentPostingBinding
-    var paths: Array<String> = emptyArray()
+    private var urls: Array<URL?> = emptyArray()
+    private var loggedIn: User? = null
+    private lateinit var b: FragmentPostingBinding
+    private var paths: Array<String> = emptyArray()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //arguments?.let {
-            //idFromLogin = it.getString("id")
-        //}
+        arguments?.let {
+            userId = it.getString("user_id")
+        }
+
+        b = FragmentPostingBinding.inflate(layoutInflater)
 
         pickImages = registerForActivityResult(
             ActivityResultContracts
@@ -55,14 +54,19 @@ class PostingFragment : Fragment() {
                 b.attachCheck.isChecked = false
             }
         }
+
+        networkThread = Thread {
+            loggedIn = NetworkService.call().find(userId!!).execute().body()
+        }
+
+        networkThread.start()
+        networkThread.join()
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
-        b = FragmentPostingBinding.inflate(inflater, container, false)
 
         val today = System.currentTimeMillis()
         var promoStart: String? = null
@@ -134,10 +138,8 @@ class PostingFragment : Fragment() {
 
                 var postId = 0
 
-                val loggedIn = User("ksr", "ksr", "ksr", "ksr")
-
                 val new = Post(
-                    b.postTitle.text.toString(), loggedIn,
+                    b.postTitle.text.toString(), loggedIn!!,
                     b.postContent.text.toString(), b.promoCheck.isChecked,
                     promoStart, promoEnd
                 )
@@ -149,8 +151,6 @@ class PostingFragment : Fragment() {
 
                 networkThread.start()
                 networkThread.join()
-
-                // TODO: postId를 0, -1, -2로 가지는 오류안내 포스트 만들어놓기
 
                 if (b.attachCheck.isChecked) {
 
@@ -183,16 +183,16 @@ class PostingFragment : Fragment() {
         return b.root
     }
 
-    /*companion object {
+    companion object {
 
         @JvmStatic
-        fun newInstance(idFromLogin: String) =
+        fun newInstance(userId: String) =
             PostingFragment().apply {
                 arguments = Bundle().apply {
-                    putString("id", idFromLogin)
+                    putString("user_id", userId)
                 }
             }
-    }*/
+    }
 
     private suspend fun uploadFile(key: String, file: File): URL? {
 

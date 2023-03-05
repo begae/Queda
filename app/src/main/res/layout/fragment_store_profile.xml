@@ -18,13 +18,12 @@
 
                 <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="380dp">
+                    android:layout_height="350dp">
 
                     <ImageView
                         android:id="@+id/backgroundImage"
                         android:layout_width="match_parent"
-                        android:layout_height="350dp"
-                        android:layout_gravity="center_horizontal|top"
+                        android:layout_height="300dp"
                         android:contentDescription="@string/storeProfileBackImage"
                         android:scaleType="centerCrop"
                         app:srcCompat="@drawable/profileback" />
@@ -32,7 +31,7 @@
                     <ImageView
                         android:id="@+id/backgroundShadow"
                         android:layout_width="match_parent"
-                        android:layout_height="350dp"
+                        android:layout_height="300dp"
                         android:contentDescription="@string/profileBackgroundShadow"
                         app:srcCompat="@android:drawable/screen_background_dark_transparent" />
 
@@ -118,22 +117,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="10dp" />
 
-                <com.google.android.material.bottomnavigation.BottomNavigationView
-                    android:id="@+id/store_navigation"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="?android:attr/windowBackground"
-                    app:menu="@menu/store_nav_menu">
 
-                </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-                <androidx.fragment.app.FragmentContainerView
-                    android:id="@+id/store_container"
-                    android:name="androidx.navigation.fragment.NavHostFragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:defaultNavHost="true"
-                    app:navGraph="@navigation/store_navigation" />
 
             </LinearLayout>
         </ScrollView>

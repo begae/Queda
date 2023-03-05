@@ -6,13 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.whoasys.queda.databinding.FragmentPostBinding
-import com.whoasys.queda.entities.Post
 import java.text.DateFormat
 
 class PostFragment : Fragment() {
 
     private var postId: Int = 0
-    lateinit var post: Post
+    private var post: Post? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,19 +27,20 @@ class PostFragment : Fragment() {
         val b = FragmentPostBinding.inflate(inflater, container, false)
 
         val networkThread = Thread {
-            post = NetworkService.call().getOnePost(postId).execute().body()!!
+            post = NetworkService.call().getOnePost(postId.toString()).execute().body()!!
         }
 
         networkThread.start()
         networkThread.join()
 
-        b.postTitle.text = post.title
-        b.postAuthor.text = post.author.id
-        b.postContent.text = post.content
-        val postDate = DateFormat.getDateInstance()
-        postDate.format(post.addedMillis)
-        b.postAdded.text = postDate.toString()
-
+        if (post != null) {
+            b.singlePostTitle.text = post!!.title
+            b.singlePostAuthor.text = post!!.author.id
+            b.singlePostContent.text = post!!.content
+            val postDate = DateFormat.getDateInstance()
+            val added = postDate.format(post!!.addedMillis)
+            b.singlePostAdded.text = added
+        }
         return b.root
     }
 

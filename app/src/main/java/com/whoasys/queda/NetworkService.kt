@@ -1,9 +1,6 @@
 package com.whoasys.queda
 
 import com.google.gson.GsonBuilder
-import com.whoasys.queda.entities.Post
-import com.whoasys.queda.entities.Store
-import com.whoasys.queda.entities.User
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -44,8 +41,13 @@ object NetworkService {
 
         @GET("/api/post/{id}")
         fun getOnePost(
-            @Path("id") id: Int
+            @Path("id") id: String
         ): Call<Post?>
+
+        @GET("/api/store/{id}")
+        fun getOneStore(
+            @Path("id") id: String
+        ): Call<Store?>
 
         @GET("/api/post/by/{author}")
         fun getAllPostsBy(
@@ -78,6 +80,6 @@ object NetworkService {
         fun updateUserAsManager(
             @Field("userId") userId: String,
             @Field("storeId") storeId: Int
-        ): Call<User?>
+        ): Call<Boolean?>
     }
 }

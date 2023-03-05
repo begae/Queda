@@ -1,4 +1,4 @@
-package com.whoasys.queda.entities
+package com.whoasys.queda
 
 class Post(
     val title: String,

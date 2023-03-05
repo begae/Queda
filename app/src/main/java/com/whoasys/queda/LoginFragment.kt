@@ -11,7 +11,6 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.whoasys.queda.databinding.FragmentLoginBinding
-import com.whoasys.queda.entities.User
 
 class LoginFragment : Fragment() {
 
@@ -60,10 +59,11 @@ class LoginFragment : Fragment() {
                     }
 
                     Toast.makeText(activity, "환영합니다, ${loggedIn!!.name} 님.", Toast.LENGTH_LONG).show()
-                    view?.findNavController()?.navigate(R.id.action_loginFragment_to_navigation_feed)
+                    //view?.findNavController()?.navigate(R.id.action_loginFragment_to_navigation_feed)
 
-                    val pair = Pair("id", loggedIn!!.id)
+                    val pair = Pair("user_id", loggedIn!!.id)
                     val bundle = bundleOf(pair)
+                    view?.findNavController()?.navigate(R.id.action_loginFragment_to_postingFragment, bundle)
                 }
 
                 else {

@@ -14,7 +14,7 @@ import com.amplifyframework.core.Amplify
 import com.amplifyframework.storage.s3.AWSS3StoragePlugin
 //import com.kakao.util.maps.helper.Utility.getKeyHash
 import com.whoasys.queda.databinding.ActivityMainBinding
-import net.daum.mf.map.api.MapView
+//import net.daum.mf.map.api.MapView
 
 class MainActivity : AppCompatActivity() {
 

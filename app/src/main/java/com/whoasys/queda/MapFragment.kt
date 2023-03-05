@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.whoasys.queda.databinding.FragmentMapBinding
-import net.daum.mf.map.api.MapView
+//import net.daum.mf.map.api.MapView
 
 class MapFragment : Fragment() {
 
