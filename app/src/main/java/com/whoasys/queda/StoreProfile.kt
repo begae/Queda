@@ -2,9 +2,13 @@ package com.whoasys.queda
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.onNavDestinationSelected
+import androidx.navigation.ui.setupWithNavController
 import com.whoasys.queda.databinding.StoreProfileBinding
 import com.whoasys.queda.entities.NetworkService
 import com.whoasys.queda.entities.Store
@@ -13,6 +17,7 @@ class StoreProfile : Fragment() {
 
     private var storeId: Int = 5
     private var store: Store? = null
+    private lateinit var b: StoreProfileBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,14 +31,14 @@ class StoreProfile : Fragment() {
 
         networkThread.start()
         networkThread.join()
+
+        b = StoreProfileBinding.inflate(layoutInflater)
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
-        val b = StoreProfileBinding.inflate(inflater, container, false)
 
         if (store!= null) {
             b.storeName.text = store!!.name

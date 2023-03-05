@@ -31,8 +31,8 @@ class MainActivity : AppCompatActivity() {
 
         /*val appBarConfiguration = AppBarConfiguration(
             topLevelDestinationIds = setOf(
-                R.id.fragment_feed, R.id.fragment_recommend,
-                R.id.fragment_map, R.id.fragment_my_page),
+                R.id.feed, R.id.forYou,
+                R.id.map, R.id.myPage),
             fallbackOnNavigateUpListener = ::onSupportNavigateUp
         )*/
 

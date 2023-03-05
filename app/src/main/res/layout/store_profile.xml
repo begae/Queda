@@ -117,6 +117,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="10dp" />
 
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/store_nav_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    app:menu="@menu/store_nav_menu">
+
+                </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/store_nav_container"
+                    android:name="androidx.navigation.fragment.NavHostFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:navGraph="@navigation/store_navigation" />
 
 
             </LinearLayout>
