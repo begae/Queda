@@ -56,7 +56,7 @@ class PostingFragment : Fragment() {
         }
 
         networkThread = Thread {
-            loggedIn = NetworkService.call().find(userId!!).execute().body()
+            loggedIn = NetworkService.call().find(userId?:"5").execute().body()
         }
 
         networkThread.start()
@@ -136,7 +136,7 @@ class PostingFragment : Fragment() {
 
             } else {
 
-                var postId = 0
+                var postId = 1
 
                 val new = Post(
                     b.postTitle.text.toString(), loggedIn!!,
@@ -146,7 +146,7 @@ class PostingFragment : Fragment() {
 
                 networkThread = Thread {
                     postId =
-                        NetworkService.call().savePost(new).execute().body() ?: -1
+                        NetworkService.call().savePost(new).execute().body() ?: 2
                 }
 
                 networkThread.start()
@@ -166,7 +166,7 @@ class PostingFragment : Fragment() {
 
                     networkThread = Thread {
                         postId = NetworkService.call().attachURLs(postId, urls.toString()).execute()
-                            .body() ?: -2
+                            .body() ?: 3
                     }
                     networkThread.start()
                     networkThread.join()
@@ -194,7 +194,7 @@ class PostingFragment : Fragment() {
             }
     }
 
-    private suspend fun uploadFile(key: String, file: File): URL? {
+    private fun uploadFile(key: String, file: File): URL? {
 
         Amplify.Storage.uploadFile(key, file,
             { println("업로드에 성공했습니다: ${it.key}") },

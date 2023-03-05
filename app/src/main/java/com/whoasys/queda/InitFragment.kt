@@ -36,7 +36,7 @@ class InitFragment : Fragment() {
         )
 
         val administrator = User("admin", "admin", "admin","admin@whoasys.com",
-            0.0, 0.0, false, null)
+            0.0, 0.0)
 
         val team = arrayOf(begae, kimsmj, hagaji, acctract, administrator)
 
@@ -77,8 +77,8 @@ class InitFragment : Fragment() {
             "053-580-6210", "09:00 - 18:00")
 
         val adminStore = Store("오류가 발생했삼", "000-00-00000",
-            "대구 모처", 0.0, 0.0, "010-2789-3764",
-            "00:00 - 00:00", 0, null, null, false, 0)
+            "대구 모처", 0.0, 0.0, "000-000-0000",
+            "00:00 - 00:00")
 
         val school = arrayOf(library, engineeringDept, naturalScienceDept, mainStadium, adminStore)
         var storeId: Int = 0
@@ -119,16 +119,16 @@ class InitFragment : Fragment() {
 
         }
 
-        val postZero = Post("오류가 발생했삼", administrator, "관리자에게 문의하삼",
-            false, null, null, null, 0)
+        val postOne = Post("오류가 발생했삼", administrator, "관리자에게 문의하삼",
+            false, null, null, null)
 
-        val postNegativeOne = Post("오류가 발생했삼", administrator, "관리자에게 문의하삼",
-            false, null, null, null, -1)
+        val postTwo = Post("오류가 발생했삼", administrator, "관리자에게 문의하삼",
+            false, null, null, null)
 
-        val postNegativeTwo = Post("오류가 발생했삼", administrator, "관리자에게 문의하삼",
-            false, null, null, null, -2)
+        val postThree = Post("오류가 발생했삼", administrator, "관리자에게 문의하삼",
+            false, null, null, null)
 
-        val errorPosts = arrayOf(postZero, postNegativeOne, postNegativeTwo)
+        val errorPosts = arrayOf(postOne, postTwo, postThree)
         var postId: Int = -3
 
         b.initPosts.setOnClickListener {

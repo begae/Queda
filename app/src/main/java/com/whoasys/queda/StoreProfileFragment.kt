@@ -9,7 +9,7 @@ import com.whoasys.queda.databinding.FragmentStoreProfileBinding
 
 class StoreProfileFragment : Fragment() {
 
-    private var storeId: Int? = null
+    private var storeId: Int = 5
     private var store: Store? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +19,7 @@ class StoreProfileFragment : Fragment() {
         }
 
         val networkThread = Thread {
-            store = NetworkService.call().getOneStore(storeId!!.toString()).execute().body()
+            store = NetworkService.call().getOneStore(storeId.toString()).execute().body()
         }
 
         networkThread.start()
