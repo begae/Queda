@@ -48,22 +48,22 @@ class LoginFragment : Fragment() {
 
                 if (loggedIn != null) {
 
-                    val storeId = loggedIn!!.store!!.id?: 0
+                    val store = loggedIn!!.store
+                    val storeId = if (store != null) store.id else 0
+
                     val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
                     sharedPref?.edit {
                         putString("saved_id", loggedIn!!.id)
                         putString("saved_name", loggedIn!!.name)
                         putBoolean("saved_is_manager", loggedIn!!.isManager)
-                        putInt("saved_store", storeId)
+                        putInt("saved_store", storeId!!)
                         commit()
                     }
 
-                    Toast.makeText(activity, "환영합니다, ${loggedIn!!.name} 님.", Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity, "환영합니다, " +
+                            "${sharedPref?.getString("saved_name", "not found")} 님.", Toast.LENGTH_LONG).show()
                     //view?.findNavController()?.navigate(R.id.action_loginFragment_to_navigation_feed)
-
-                    val pair = Pair("user_id", loggedIn!!.id)
-                    val bundle = bundleOf(pair)
-                    view?.findNavController()?.navigate(R.id.action_loginFragment_to_postingFragment, bundle)
+                    view?.findNavController()?.navigate(R.id.action_loginFragment_to_postingFragment)
                 }
 
                 else {
