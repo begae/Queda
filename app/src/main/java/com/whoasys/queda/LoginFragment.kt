@@ -68,7 +68,7 @@ class LoginFragment : Fragment() {
                     val pair2 = Pair("user_longitude", loggedIn!!.longitude)
                     val bundle = bundleOf(pair1, pair2)
                     view?.findNavController()
-                        ?.navigate(R.id.action_loginFragment_to_navigation_feed, bundle)
+                        ?.navigate(R.id.action_loginFragment_to_feedFragment, bundle)
                 }
 
                 else {

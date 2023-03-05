@@ -44,7 +44,7 @@ class InitFragment : Fragment() {
         val team = arrayOf(begae, kimsmj, hagaji, acctract, administrator)
 
         lateinit var networkThread: Thread
-        var name: String? = null
+        var name: String?
         var names = emptyArray<String?>()
 
         b.initJoin.setOnClickListener {
@@ -84,7 +84,7 @@ class InitFragment : Fragment() {
             "00:00 - 00:00")
 
         val school = arrayOf(library, engineeringDept, naturalScienceDept, mainStadium, adminStore)
-        var storeId: Int = 0
+        var storeId: Int
         var storeIds = emptyArray<Int>()
 
         b.initRegister.setOnClickListener {
@@ -103,7 +103,7 @@ class InitFragment : Fragment() {
 
         }
 
-        var response: Boolean = false
+        var response: Boolean
         var responses = emptyArray<Boolean>()
 
         b.initUpdate.setOnClickListener {
@@ -132,7 +132,7 @@ class InitFragment : Fragment() {
             false, null, null, null)
 
         val errorPosts = arrayOf(postOne, postTwo, postThree)
-        var postId: Int = -3
+        var postId: Int
 
         b.initPosts.setOnClickListener {
 

@@ -9,7 +9,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.whoasys.queda.R
-import com.whoasys.queda.recyclers.placeholder.PlaceholderContent
 
 /**
  * A fragment representing a list of Items.

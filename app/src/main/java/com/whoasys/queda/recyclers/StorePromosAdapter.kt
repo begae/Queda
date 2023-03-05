@@ -5,17 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.whoasys.queda.R
-
-import com.whoasys.queda.recyclers.placeholder.PlaceholderContent.PlaceholderItem
-import com.whoasys.queda.recyclers.databinding.FragmentStorePromosBinding
+import com.whoasys.queda.databinding.FragmentStorePromosBinding
 
 /**
  * [RecyclerView.Adapter] that can display a [PlaceholderItem].
  * TODO: Replace the implementation with code for your data type.
  */
 class StorePromosAdapter(
-    private val values: List<PlaceholderItem>
+    private val values: List<PlaceholderContent.PlaceholderItem>
 ) : RecyclerView.Adapter<StorePromosAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

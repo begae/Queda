@@ -6,16 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.whoasys.queda.R
+import com.whoasys.queda.databinding.FragmentScrapsBinding
 
-import com.whoasys.queda.recyclers.placeholder.PlaceholderContent.PlaceholderItem
-import com.whoasys.queda.recyclers.databinding.FragmentScrapsBinding
 
 /**
  * [RecyclerView.Adapter] that can display a [PlaceholderItem].
  * TODO: Replace the implementation with code for your data type.
  */
 class ScrapsAdapter(
-    private val values: List<PlaceholderItem>
+    private val values: List<PlaceholderContent.PlaceholderItem>
 ) : RecyclerView.Adapter<ScrapsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

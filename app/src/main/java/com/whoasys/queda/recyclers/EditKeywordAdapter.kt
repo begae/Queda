@@ -2,18 +2,12 @@ package com.whoasys.queda.recyclers
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.whoasys.queda.R
+import com.whoasys.queda.databinding.FragmentEditKeywordBinding
+import com.whoasys.queda.recyclers.PlaceholderContent.PlaceholderItem
 
-import com.whoasys.queda.recyclers.placeholder.PlaceholderContent.PlaceholderItem
-import com.whoasys.queda.recyclers.databinding.FragmentEditKeywordBinding
 
-/**
- * [RecyclerView.Adapter] that can display a [PlaceholderItem].
- * TODO: Replace the implementation with code for your data type.
- */
 class EditKeywordAdapter(
     private val values: List<PlaceholderItem>
 ) : RecyclerView.Adapter<EditKeywordAdapter.ViewHolder>() {

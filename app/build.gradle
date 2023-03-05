@@ -38,14 +38,14 @@ android {
         viewBinding true
     }
 
-    splits {
+    /*splits {
         abi {
             enable true
             reset()
             include 'x86', 'x86_64', 'armeabi-v7a'
             universalApk true
         }
-    }
+    }*/
 }
 
 dependencies {
