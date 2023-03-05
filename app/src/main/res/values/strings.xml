@@ -65,5 +65,6 @@
     <string name="feed_guide">피드 화면 입니다.</string>
     <string name="register">매장 등록</string>
     <string name="updateAsManager">관리자 등록</string>
+    <string name="error_page">오류안내 게시물 생성</string>
 
 </resources>
