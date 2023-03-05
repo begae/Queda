@@ -11,6 +11,7 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.whoasys.queda.databinding.FragmentLoginBinding
+import com.whoasys.queda.entities.User
 
 class LoginFragment : Fragment() {
 
@@ -24,8 +25,8 @@ class LoginFragment : Fragment() {
 
         b.joinFirst.setOnClickListener {
 
-            val pair1 = Pair("id", b.id.text.toString())
-            val pair2 = Pair("pw", b.pw.text.toString())
+            val pair1 = Pair("entered_id", b.id.text.toString())
+            val pair2 = Pair("entered_pw", b.pw.text.toString())
             val bundle = bundleOf(pair1, pair2)
             view?.findNavController()?.navigate(R.id.action_loginFragment_to_joinFragment, bundle)
         }
@@ -57,13 +58,17 @@ class LoginFragment : Fragment() {
                         putString("saved_name", loggedIn!!.name)
                         putBoolean("saved_is_manager", loggedIn!!.isManager)
                         putInt("saved_store", storeId!!)
-                        commit()
+                        apply()
                     }
 
                     Toast.makeText(activity, "환영합니다, " +
-                            "${sharedPref?.getString("saved_name", "not found")} 님.", Toast.LENGTH_LONG).show()
-                    //view?.findNavController()?.navigate(R.id.action_loginFragment_to_navigation_feed)
-                    view?.findNavController()?.navigate(R.id.action_loginFragment_to_postingFragment)
+                            "${loggedIn!!.name} 님.", Toast.LENGTH_LONG).show()
+
+                    val pair1 = Pair("user_latitude", loggedIn!!.latitude)
+                    val pair2 = Pair("user_longitude", loggedIn!!.longitude)
+                    val bundle = bundleOf(pair1, pair2)
+                    view?.findNavController()
+                        ?.navigate(R.id.action_loginFragment_to_navigation_feed, bundle)
                 }
 
                 else {

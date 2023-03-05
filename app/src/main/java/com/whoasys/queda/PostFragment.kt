@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.whoasys.queda.databinding.FragmentPostBinding
+import com.whoasys.queda.entities.Post
 import java.text.DateFormat
 
 class PostFragment : Fragment() {

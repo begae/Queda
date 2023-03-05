@@ -10,12 +10,12 @@ import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.whoasys.queda.databinding.FragmentJoinBinding
+import com.whoasys.queda.entities.User
 
 class JoinFragment : Fragment() {
 
     private var idFromLogin: String? = null
     private var pwFromLogin: String? = null
-    var loggedIn: User? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +31,7 @@ class JoinFragment : Fragment() {
     ): View {
 
         val b = FragmentJoinBinding.inflate(inflater, container, false)
+        var loggedIn: User? = null
 
         b.id.setText(idFromLogin)
         b.pw.setText(pwFromLogin)
@@ -93,8 +94,8 @@ class JoinFragment : Fragment() {
         fun newInstance(idFromLogin: String, pwFromLogin: String) =
             JoinFragment().apply {
                 arguments = Bundle().apply {
-                    putString("id", idFromLogin)
-                    putString("pw", pwFromLogin)
+                    putString("entered_id", idFromLogin)
+                    putString("entered_pw", pwFromLogin)
                 }
             }
     }

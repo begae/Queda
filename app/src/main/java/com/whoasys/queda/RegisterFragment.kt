@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.whoasys.queda.databinding.FragmentRegisterBinding
+import com.whoasys.queda.entities.Store
 
 class RegisterFragment : Fragment() {
 

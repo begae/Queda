@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.whoasys.queda.databinding.FragmentStoreProfileBinding
+import com.whoasys.queda.entities.Store
 
 class StoreProfileFragment : Fragment() {
 

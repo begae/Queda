@@ -14,6 +14,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import com.amplifyframework.core.Amplify
 import com.whoasys.queda.databinding.FragmentPostingBinding
+import com.whoasys.queda.entities.Post
+import com.whoasys.queda.entities.User
 import getPath
 import kotlinx.coroutines.launch
 import java.io.File

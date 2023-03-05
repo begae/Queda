@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.whoasys.queda.databinding.FragmentInitBinding
+import com.whoasys.queda.entities.Post
+import com.whoasys.queda.entities.Store
+import com.whoasys.queda.entities.User
 
 class InitFragment : Fragment() {
 

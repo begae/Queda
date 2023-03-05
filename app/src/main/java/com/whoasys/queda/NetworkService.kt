@@ -1,6 +1,9 @@
 package com.whoasys.queda
 
 import com.google.gson.GsonBuilder
+import com.whoasys.queda.entities.Post
+import com.whoasys.queda.entities.Store
+import com.whoasys.queda.entities.User
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
