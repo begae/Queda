@@ -2,6 +2,7 @@ package com.whoasys.queda
 
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -11,7 +12,9 @@ import com.amplifyframework.AmplifyException
 import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin
 import com.amplifyframework.core.Amplify
 import com.amplifyframework.storage.s3.AWSS3StoragePlugin
+//import com.kakao.util.maps.helper.Utility.getKeyHash
 import com.whoasys.queda.databinding.ActivityMainBinding
+import net.daum.mf.map.api.MapView
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,8 +31,8 @@ class MainActivity : AppCompatActivity() {
 
         /*val appBarConfiguration = AppBarConfiguration(
             topLevelDestinationIds = setOf(
-                R.id.navigation_feed, R.id.navigation_recommend,
-                R.id.navigation_map, R.id.navigation_my_page),
+                R.id.fragment_feed, R.id.fragment_recommend,
+                R.id.fragment_map, R.id.fragment_my_page),
             fallbackOnNavigateUpListener = ::onSupportNavigateUp
         )*/
 
@@ -37,8 +40,10 @@ class MainActivity : AppCompatActivity() {
             return item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
         }
 
+        //val hashKey = getKeyHash(this)
+        //println("해시키: $hashKey")
+
         try {
-            // Add these lines to add the AWSCognitoAuthPlugin and AWSS3StoragePlugin plugins
             Amplify.addPlugin(AWSCognitoAuthPlugin())
             Amplify.addPlugin(AWSS3StoragePlugin())
             Amplify.configure(applicationContext)

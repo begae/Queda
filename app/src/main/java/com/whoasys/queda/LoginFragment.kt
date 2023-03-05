@@ -49,7 +49,7 @@ class LoginFragment : Fragment() {
 
                 if (loggedIn != null) {
 
-                    val storeId = loggedIn!!.storeId?: 0
+                    val storeId = loggedIn!!.store!!.id?: 0
                     val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
                     sharedPref?.edit {
                         putString("saved_id", loggedIn!!.id)

@@ -15,6 +15,8 @@ import androidx.navigation.findNavController
 import com.amplifyframework.core.Amplify
 import com.whoasys.queda.databinding.FragmentPostingBinding
 import com.whoasys.queda.entities.Post
+import com.whoasys.queda.entities.Store
+import com.whoasys.queda.entities.User
 import getPath
 import kotlinx.coroutines.launch
 import java.io.File
@@ -132,8 +134,10 @@ class PostingFragment : Fragment() {
 
                 var postId = 0
 
+                val loggedIn = User("ksr", "ksr", "ksr", "ksr")
+
                 val new = Post(
-                    b.postTitle.text.toString(), "ksr",
+                    b.postTitle.text.toString(), loggedIn,
                     b.postContent.text.toString(), b.promoCheck.isChecked,
                     promoStart, promoEnd
                 )

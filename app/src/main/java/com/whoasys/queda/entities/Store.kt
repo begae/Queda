@@ -5,7 +5,7 @@ import java.net.URL
 class Store (
     val name: String,
     val registration: String,
-    val managerId: String,
+    val manager: User,
     var address: String,
     val latitude: Double,
     val longitude: Double,

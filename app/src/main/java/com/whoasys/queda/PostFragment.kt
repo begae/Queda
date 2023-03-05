@@ -35,7 +35,7 @@ class PostFragment : Fragment() {
         networkThread.join()
 
         b.postTitle.text = post.title
-        b.postAuthor.text = post.authorId
+        b.postAuthor.text = post.author.id
         b.postContent.text = post.content
         val postDate = DateFormat.getDateInstance()
         postDate.format(post.addedMillis)

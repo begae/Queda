@@ -45,7 +45,7 @@ class RegisterFragment : Fragment() {
         b.register.setOnClickListener {
 
             val store = Store("김세령 집",
-                "012-34-78901", "ksr",
+                "012-34-78901", fakeUser!!,
                 "대구 수성구 지산로14길 83",
                 35.826551, 128.638423, "010-2789-3764",
                 "12:00 - 08:00")

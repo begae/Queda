@@ -6,5 +6,5 @@ class User constructor(
     val name: String,
     var email: String,
     var isManager: Boolean = false,
-    var storeId: Int? = null
+    var store: Store? = null
 )

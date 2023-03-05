@@ -6,10 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.whoasys.queda.databinding.FragmentMapBinding
+import net.daum.mf.map.api.MapView
 
 class MapFragment : Fragment() {
-
-    lateinit var b: FragmentMapBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -17,7 +16,7 @@ class MapFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        b = FragmentMapBinding.inflate(inflater, container, false)
+        val b = FragmentMapBinding.inflate(inflater, container, false)
 
         return b.root
     }

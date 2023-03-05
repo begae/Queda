@@ -37,6 +37,15 @@ android {
     buildFeatures {
         viewBinding true
     }
+
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86', 'x86_64', 'armeabi-v7a'
+            universalApk true
+        }
+    }
 }
 
 dependencies {
@@ -67,5 +76,8 @@ dependencies {
     implementation 'com.amplifyframework:aws-datastore:2.2.2'
     implementation 'com.amplifyframework:aws-storage-s3:2.2.2'
     implementation 'com.amplifyframework:aws-auth-cognito:2.2.2'
+
+    // for Kakao map
+    implementation files('libs/libDaumMapAndroid.jar')
 
 }
