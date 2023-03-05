@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.whoasys.queda.databinding.FragmentSearchResultBinding
+import com.whoasys.queda.databinding.SearchResultBinding
 
 /**
  * [RecyclerView.Adapter] that can display a [PlaceholderItem].
@@ -18,7 +18,7 @@ class SearchResultAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         return ViewHolder(
-            FragmentSearchResultBinding.inflate(
+            SearchResultBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -35,7 +35,7 @@ class SearchResultAdapter(
 
     override fun getItemCount(): Int = values.size
 
-    inner class ViewHolder(binding: FragmentSearchResultBinding) :
+    inner class ViewHolder(binding: SearchResultBinding) :
         RecyclerView.ViewHolder(binding.root) {
         val idView: TextView = binding.itemNumber
         val contentView: TextView = binding.content

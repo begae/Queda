@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.whoasys.queda.databinding.FragmentStorePromosBinding
+import com.whoasys.queda.databinding.StorePromosBinding
 
 /**
  * [RecyclerView.Adapter] that can display a [PlaceholderItem].
@@ -18,7 +18,7 @@ class StorePromosAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         return ViewHolder(
-            FragmentStorePromosBinding.inflate(
+            StorePromosBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -35,7 +35,7 @@ class StorePromosAdapter(
 
     override fun getItemCount(): Int = values.size
 
-    inner class ViewHolder(binding: FragmentStorePromosBinding) :
+    inner class ViewHolder(binding: StorePromosBinding) :
         RecyclerView.ViewHolder(binding.root) {
         val idView: TextView = binding.itemNumber
         val contentView: TextView = binding.content

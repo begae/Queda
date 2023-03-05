@@ -4,7 +4,7 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
-import com.whoasys.queda.databinding.FragmentEditKeywordBinding
+import com.whoasys.queda.databinding.EditKeywordBinding
 import com.whoasys.queda.recyclers.PlaceholderContent.PlaceholderItem
 
 
@@ -15,7 +15,7 @@ class EditKeywordAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         return ViewHolder(
-            FragmentEditKeywordBinding.inflate(
+            EditKeywordBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -32,7 +32,7 @@ class EditKeywordAdapter(
 
     override fun getItemCount(): Int = values.size
 
-    inner class ViewHolder(binding: FragmentEditKeywordBinding) :
+    inner class ViewHolder(binding: EditKeywordBinding) :
         RecyclerView.ViewHolder(binding.root) {
         val idView: TextView = binding.itemNumber
         val contentView: TextView = binding.content

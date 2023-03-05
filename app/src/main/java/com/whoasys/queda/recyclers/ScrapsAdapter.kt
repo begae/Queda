@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.whoasys.queda.R
-import com.whoasys.queda.databinding.FragmentScrapsBinding
+import com.whoasys.queda.databinding.ScrapsBinding
 
 
 /**
@@ -20,7 +20,7 @@ class ScrapsAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         return ViewHolder(
-            FragmentScrapsBinding.inflate(
+            ScrapsBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -37,7 +37,7 @@ class ScrapsAdapter(
 
     override fun getItemCount(): Int = values.size
 
-    inner class ViewHolder(binding: FragmentScrapsBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(binding: ScrapsBinding) : RecyclerView.ViewHolder(binding.root) {
         val idView: TextView = binding.itemNumber
         val contentView: TextView = binding.content
 
