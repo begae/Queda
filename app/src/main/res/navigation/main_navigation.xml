@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
+    android:id="@+id/main_navigation"
     app:startDestination="@id/feedFragment">
     <fragment
         android:id="@+id/feedFragment"
@@ -171,4 +171,28 @@
             android:id="@+id/action_postingFragment_to_postFragment"
             app:destination="@id/postFragment" />
     </fragment>
+    <navigation android:id="@+id/store_navigation"
+        app:startDestination="@id/storeInfoFragment">
+        <fragment
+            android:id="@+id/storePromosFragment"
+            android:name="com.whoasys.queda.recyclers.StorePromosFragment"
+            android:label="StorePromosFragment" >
+            <action
+                android:id="@+id/action_storePromosFragment_to_postFragment"
+                app:destination="@id/postFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/storeInfoFragment"
+            android:name="com.whoasys.queda.StoreInfoFragment"
+            android:label="fragment_store_info"
+            tools:layout="@layout/fragment_store_info" />
+        <fragment
+            android:id="@+id/storePostsFragment"
+            android:name="com.whoasys.queda.recyclers.StorePostsFragment"
+            android:label="StorePostsFragment" >
+            <action
+                android:id="@+id/action_storePostsFragment_to_postFragment"
+                app:destination="@id/postFragment" />
+        </fragment>
+    </navigation>
 </navigation>
