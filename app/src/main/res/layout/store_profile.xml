@@ -28,20 +28,19 @@
                         android:scaleType="centerCrop"
                         app:srcCompat="@drawable/profileback" />
 
-                    <ImageButton
+                    <ImageView
                         android:id="@+id/background_edit"
                         android:layout_width="match_parent"
                         android:layout_height="320dp"
                         android:background="@android:drawable/screen_background_dark_transparent"
                         android:contentDescription="@string/profileBackgroundShadow" />
 
-                    <ImageButton
+                    <ImageView
                         android:id="@+id/profile_image"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
                         android:layout_gravity="bottom|center_horizontal"
                         android:background="@drawable/profile"
-                        android:clipToOutline="true"
                         android:contentDescription="@string/storeProfileImage"
                         android:scaleType="center" />
 
@@ -68,26 +67,18 @@
                             android:background="#00FFFFFF"
                             android:fontFamily="@font/east_sea_dokdo"
                             android:text="@string/edit"
-                            android:textColor="@color/white"
-                            android:textSize="24sp" />
-
-                        <Button
-                            android:id="@+id/change_notice_btn"
-                            android:layout_width="110dp"
-                            android:layout_height="50dp"
-                            android:background="#00FFFFFF"
-                            android:fontFamily="@font/east_sea_dokdo"
-                            android:text="@string/change_notice"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             android:textColor="@color/white"
                             android:textSize="24sp" />
 
                         <Button
                             android:id="@+id/write_post_btn"
-                            android:layout_width="90dp"
+                            android:layout_width="100dp"
                             android:layout_height="50dp"
                             android:background="#00FFFFFF"
                             android:fontFamily="@font/east_sea_dokdo"
                             android:text="@string/write"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             android:textColor="@color/white"
                             android:textSize="24sp" />
 
@@ -96,69 +87,73 @@
 
                 </FrameLayout>
 
-                <Button
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <TextView
                     android:id="@+id/store_name"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:background="#00FFFFFF"
                     android:fontFamily="@font/east_sea_dokdo"
+                    android:gravity="center"
                     android:insetTop="0dp"
                     android:insetBottom="0dp"
                     android:text="@string/storeNameSample"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/black"
                     android:textSize="42sp"
                     android:textStyle="bold" />
 
-                <Button
+                <TextView
                     android:id="@+id/store_keywords"
                     android:layout_width="match_parent"
                     android:layout_height="34dp"
                     android:background="#00FFFFFF"
                     android:fontFamily="@font/east_sea_dokdo"
+                    android:gravity="center"
                     android:insetTop="0dp"
                     android:insetBottom="0dp"
                     android:text="@string/storeKeySample"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@color/purple_500"
                     android:textSize="26sp" />
 
-                <Button
+                <TextView
                     android:id="@+id/store_address"
                     android:layout_width="match_parent"
                     android:layout_height="34dp"
                     android:background="#00FFFFFF"
                     android:fontFamily="@font/east_sea_dokdo"
+                    android:gravity="center"
                     android:insetTop="0dp"
                     android:insetBottom="0dp"
                     android:text="@string/storeAddrSample"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@color/purple_700"
                     android:textSize="26sp" />
 
-                <Button
+                <TextView
                     android:id="@+id/store_phone"
                     android:layout_width="match_parent"
                     android:layout_height="34dp"
                     android:background="#00FFFFFF"
                     android:fontFamily="@font/east_sea_dokdo"
+                    android:gravity="center"
                     android:insetTop="0dp"
                     android:insetBottom="0dp"
                     android:text="@string/storePhoneSample"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@color/purple_700"
                     android:textSize="26sp" />
 
-                <Button
+                <TextView
                     android:id="@+id/store_open_time"
                     android:layout_width="match_parent"
                     android:layout_height="34dp"
                     android:background="#00FFFFFF"
                     android:fontFamily="@font/east_sea_dokdo"
+                    android:gravity="center"
                     android:insetTop="0dp"
                     android:insetBottom="0dp"
                     android:text="@string/storeTimeSample"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@color/purple_700"
                     android:textSize="26sp" />
 

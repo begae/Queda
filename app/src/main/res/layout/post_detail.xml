@@ -112,6 +112,21 @@
                     android:textSize="24sp"
                     app:cornerRadius="15dp" />
 
+                <Button
+                    android:id="@+id/set_as_notice"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/purple"
+                    android:fontFamily="@font/east_sea_dokdo"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/set_as_notice"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    app:cornerRadius="15dp" />
+
             </TableRow>
 
             <TextView
