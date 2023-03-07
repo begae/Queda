@@ -3,21 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/store_navigation"
-    app:startDestination="@id/infoPostFragment">
+    app:startDestination="@id/storeInfo">
+        <fragment
+            android:id="@+id/storePromos"
+            android:name="com.whoasys.queda.recyclers.StorePromos"
+            android:label="StorePromos">
+            <action
+                android:id="@+id/action_storePromosFragment_to_postFragment"
+                app:destination="@id/postDetail" />
+        </fragment>
+        <fragment
+            android:id="@+id/storeInfo"
+            android:name="com.whoasys.queda.StoreInfo"
+            android:label="StoreInfo"
+            tools:layout="@layout/store_info" />
+        <fragment
+            android:id="@+id/storePosts"
+            android:name="com.whoasys.queda.recyclers.StorePosts"
+            android:label="StorePostsFragment" >
+            <action
+                android:id="@+id/action_storePostsFragment_to_postFragment"
+                app:destination="@id/postDetail" />
+        </fragment>
+    </navigation>
 
-    <fragment
-        android:id="@+id/infoPostFragment"
-        android:name="com.whoasys.queda.PostFragment"
-        android:label="fragment_post"
-        tools:layout="@layout/fragment_post" />
-    <fragment
-        android:id="@+id/allPostsByFragment"
-        android:name="com.whoasys.queda.FeedFragment"
-        android:label="fragment_feed"
-        tools:layout="@layout/fragment_feed" />
-    <fragment
-        android:id="@+id/promoPostsByFragment"
-        android:name="com.whoasys.queda.FeedFragment"
-        android:label="fragment_feed"
-        tools:layout="@layout/fragment_feed" />
-</navigation>

@@ -14,7 +14,7 @@ import com.amplifyframework.core.Amplify
 import com.amplifyframework.storage.s3.AWSS3StoragePlugin
 //import com.kakao.util.maps.helper.Utility.getKeyHash
 import com.whoasys.queda.databinding.ActivityMainBinding
-import net.daum.mf.map.api.MapView
+//import net.daum.mf.map.api.MapView
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,8 +31,8 @@ class MainActivity : AppCompatActivity() {
 
         /*val appBarConfiguration = AppBarConfiguration(
             topLevelDestinationIds = setOf(
-                R.id.fragment_feed, R.id.fragment_recommend,
-                R.id.fragment_map, R.id.fragment_my_page),
+                R.id.feed, R.id.forYou,
+                R.id.map, R.id.myPage),
             fallbackOnNavigateUpListener = ::onSupportNavigateUp
         )*/
 

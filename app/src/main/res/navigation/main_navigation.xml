@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/storeProfile">
+    <fragment
+        android:id="@+id/feed"
+        android:name="com.whoasys.queda.recyclers.Feed"
+        android:label="Feed">
+        <action
+            android:id="@+id/action_feedFragment_to_postFragment"
+            app:destination="@id/postDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/postDetail"
+        android:name="com.whoasys.queda.PostDetail"
+        android:label="PostDetail"
+        tools:layout="@layout/post_detail">
+        <action
+            android:id="@+id/action_postFragment_to_storeProfileFragment2"
+            app:destination="@id/storeProfile" />
+    </fragment>
+    <fragment
+        android:id="@+id/storeProfile"
+        android:name="com.whoasys.queda.StoreProfile"
+        android:label="StoreProfile"
+        tools:layout="@layout/store_profile" />
+    <fragment
+        android:id="@+id/map"
+        android:name="com.whoasys.queda.api.Map"
+        android:label="Map">
+        <action
+            android:id="@+id/action_mapFragment_to_searchResultFragment"
+            app:destination="@id/searchResult" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchResult"
+        android:name="com.whoasys.queda.recyclers.SearchResult"
+        android:label="SearchResult">
+        <action
+            android:id="@+id/action_searchResultFragment_to_storeProfileFragment"
+            app:destination="@id/storeProfile" />
+    </fragment>
+    <fragment
+        android:id="@+id/myPage"
+        android:name="com.whoasys.queda.MyPage"
+        android:label="MyPage"
+        tools:layout="@layout/my_page">
+        <action
+            android:id="@+id/action_myPageFragment_to_scrapsFragment"
+            app:destination="@id/scraps" />
+        <action
+            android:id="@+id/action_myPageFragment_to_followingFragment"
+            app:destination="@id/following" />
+        <action
+            android:id="@+id/action_myPageFragment_to_editKeywordFragment"
+            app:destination="@id/editKeyword" />
+        <action
+            android:id="@+id/action_myPageFragment_to_myStoreFragment"
+            app:destination="@id/myStore" />
+        <action
+            android:id="@+id/action_myPageFragment_to_registerFragment"
+            app:destination="@id/register" />
+    </fragment>
+    <fragment
+        android:id="@+id/scraps"
+        android:name="com.whoasys.queda.recyclers.Scraps"
+        android:label="Scraps">
+        <action
+            android:id="@+id/action_scrapsFragment_to_postFragment"
+            app:destination="@id/postDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/forYou"
+        android:name="com.whoasys.queda.recyclers.ForYou"
+        android:label="ForYou">
+        <action
+            android:id="@+id/action_forYouFragment_to_storeProfileFragment"
+            app:destination="@id/storeProfile" />
+    </fragment>
+    <fragment
+        android:id="@+id/following"
+        android:name="com.whoasys.queda.recyclers.Following"
+        android:label="Following">
+        <action
+            android:id="@+id/action_followingFragment_to_storeProfileFragment"
+            app:destination="@id/storeProfile" />
+    </fragment>
+    <fragment
+        android:id="@+id/editKeyword"
+        android:name="com.whoasys.queda.recyclers.EditKeyword"
+        android:label="EditKeyword">
+        <action
+            android:id="@+id/action_editKeywordFragment_to_feedFragment"
+            app:destination="@id/feed" />
+        <action
+            android:id="@+id/action_editKeywordFragment_to_registerFragment"
+            app:destination="@id/register" />
+    </fragment>
+    <fragment
+        android:id="@+id/myStore"
+        android:name="com.whoasys.queda.MyStore"
+        android:label="MyStore"
+        tools:layout="@layout/my_store">
+        <action
+            android:id="@+id/action_myStoreFragment_to_postingFragment"
+            app:destination="@id/posting" />
+    </fragment>
+    <fragment
+        android:id="@+id/join"
+        android:name="com.whoasys.queda.Join"
+        android:label="Join"
+        tools:layout="@layout/join">
+        <action
+            android:id="@+id/action_joinFragment_to_editKeywordFragment"
+            app:destination="@id/editKeyword" />
+    </fragment>
+    <fragment
+        android:id="@+id/login"
+        android:name="com.whoasys.queda.Login"
+        android:label="Login"
+        tools:layout="@layout/login">
+        <action
+            android:id="@+id/action_loginFragment_to_joinFragment"
+            app:destination="@id/join" />
+        <action
+            android:id="@+id/action_loginFragment_to_feedFragment"
+            app:destination="@id/feed" />
+    </fragment>
+    <fragment
+        android:id="@+id/register"
+        android:name="com.whoasys.queda.Register"
+        android:label="Register"
+        tools:layout="@layout/register">
+        <action
+            android:id="@+id/action_registerFragment_to_verifyFragment"
+            app:destination="@id/verify" />
+        <action
+            android:id="@+id/action_registerFragment_to_addressFragment"
+            app:destination="@id/address" />
+        <action
+            android:id="@+id/action_registerFragment_to_editKeywordFragment"
+            app:destination="@id/editKeyword" />
+        <action
+            android:id="@+id/action_registerFragment_to_myStoreFragment2"
+            app:destination="@id/myStore" />
+    </fragment>
+    <fragment
+        android:id="@+id/verify"
+        android:name="com.whoasys.queda.api.Verify"
+        android:label="Verify">
+        <action
+            android:id="@+id/action_verifyFragment_to_registerFragment"
+            app:destination="@id/register" />
+    </fragment>
+    <fragment
+        android:id="@+id/address"
+        android:name="com.whoasys.queda.api.Address"
+        android:label="Address">
+        <action
+            android:id="@+id/action_addressFragment_to_registerFragment"
+            app:destination="@id/register" />
+    </fragment>
+    <fragment
+        android:id="@+id/posting"
+        android:name="com.whoasys.queda.Posting"
+        android:label="Posting"
+        tools:layout="@layout/posting">
+        <action
+            android:id="@+id/action_postingFragment_to_postFragment"
+            app:destination="@id/postDetail" />
+    </fragment>
+
+</navigation>
