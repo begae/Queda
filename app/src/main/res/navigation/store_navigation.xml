@@ -3,26 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/store_navigation"
-    app:startDestination="@id/storeInfo">
+    app:startDestination="@id/storeNotice">
         <fragment
             android:id="@+id/storePromos"
             android:name="com.whoasys.queda.recyclers.StorePromos"
             android:label="StorePromos">
             <action
-                android:id="@+id/action_storePromosFragment_to_postFragment"
+                android:id="@+id/action_storePromos_to_postDetail"
                 app:destination="@id/postDetail" />
         </fragment>
-        <fragment
-            android:id="@+id/storeInfo"
-            android:name="com.whoasys.queda.StoreInfo"
-            android:label="StoreInfo"
-            tools:layout="@layout/store_info" />
+    <fragment
+        android:id="@+id/storeNotice"
+        android:name="com.whoasys.queda.StoreNotice"
+        android:label="StoreNotice"
+        tools:layout="@layout/store_notice" />
         <fragment
             android:id="@+id/storePosts"
             android:name="com.whoasys.queda.recyclers.StorePosts"
             android:label="StorePostsFragment" >
             <action
-                android:id="@+id/action_storePostsFragment_to_postFragment"
+                android:id="@+id/action_storePosts_to_postDetail"
                 app:destination="@id/postDetail" />
         </fragment>
     </navigation>

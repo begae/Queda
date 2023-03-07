@@ -43,13 +43,14 @@
             <TableRow
                 android:id="@+id/customer_menu"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
 
                 <Button
                     android:id="@+id/visit"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_margin="5dp"
+                    android:layout_marginEnd="3dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/purple_700"
                     android:fontFamily="@font/east_sea_dokdo"
@@ -64,7 +65,7 @@
                     android:id="@+id/scrap"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_margin="5dp"
+                    android:layout_marginStart="2dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/purple_500"
                     android:fontFamily="@font/east_sea_dokdo"
@@ -80,13 +81,13 @@
                 android:id="@+id/manager_menu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone">
+                android:layout_margin="5dp">
 
                 <Button
                     android:id="@+id/delete"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_margin="5dp"
+                    android:layout_marginEnd="2dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/purple_700"
                     android:fontFamily="@font/east_sea_dokdo"
@@ -101,7 +102,7 @@
                     android:id="@+id/modify"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_margin="5dp"
+                    android:layout_marginStart="3dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/purple_500"
                     android:fontFamily="@font/east_sea_dokdo"
@@ -116,7 +117,7 @@
                     android:id="@+id/set_as_notice"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_margin="5dp"
+                    android:layout_marginStart="5dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/purple"
                     android:fontFamily="@font/east_sea_dokdo"
@@ -130,7 +131,7 @@
             </TableRow>
 
             <TextView
-                android:id="@+id/single_post_title"
+                android:id="@+id/post_detail_title"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
@@ -143,7 +144,7 @@
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/single_post_author"
+                android:id="@+id/post_detail_author"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_margin="5dp"
@@ -156,7 +157,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/single_post_added"
+                android:id="@+id/post_detail_added"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_margin="5dp"
@@ -169,7 +170,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/single_post_promo_range"
+                android:id="@+id/post_detail_promo_range"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_margin="5dp"
@@ -179,11 +180,10 @@
                 android:text="@string/promo_range"
                 android:textColor="@color/black"
                 android:textLocale="Korean"
-                android:textSize="20sp"
-                android:visibility="gone" />
+                android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/single_post_content"
+                android:id="@+id/post_detail_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"

@@ -17,7 +17,6 @@ class StoreProfile : Fragment() {
 
     private var storeId: Int = 5
     private var store: Store? = null
-    private lateinit var b: StoreProfileBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,8 +30,6 @@ class StoreProfile : Fragment() {
 
         networkThread.start()
         networkThread.join()
-
-        b = StoreProfileBinding.inflate(layoutInflater)
     }
 
     override fun onCreateView(
@@ -40,12 +37,15 @@ class StoreProfile : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        if (store!= null) {
-            b.storeName.text = store!!.name
-            b.storeAddress.text = store!!.address
-            b.storePhone.text = store!!.phone
-            b.storeOpenTime.text = store!!.openTime
-        }
+        val b = StoreProfileBinding.inflate(layoutInflater)
+
+
+        b.storeName.text = store!!.name
+        b.storeAddress.text = store!!.address
+        b.storePhone.text = store!!.phone
+        b.storeOpenTime.text = store!!.openTime
+
+
 
         return b.root
     }

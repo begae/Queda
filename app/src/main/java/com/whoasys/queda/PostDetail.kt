@@ -12,47 +12,61 @@ import java.text.DateFormat
 
 class PostDetail : Fragment() {
 
-    private var postId: Int = 0
+    private var userId: String = "admin"
+    private var postId: Int = 1
     private var post: Post? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            postId = it.getInt("id")
+            postId = it.getInt("post_id")
+            userId = it.getString("user_id")?: "admin"
         }
+
+        val networkThread = Thread {
+            post = NetworkService.call().getOnePost(postId.toString()).execute().body()
+        }
+
+        networkThread.start()
+        networkThread.join()
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val b = PostDetailBinding.inflate(inflater, container, false)
 
-        val networkThread = Thread {
-            post = NetworkService.call().getOnePost(postId.toString()).execute().body()!!
-        }
-
-        networkThread.start()
-        networkThread.join()
+        val b = PostDetailBinding.inflate(layoutInflater)
 
         if (post != null) {
-            b.singlePostTitle.text = post!!.title
-            b.singlePostAuthor.text = post!!.author.id
-            b.singlePostContent.text = post!!.content
-            val postDate = DateFormat.getDateInstance()
-            val added = postDate.format(post!!.addedMillis)
-            b.singlePostAdded.text = added
+
+            // coil implement
+
+            if (post!!.author.id == userId) {
+
+                b.customerMenu.visibility = View.GONE
+                b.managerMenu.visibility = View.VISIBLE
+            }
+
+            b.postDetailTitle.text = post!!.title
+            b.postDetailAuthor.text = post!!.author.id
+            b.postDetailContent.text = post!!.content
+            val formatter = DateFormat.getDateInstance()
+            val added = formatter.format(post!!.addedMillis)
+            b.postDetailAdded.text = added
         }
+
         return b.root
     }
 
     companion object {
 
         @JvmStatic
-        fun newInstance(postId: Int) =
+        fun newInstance(postId: Int, userId: String) =
             PostDetail().apply {
                 arguments = Bundle().apply {
-                    putInt("id", postId)
+                    putInt("post_id", postId)
+                    putString("user_id", userId)
                 }
             }
     }
