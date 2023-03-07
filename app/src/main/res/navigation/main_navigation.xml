@@ -9,7 +9,7 @@
         android:name="com.whoasys.queda.recyclers.Feed"
         android:label="Feed">
         <action
-            android:id="@+id/action_feedFragment_to_postFragment"
+            android:id="@+id/action_feed_to_postDetail"
             app:destination="@id/postDetail" />
     </fragment>
     <fragment
@@ -18,20 +18,27 @@
         android:label="PostDetail"
         tools:layout="@layout/post_detail">
         <action
-            android:id="@+id/action_postFragment_to_storeProfileFragment2"
+            android:id="@+id/action_post_to_storeProfile"
             app:destination="@id/storeProfile" />
     </fragment>
     <fragment
         android:id="@+id/storeProfile"
         android:name="com.whoasys.queda.StoreProfile"
         android:label="StoreProfile"
-        tools:layout="@layout/store_profile" />
+        tools:layout="@layout/store_profile" >
+        <action
+            android:id="@+id/action_storeProfile_to_posting"
+            app:destination="@id/posting" />
+        <action
+            android:id="@+id/action_storeProfile_to_editKeyword"
+            app:destination="@id/editKeyword" />
+    </fragment>
     <fragment
         android:id="@+id/map"
         android:name="com.whoasys.queda.api.Map"
         android:label="Map">
         <action
-            android:id="@+id/action_mapFragment_to_searchResultFragment"
+            android:id="@+id/action_map_to_searchResult"
             app:destination="@id/searchResult" />
     </fragment>
     <fragment
@@ -39,7 +46,7 @@
         android:name="com.whoasys.queda.recyclers.SearchResult"
         android:label="SearchResult">
         <action
-            android:id="@+id/action_searchResultFragment_to_storeProfileFragment"
+            android:id="@+id/action_searchResult_to_storeProfile"
             app:destination="@id/storeProfile" />
     </fragment>
     <fragment
@@ -48,27 +55,27 @@
         android:label="MyPage"
         tools:layout="@layout/my_page">
         <action
-            android:id="@+id/action_myPageFragment_to_scrapsFragment"
+            android:id="@+id/action_myPage_to_scraps"
             app:destination="@id/scraps" />
         <action
-            android:id="@+id/action_myPageFragment_to_followingFragment"
+            android:id="@+id/action_myPage_to_following"
             app:destination="@id/following" />
         <action
-            android:id="@+id/action_myPageFragment_to_editKeywordFragment"
+            android:id="@+id/action_myPage_to_editKeyword"
             app:destination="@id/editKeyword" />
         <action
-            android:id="@+id/action_myPageFragment_to_myStoreFragment"
-            app:destination="@id/myStore" />
-        <action
-            android:id="@+id/action_myPageFragment_to_registerFragment"
+            android:id="@+id/action_myPage_to_register"
             app:destination="@id/register" />
+        <action
+            android:id="@+id/action_myPage_to_storeProfile"
+            app:destination="@id/storeProfile" />
     </fragment>
     <fragment
         android:id="@+id/scraps"
         android:name="com.whoasys.queda.recyclers.Scraps"
         android:label="Scraps">
         <action
-            android:id="@+id/action_scrapsFragment_to_postFragment"
+            android:id="@+id/action_scraps_to_post"
             app:destination="@id/postDetail" />
     </fragment>
     <fragment
@@ -76,7 +83,7 @@
         android:name="com.whoasys.queda.recyclers.ForYou"
         android:label="ForYou">
         <action
-            android:id="@+id/action_forYouFragment_to_storeProfileFragment"
+            android:id="@+id/action_forYou_to_storeProfile"
             app:destination="@id/storeProfile" />
     </fragment>
     <fragment
@@ -84,7 +91,7 @@
         android:name="com.whoasys.queda.recyclers.Following"
         android:label="Following">
         <action
-            android:id="@+id/action_followingFragment_to_storeProfileFragment"
+            android:id="@+id/action_following_to_storeProfile"
             app:destination="@id/storeProfile" />
     </fragment>
     <fragment
@@ -92,20 +99,14 @@
         android:name="com.whoasys.queda.recyclers.EditKeyword"
         android:label="EditKeyword">
         <action
-            android:id="@+id/action_editKeywordFragment_to_feedFragment"
+            android:id="@+id/action_editKeyword_to_feed"
             app:destination="@id/feed" />
         <action
-            android:id="@+id/action_editKeywordFragment_to_registerFragment"
+            android:id="@+id/action_editKeyword_to_register"
             app:destination="@id/register" />
-    </fragment>
-    <fragment
-        android:id="@+id/myStore"
-        android:name="com.whoasys.queda.MyStore"
-        android:label="MyStore"
-        tools:layout="@layout/my_store">
         <action
-            android:id="@+id/action_myStoreFragment_to_postingFragment"
-            app:destination="@id/posting" />
+            android:id="@+id/action_editKeyword_to_storeProfile"
+            app:destination="@id/storeProfile" />
     </fragment>
     <fragment
         android:id="@+id/join"
@@ -113,7 +114,7 @@
         android:label="Join"
         tools:layout="@layout/join">
         <action
-            android:id="@+id/action_joinFragment_to_editKeywordFragment"
+            android:id="@+id/action_join_to_editKeyword"
             app:destination="@id/editKeyword" />
     </fragment>
     <fragment
@@ -122,10 +123,10 @@
         android:label="Login"
         tools:layout="@layout/login">
         <action
-            android:id="@+id/action_loginFragment_to_joinFragment"
+            android:id="@+id/action_login_to_join"
             app:destination="@id/join" />
         <action
-            android:id="@+id/action_loginFragment_to_feedFragment"
+            android:id="@+id/action_login_to_feed"
             app:destination="@id/feed" />
     </fragment>
     <fragment
@@ -134,24 +135,24 @@
         android:label="Register"
         tools:layout="@layout/register">
         <action
-            android:id="@+id/action_registerFragment_to_verifyFragment"
+            android:id="@+id/action_register_to_verify"
             app:destination="@id/verify" />
         <action
-            android:id="@+id/action_registerFragment_to_addressFragment"
+            android:id="@+id/action_register_to_address"
             app:destination="@id/address" />
         <action
-            android:id="@+id/action_registerFragment_to_editKeywordFragment"
+            android:id="@+id/action_register_to_editKeyword"
             app:destination="@id/editKeyword" />
         <action
-            android:id="@+id/action_registerFragment_to_myStoreFragment2"
-            app:destination="@id/myStore" />
+            android:id="@+id/action_register_to_storeProfile"
+            app:destination="@id/storeProfile" />
     </fragment>
     <fragment
         android:id="@+id/verify"
         android:name="com.whoasys.queda.api.Verify"
         android:label="Verify">
         <action
-            android:id="@+id/action_verifyFragment_to_registerFragment"
+            android:id="@+id/action_verify_to_register"
             app:destination="@id/register" />
     </fragment>
     <fragment
@@ -159,7 +160,7 @@
         android:name="com.whoasys.queda.api.Address"
         android:label="Address">
         <action
-            android:id="@+id/action_addressFragment_to_registerFragment"
+            android:id="@+id/action_address_to_register"
             app:destination="@id/register" />
     </fragment>
     <fragment
@@ -168,7 +169,7 @@
         android:label="Posting"
         tools:layout="@layout/posting">
         <action
-            android:id="@+id/action_postingFragment_to_postFragment"
+            android:id="@+id/action_posting_to_postDetail"
             app:destination="@id/postDetail" />
     </fragment>
 
