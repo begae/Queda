@@ -42,7 +42,7 @@ class StoreProfile : Fragment() {
 
         if (store!= null) {
             b.storeName.text = store!!.name
-            b.storeAddr.text = store!!.address
+            b.storeAddress.text = store!!.address
             b.storePhone.text = store!!.phone
             b.storeOpenTime.text = store!!.openTime
         }

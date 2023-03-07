@@ -54,7 +54,7 @@ class Posting : Fragment() {
 
             } else {
 
-                b.attachCheck.isChecked = false
+                b.attachCheckbox.isChecked = false
             }
         }
 
@@ -75,9 +75,9 @@ class Posting : Fragment() {
         var promoStart: String? = null
         var promoEnd: String? = null
 
-        b.promoCheck.setOnCheckedChangeListener { _, _ ->
+        b.promoCheckbox.setOnCheckedChangeListener { _, _ ->
 
-            if (b.promoCheck.isChecked) {
+            if (b.promoCheckbox.isChecked) {
                 b.datePickers.visibility = View.VISIBLE
 
                 b.promoStartDate.minDate = today
@@ -107,27 +107,27 @@ class Posting : Fragment() {
             }
         }
 
-        b.attachCheck.setOnCheckedChangeListener { _, _ ->
+        b.attachCheckbox.setOnCheckedChangeListener { _, _ ->
 
-            if (b.attachCheck.isChecked) {
-                b.attachImages.visibility = View.VISIBLE
+            if (b.attachCheckbox.isChecked) {
+                b.attachImagesBtn.visibility = View.VISIBLE
 
             } else {
-                b.attachImages.visibility = View.GONE
+                b.attachImagesBtn.visibility = View.GONE
             }
         }
 
-        b.attachImages.setOnClickListener {
+        b.attachImagesBtn.setOnClickListener {
 
             pickImages.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
         }
 
         b.finishPostiing.setOnClickListener {
 
-            if (b.promoCheck.isChecked) {
+            if (b.promoCheckbox.isChecked) {
 
                 if (promoStart.isNullOrEmpty() || promoEnd.isNullOrEmpty()) {
-                    b.promoCheck.isChecked = false
+                    b.promoCheckbox.isChecked = false
                     b.finishPostiing.isSelected = false
                     Toast.makeText(activity, "행사 시작일과 종료일을 설정해주세요.", Toast.LENGTH_LONG).show()
                 }
@@ -143,7 +143,7 @@ class Posting : Fragment() {
 
                 val new = Post(
                     b.postTitle.text.toString(), loggedIn!!,
-                    b.postContent.text.toString(), b.promoCheck.isChecked,
+                    b.postContent.text.toString(), b.promoCheckbox.isChecked,
                     promoStart, promoEnd
                 )
 
@@ -155,7 +155,7 @@ class Posting : Fragment() {
                 networkThread.start()
                 networkThread.join()
 
-                if (b.attachCheck.isChecked) {
+                if (b.attachCheckbox.isChecked) {
 
                     for (i: Int in paths.indices) {
                         viewLifecycleOwner.lifecycleScope.launch {
