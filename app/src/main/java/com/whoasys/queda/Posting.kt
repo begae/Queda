@@ -179,7 +179,7 @@ class Posting : Fragment() {
                 val bundle = bundleOf(pair)
 
                 view?.findNavController()
-                    ?.navigate(R.id.action_postingFragment_to_postFragment, bundle)
+                    ?.navigate(R.id.action_posting_to_postDetail, bundle)
             }
         }
 

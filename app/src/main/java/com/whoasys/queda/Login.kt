@@ -29,7 +29,7 @@ class Login : Fragment() {
             val pair1 = Pair("entered_id", b.id.text.toString())
             val pair2 = Pair("entered_pw", b.pw.text.toString())
             val bundle = bundleOf(pair1, pair2)
-            view?.findNavController()?.navigate(R.id.action_loginFragment_to_joinFragment, bundle)
+            view?.findNavController()?.navigate(R.id.action_login_to_join, bundle)
         }
 
         b.loginBtn.setOnClickListener {
@@ -69,7 +69,7 @@ class Login : Fragment() {
                     val pair2 = Pair("user_longitude", loggedIn!!.longitude)
                     val bundle = bundleOf(pair1, pair2)
                     view?.findNavController()
-                        ?.navigate(R.id.action_loginFragment_to_feedFragment, bundle)
+                        ?.navigate(R.id.action_login_to_feed, bundle)
                 }
 
                 else {

@@ -76,7 +76,7 @@ class Join : Fragment() {
                         apply()
                     }
 
-                    view?.findNavController()?.navigate(R.id.action_joinFragment_to_editKeywordFragment)
+                    view?.findNavController()?.navigate(R.id.action_join_to_editKeyword)
 
                 } else {
 
