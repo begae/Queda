@@ -67,5 +67,9 @@
     <string name="updateAsManager">관리자 등록</string>
     <string name="error_page">오류안내 게시물 생성</string>
     <string name="write_post_btn">글쓰기 버튼</string>
+    <string name="write">글쓰기</string>
+    <string name="edit">정보수정</string>
+    <string name="change_notice">공지바꾸기</string>
+    <string name="store_notice">공지</string>
 
 </resources>
