@@ -73,5 +73,8 @@
     <string name="store_notice">공지</string>
     <string name="finish_edit">수정완료</string>
     <string name="set_as_notice">공지로 설정</string>
+    <string name="title_activity_store">StoreActivity</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 
 </resources>
