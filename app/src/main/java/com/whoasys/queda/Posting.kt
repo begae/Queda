@@ -16,9 +16,10 @@ import com.amplifyframework.core.Amplify
 import com.amplifyframework.storage.StorageAccessLevel
 import com.amplifyframework.storage.options.StorageUploadFileOptions
 import com.whoasys.queda.databinding.PostingBinding
-import com.whoasys.queda.entities.NetworkService
 import com.whoasys.queda.entities.Post
+import com.whoasys.queda.entities.PostService
 import com.whoasys.queda.entities.User
+import com.whoasys.queda.entities.UserService
 import com.whoasys.queda.etc.getPath
 import kotlinx.coroutines.launch
 import java.io.File
@@ -60,7 +61,7 @@ class Posting : Fragment() {
         }
 
         networkThread = Thread {
-            loggedIn = NetworkService.call().find(userId?:"5").execute().body()
+            loggedIn = UserService.call().findUserById(userId?:"5").execute().body()
         }
 
         networkThread.start()
@@ -150,7 +151,7 @@ class Posting : Fragment() {
 
                 networkThread = Thread {
                     postId =
-                        NetworkService.call().savePost(new).execute().body() ?: 2
+                        PostService.call().savePost(new).execute().body() ?: 2
                 }
 
                 networkThread.start()
@@ -172,7 +173,7 @@ class Posting : Fragment() {
                     for (j: Int in keys.indices) {
                         networkThread = Thread {
                             postId =
-                                NetworkService.call().attach(j, postId, keys[j]).execute()
+                                PostService.call().attach(j, postId, keys[j]).execute()
                                     .body() ?: 3
                         }
                         networkThread.start()

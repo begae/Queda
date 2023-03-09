@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.whoasys.queda.databinding.RegisterBinding
-import com.whoasys.queda.entities.NetworkService
 import com.whoasys.queda.entities.Store
+import com.whoasys.queda.entities.StoreService
+import com.whoasys.queda.entities.UserService
 
 class Register : Fragment() {
 
@@ -31,7 +32,7 @@ class Register : Fragment() {
                 "12:00 - 08:00")
 
             networkThread = Thread {
-                response = NetworkService.call().register(store).execute().body()
+                response = StoreService.call().register(store).execute().body()
             }
 
             networkThread.start()
@@ -43,7 +44,7 @@ class Register : Fragment() {
 
             var pass: Boolean? = false
             networkThread = Thread {
-                pass = NetworkService.call()
+                pass = UserService.call()
                     .updateUserAsManager("fake", response!!).execute().body()
             }
 

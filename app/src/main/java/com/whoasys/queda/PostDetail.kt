@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import coil.load
 import com.whoasys.queda.databinding.PostDetailBinding
-import com.whoasys.queda.entities.NetworkService
 import com.whoasys.queda.entities.Post
+import com.whoasys.queda.entities.PostService
 import java.text.DateFormat
 import java.util.*
 
@@ -26,7 +26,7 @@ class PostDetail : Fragment() {
         }
 
         val networkThread = Thread {
-            post = NetworkService.call().getOnePost(postId.toString()).execute().body()
+            post = PostService.call().getOnePost(postId).execute().body()
         }
 
         networkThread.start()
@@ -42,7 +42,7 @@ class PostDetail : Fragment() {
 
         if (post != null) {
 
-            if (post!!.author.id == userId) {
+            if (post!!.author?.id == userId) {
 
                 b.customerMenu.visibility = View.GONE
                 b.managerMenu.visibility = View.VISIBLE
@@ -77,7 +77,7 @@ class PostDetail : Fragment() {
             }
 
             b.titleView.text = post!!.title
-            b.authorView.text = post!!.author.id
+            b.authorView.text = post!!.author?.id
             b.contentView.text = post!!.content
             val formatter = DateFormat.getDateInstance(DateFormat.DEFAULT, Locale.KOREA)
             val added = formatter.format(post!!.addedMillis)

@@ -10,8 +10,8 @@ import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.whoasys.queda.databinding.JoinBinding
-import com.whoasys.queda.entities.NetworkService
 import com.whoasys.queda.entities.User
+import com.whoasys.queda.entities.UserService
 
 class Join : Fragment() {
 
@@ -59,7 +59,7 @@ class Join : Fragment() {
                     val new = User(b.id.text.toString(), b.pw.text.toString(),
                                 b.name.text.toString(), b.email.text.toString(),
                                 null, null)
-                    loggedIn = NetworkService.call().join(new).execute().body()
+                    loggedIn = UserService.call().join(new).execute().body()
                 }
 
                 networkThread.start()

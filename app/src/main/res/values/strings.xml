@@ -78,5 +78,6 @@
     <string name="title_notifications">Notifications</string>
     <string name="set_notice">공지하기</string>
     <string name="from_until">~</string>
+    <string name="thumbnail">Thumbnail</string>
 
 </resources>

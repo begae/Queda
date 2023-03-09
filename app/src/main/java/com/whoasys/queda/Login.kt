@@ -11,8 +11,8 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.whoasys.queda.databinding.LoginBinding
-import com.whoasys.queda.entities.NetworkService
 import com.whoasys.queda.entities.User
+import com.whoasys.queda.entities.UserService
 
 class Login : Fragment() {
 
@@ -41,7 +41,7 @@ class Login : Fragment() {
             else {
 
                 val networkThread = Thread {
-                    loggedIn = NetworkService.call().login(b.id.text.toString(),
+                    loggedIn = UserService.call().login(b.id.text.toString(),
                         b.pw.text.toString()).execute().body()
                 }
 

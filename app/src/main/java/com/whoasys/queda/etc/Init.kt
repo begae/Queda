@@ -5,11 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.whoasys.queda.entities.NetworkService
 import com.whoasys.queda.databinding.InitBinding
-import com.whoasys.queda.entities.Post
-import com.whoasys.queda.entities.Store
-import com.whoasys.queda.entities.User
+import com.whoasys.queda.entities.*
 
 class Init : Fragment() {
 
@@ -52,7 +49,7 @@ class Init : Fragment() {
 
             for (member in team) {
                 networkThread = Thread {
-                    name = NetworkService.call().join(member).execute().body()?.name
+                    name = UserService.call().join(member).execute().body()?.name
                     print(name)
                     names = names.plus(name)
                 }
@@ -92,7 +89,7 @@ class Init : Fragment() {
 
             for (facility in school) {
                 networkThread = Thread {
-                    storeId = NetworkService.call().register(facility).execute().body()?: 0
+                    storeId = StoreService.call().register(facility).execute().body()?: 0
                     print(storeId)
                     storeIds = storeIds.plus(storeId)
                 }
@@ -111,7 +108,7 @@ class Init : Fragment() {
 
             for (i: Int in team.indices) {
                 networkThread = Thread {
-                    response = NetworkService.call().updateUserAsManager(team[i].id, storeIds[i]).execute().body()?: false
+                    response = UserService.call().updateUserAsManager(team[i].id, storeIds[i]).execute().body()?: false
                     print(response)
                     responses = responses.plus(response)
                 }
@@ -139,7 +136,7 @@ class Init : Fragment() {
 
             for (post in errorPosts) {
                 networkThread = Thread {
-                    postId = NetworkService.call().savePost(post).execute().body()?: -3
+                    postId = PostService.call().savePost(post).execute().body()?: -3
                     print(postId)
                 }
                 networkThread.start()

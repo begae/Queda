@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 import java.io.IOException
 
-object NetworkService {
+object UserService {
 
     private const val SERVER = "http://118.67.129.26:8080"
 
@@ -27,57 +27,62 @@ object NetworkService {
 
     interface Http {
 
-        @POST("/api/post/new")
+        @POST("/post/new")
         fun savePost(
             @Body post: Post
         ): Call<Int?>
 
         @FormUrlEncoded
-        @POST("/api/post/attach")
+        @POST("/post/attach")
         fun attach(
             @Field("num") num: Int,
             @Field("id") id: Int,
             @Field("key") key: String
         ): Call<Int?>
 
-        @GET("/api/post/{id}")
+        @GET("/post/id")
         fun getOnePost(
-            @Path("id") id: String
+            @Query("id") id: Int
         ): Call<Post?>
 
-        @GET("/api/store/{id}")
+        @GET("/store/id")
         fun getOneStore(
-            @Path("id") id: String
+            @Query("id") id: Int
         ): Call<Store?>
 
-        @GET("/api/post/by/{author}")
+        @GET("/user/id")
+        fun findUserById(
+            @Query("id") id: String
+        ): Call<User?>
+
+        @GET("/user/with")
+        fun findUserByStoreId(
+            @Query("storeId") storeId: Int
+        ): Call<User?>
+
+        @GET("/post/by")
         fun getAllPostsBy(
-            @Path("author") author: String
+            @Query("author") author: String
         ): Call<Iterable<Post>?>
 
-        @POST("/api/user/join")
+        @POST("/user/join")
         fun join(
             @Body user: User
         ): Call<User?>
 
-        @GET("/api/user/login")
+        @GET("/user/login")
         fun login(
             @Query("id") id: String,
             @Query("pw") pw: String
         ): Call<User?>
 
-        @GET("/api/user/find")
-        fun find(
-            @Query("id") id: String
-        ): Call<User?>
-
-        @POST("/api/store/register")
+        @POST("/store/register")
         fun register(
             @Body store: Store
         ): Call<Int?>
 
         @FormUrlEncoded
-        @POST("/api/user/manager")
+        @POST("/user/manager")
         fun updateUserAsManager(
             @Field("userId") userId: String,
             @Field("storeId") storeId: Int

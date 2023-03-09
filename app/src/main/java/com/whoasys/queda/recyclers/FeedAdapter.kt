@@ -30,8 +30,8 @@ class FeedAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.feed_name.text = itemList[position].author.store!!.name
-        holder.feed_location.text = itemList[position].author.store!!.address
+        holder.feed_name.text = itemList[position].author?.store!!.name
+        holder.feed_location.text = itemList[position].author?.store!!.address
         //holder.feed_time.text = itemList[position].addedMillis.toString()
         holder.feed_postTitle.text = itemList[position].title
         //val imgUrl =
