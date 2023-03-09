@@ -34,9 +34,10 @@ object NetworkService {
 
         @FormUrlEncoded
         @POST("/api/post/attach")
-        fun attachURLs(
+        fun attach(
+            @Field("num") num: Int,
             @Field("id") id: Int,
-            @Field("urls") urls: String
+            @Field("key") key: String
         ): Call<Int?>
 
         @GET("/api/post/{id}")

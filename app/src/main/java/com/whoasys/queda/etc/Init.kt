@@ -124,13 +124,13 @@ class Init : Fragment() {
         }
 
         val postOne = Post("오류가 발생했삼", administrator, "관리자에게 문의하삼",
-            false, null, null, null)
+            false, null, null, null, null, null)
 
         val postTwo = Post("오류가 발생했삼", administrator, "관리자에게 문의하삼",
-            false, null, null, null)
+            false, null, null, null, null, null)
 
         val postThree = Post("오류가 발생했삼", administrator, "관리자에게 문의하삼",
-            false, null, null, null)
+            false, null, null, null, null, null)
 
         val errorPosts = arrayOf(postOne, postTwo, postThree)
         var postId: Int
