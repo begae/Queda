@@ -85,9 +85,9 @@ class Feed : Fragment() {
         UserList.add(User("1","1","1","1",1.0, 1.0, true, StoreList[0]))
         UserList.add(User("2","2","2","2",1.0, 1.0, true, StoreList[1]))
 
-        PostList.add(
+        /*(PostList.add(
             Post("1번 포스트 제목",UserList[0],"",false,"","",
-            "",1,null)
+            null, null, null)
         )
         PostList.add(
             Post("2번 포스트 제목",UserList[1],"",false,"","",
@@ -96,7 +96,7 @@ class Feed : Fragment() {
         PostList.add(
             Post("3번 포스트 제목",UserList[1],"",false,"","",
             "",3,null)
-        )
+        )*/
 
         itemList.add(PostList[0])
         itemList.add(PostList[1])

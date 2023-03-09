@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import coil.load
 import com.whoasys.queda.databinding.PostDetailBinding
 import com.whoasys.queda.entities.NetworkService
 import com.whoasys.queda.entities.Post
@@ -14,7 +15,7 @@ import java.util.*
 class PostDetail : Fragment() {
 
     private var userId: String = "admin"
-    private var postId: Int = 1
+    private var postId: Int = 4
     private var post: Post? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,12 +42,31 @@ class PostDetail : Fragment() {
 
         if (post != null) {
 
-            // coil implement
-
             if (post!!.author.id == userId) {
 
                 b.customerMenu.visibility = View.GONE
                 b.managerMenu.visibility = View.VISIBLE
+            }
+
+            // 이부분 (밑에 열줄 정도) 좀 다듬기
+
+            val bucket = "https://whoasys-queda-bucket-real193930-ksrmac.s3.ap-northeast-2.amazonaws.com/public/"
+
+            var key0 = post!!.attached0
+            val key1 = post!!.attached1
+            val key2 = post!!.attached2
+
+            if (key0 != null) {
+                b.image0.visibility = View.VISIBLE
+                b.image0.load(bucket + key0)
+            }
+            if (key1 != null) {
+                b.image1.visibility = View.VISIBLE
+                b.image1.load(bucket + key1)
+            }
+            if (key2 != null) {
+                b.image2.visibility = View.VISIBLE
+                b.image2.load(bucket + key2)
             }
 
             b.postDetailTitle.text = post!!.title

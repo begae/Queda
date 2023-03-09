@@ -14,36 +14,33 @@
             android:orientation="vertical" >
 
             <ImageView
-                android:id="@+id/attached1"
+                android:id="@+id/image0"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:layout_margin="5dp"
-                android:contentDescription="@string/attached"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/profileback" />
+                android:visibility="gone" />
 
             <ImageView
-                android:id="@+id/attached2"
+                android:id="@+id/image1"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:layout_margin="5dp"
                 android:scaleType="centerCrop"
-                android:visibility="gone"
-                app:srcCompat="@drawable/profileback" />
+                android:visibility="gone" />
 
             <ImageView
-                android:id="@+id/attached3"
+                android:id="@+id/image2"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:layout_margin="5dp"
                 android:scaleType="centerCrop"
-                android:visibility="gone"
-                app:srcCompat="@drawable/profileback" />
+                android:visibility="gone" />
 
             <TableRow
                 android:id="@+id/customer_menu"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="5dp">
 
                 <Button
@@ -73,15 +70,16 @@
                     android:insetBottom="0dp"
                     android:text="@string/scrap"
                     android:textColor="@color/white"
-                    android:textSize="24sp"
+                    android:textSize="26sp"
                     app:cornerRadius="15dp" />
             </TableRow>
 
             <TableRow
                 android:id="@+id/manager_menu"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp">
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:visibility="gone">
 
                 <Button
                     android:id="@+id/delete"
@@ -95,7 +93,7 @@
                     android:insetBottom="0dp"
                     android:text="@string/delete"
                     android:textColor="@color/white"
-                    android:textSize="24sp"
+                    android:textSize="26sp"
                     app:cornerRadius="15dp" />
 
                 <Button
@@ -110,7 +108,7 @@
                     android:insetBottom="0dp"
                     android:text="@string/modify"
                     android:textColor="@color/white"
-                    android:textSize="24sp"
+                    android:textSize="26sp"
                     app:cornerRadius="15dp" />
 
                 <Button
@@ -123,9 +121,9 @@
                     android:fontFamily="@font/east_sea_dokdo"
                     android:insetTop="0dp"
                     android:insetBottom="0dp"
-                    android:text="@string/set_as_notice"
+                    android:text="@string/set_notice"
                     android:textColor="@color/white"
-                    android:textSize="24sp"
+                    android:textSize="26sp"
                     app:cornerRadius="15dp" />
 
             </TableRow>

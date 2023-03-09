@@ -20,14 +20,13 @@ import com.whoasys.queda.entities.User
 import com.whoasys.queda.etc.getPath
 import kotlinx.coroutines.launch
 import java.io.File
-import java.net.URL
 
 class Posting : Fragment() {
 
     private lateinit var pickImages: ActivityResultLauncher<PickVisualMediaRequest>
     private var userId: String? = "begae"
     private lateinit var networkThread: Thread
-    private var urls: Array<URL?> = emptyArray()
+    private var keys: Array<String> = emptyArray()
     private var loggedIn: User? = null
     private lateinit var b: PostingBinding
     private var paths: Array<String> = emptyArray()
@@ -162,24 +161,28 @@ class Posting : Fragment() {
 
                             val now = System.currentTimeMillis()
                             val file = File(paths[i])
-                            val url = uploadFile("${now.toString()}$i.jpeg", file)
-                            urls = urls.plus(url)
+                            val key = "${now.toString()}$i.jpeg"
+                            uploadFile(key, file)
+                            keys = keys.plus(key)
                         }
                     }
 
-                    networkThread = Thread {
-                        postId = NetworkService.call().attachURLs(postId, urls.toString()).execute()
-                            .body() ?: 3
+                    for (j: Int in keys.indices) {
+                        networkThread = Thread {
+                            postId =
+                                NetworkService.call().attach(j, postId, keys[j]).execute()
+                                    .body() ?: 3
+                        }
+                        networkThread.start()
+                        networkThread.join()
                     }
-                    networkThread.start()
-                    networkThread.join()
                 }
 
                 val pair = Pair("post_id", postId)
                 val bundle = bundleOf(pair)
 
-                view?.findNavController()
-                    ?.navigate(R.id.action_posting_to_postDetail, bundle)
+                //view?.findNavController()
+                //    ?.navigate(R.id.action_posting_to_postDetail, bundle)
             }
         }
 
@@ -197,19 +200,11 @@ class Posting : Fragment() {
             }
     }
 
-    private fun uploadFile(key: String, file: File): URL? {
+    private fun uploadFile(key: String, file: File) {
 
         Amplify.Storage.uploadFile(key, file,
             { println("업로드에 성공했습니다: ${it.key}") },
             { println("업로드에 실패했습니다: $it") }
         )
-
-        var url: URL? = null
-        Amplify.Storage.getUrl(key,
-            { url = it.url },
-            { println("URL을 가져오지 못했습니다.") }
-        )
-
-        return url
     }
 }
