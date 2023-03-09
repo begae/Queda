@@ -17,10 +17,9 @@
       },
       "storage": {
         "queda23fe7ed1": {
-          "bucketName": "whoasys-queda-bucket",
+          "bucketName": "whoasys-queda-bucket-real193930-ksrmac",
           "region": "ap-northeast-2"
-        },
-        "storageReal": {}
+        }
       }
     }
   },
