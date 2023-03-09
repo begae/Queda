@@ -15,7 +15,7 @@ import java.util.*
 class PostDetail : Fragment() {
 
     private var userId: String = "admin"
-    private var postId: Int = 4
+    private var postId: Int = 8
     private var post: Post? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

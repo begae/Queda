@@ -13,6 +13,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import com.amplifyframework.core.Amplify
+import com.amplifyframework.storage.StorageAccessLevel
+import com.amplifyframework.storage.options.StorageUploadFileOptions
 import com.whoasys.queda.databinding.PostingBinding
 import com.whoasys.queda.entities.NetworkService
 import com.whoasys.queda.entities.Post
@@ -181,8 +183,8 @@ class Posting : Fragment() {
                 val pair = Pair("post_id", postId)
                 val bundle = bundleOf(pair)
 
-                //view?.findNavController()
-                //    ?.navigate(R.id.action_posting_to_postDetail, bundle)
+                view?.findNavController()
+                    ?.navigate(R.id.action_posting_to_postDetail, bundle)
             }
         }
 
@@ -202,7 +204,11 @@ class Posting : Fragment() {
 
     private fun uploadFile(key: String, file: File) {
 
-        Amplify.Storage.uploadFile(key, file,
+        val options = StorageUploadFileOptions.builder()
+            .accessLevel(StorageAccessLevel.PUBLIC)
+            .build()
+
+        Amplify.Storage.uploadFile(key, file, options,
             { println("업로드에 성공했습니다: ${it.key}") },
             { println("업로드에 실패했습니다: $it") }
         )
