@@ -84,28 +84,28 @@ class Posting : Fragment() {
                 b.promoStartDate.minDate = today
                 b.promoEndDate.minDate = today
 
-                b.promoStartDate.setOnDateChangedListener { _, yyyy, mm, dd ->
-
-                    val syyyy = yyyy.toString()
-                    val smm = mm.toString().padStart(2, '0')
-                    val sdd = dd.toString().padStart(2, '0')
-                    promoStart = "$syyyy-$smm-$sdd"
-                }
-
-                b.promoEndDate.setOnDateChangedListener { _, yyyy, mm, dd ->
-
-                    val eyyyy = yyyy.toString()
-                    val emm = mm.toString().padStart(2, '0')
-                    val edd = dd.toString().padStart(2, '0')
-                    promoEnd = "$eyyyy-$emm-$edd"
-                }
-
             } else {
 
                 b.datePickers.visibility = View.GONE
                 promoStart = null
                 promoEnd = null
             }
+        }
+
+        b.promoStartDate.setOnDateChangedListener { _, yyyy, mm, dd ->
+
+            val syyyy = yyyy.toString()
+            val smm = mm.toString().padStart(2, '0')
+            val sdd = dd.toString().padStart(2, '0')
+            promoStart = "$syyyy. $smm. $sdd"
+        }
+
+        b.promoEndDate.setOnDateChangedListener { _, yyyy, mm, dd ->
+
+            val eyyyy = yyyy.toString()
+            val emm = mm.toString().padStart(2, '0')
+            val edd = dd.toString().padStart(2, '0')
+            promoEnd = "$eyyyy. $emm. $edd"
         }
 
         b.attachCheckbox.setOnCheckedChangeListener { _, _ ->

@@ -37,6 +37,167 @@
                 android:scaleType="centerCrop"
                 android:visibility="gone" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:id="@+id/title_view"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/east_sea_dokdo"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/post_title"
+                android:textColor="@color/black"
+                android:textLocale="Korean"
+                android:textSize="34sp" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/post_detail_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/east_sea_dokdo"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/post_author"
+                    android:textColor="@color/black"
+                    android:textLocale="Korean"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/author_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/east_sea_dokdo"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/post_author"
+                    android:textColor="@color/black"
+                    android:textLocale="Korean"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/post_detail_added"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/east_sea_dokdo"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/post_added"
+                    android:textColor="@color/black"
+                    android:textLocale="Korean"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/added_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/east_sea_dokdo"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/post_added"
+                    android:textColor="@color/black"
+                    android:textLocale="Korean"
+                    android:textSize="28sp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/promo_range"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/post_detail_promo_range"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/east_sea_dokdo"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/promo_range"
+                    android:textColor="@color/black"
+                    android:textLocale="Korean"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/promo_start"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/east_sea_dokdo"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/promo_range"
+                    android:textColor="@color/black"
+                    android:textLocale="Korean"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/from_until"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/east_sea_dokdo"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/from_until"
+                    android:textColor="@color/black"
+                    android:textLocale="Korean"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/promo_end"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/east_sea_dokdo"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/promo_range"
+                    android:textColor="@color/black"
+                    android:textLocale="Korean"
+                    android:textSize="28sp" />
+
+            </TableRow>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:id="@+id/content_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/east_sea_dokdo"
+                android:gravity="center"
+                android:singleLine="false"
+                android:text="@string/post_content"
+                android:textColor="@color/black"
+                android:textLocale="Korean"
+                android:textSize="28sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
             <TableRow
                 android:id="@+id/customer_menu"
                 android:layout_width="match_parent"
@@ -127,75 +288,6 @@
                     app:cornerRadius="15dp" />
 
             </TableRow>
-
-            <TextView
-                android:id="@+id/post_detail_title"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_margin="5dp"
-                android:fontFamily="@font/east_sea_dokdo"
-                android:gravity="start|center_vertical"
-                android:singleLine="true"
-                android:text="@string/post_title"
-                android:textColor="@color/black"
-                android:textLocale="Korean"
-                android:textSize="34sp" />
-
-            <TextView
-                android:id="@+id/post_detail_author"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="5dp"
-                android:fontFamily="@font/east_sea_dokdo"
-                android:gravity="start|center_vertical"
-                android:singleLine="true"
-                android:text="@string/post_author"
-                android:textColor="@color/black"
-                android:textLocale="Korean"
-                android:textSize="26sp" />
-
-            <TextView
-                android:id="@+id/post_detail_added"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="5dp"
-                android:fontFamily="@font/east_sea_dokdo"
-                android:gravity="start|center_vertical"
-                android:singleLine="true"
-                android:text="@string/post_added"
-                android:textColor="@color/black"
-                android:textLocale="Korean"
-                android:textSize="26sp" />
-
-            <TextView
-                android:id="@+id/post_detail_promo_range"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="5dp"
-                android:fontFamily="@font/east_sea_dokdo"
-                android:gravity="start|center_vertical"
-                android:singleLine="true"
-                android:text="@string/promo_range"
-                android:textColor="@color/black"
-                android:textLocale="Korean"
-                android:textSize="26sp" />
-
-            <TextView
-                android:id="@+id/post_detail_content"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:fontFamily="@font/east_sea_dokdo"
-                android:gravity="start|center_vertical"
-                android:singleLine="false"
-                android:text="@string/post_content"
-                android:textColor="@color/black"
-                android:textLocale="Korean"
-                android:textSize="26sp" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
 
         </LinearLayout>
     </ScrollView>

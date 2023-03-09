@@ -49,16 +49,16 @@
     <string name="storeProfileBackImage">매장 프로필배경 사진</string>
     <string name="like">찜 버튼</string>
     <string name="post_detail">게시물 상세</string>
-    <string name="post_title">게시물 제목</string>
-    <string name="post_content">게시물 내용</string>
+    <string name="post_title">제목</string>
+    <string name="post_content">내용</string>
     <string name="delete">삭제</string>
     <string name="modify">수정</string>
     <string name="hello_blank_fragment">롸</string>
     <string name="searchGuide">키워드로 검색해보세요.</string>
     <string name="scrap">스크랩</string>
-    <string name="post_author">작성자</string>
+    <string name="post_author">글쓴이</string>
     <string name="attached">첨부사진</string>
-    <string name="post_added">작성일시</string>
+    <string name="post_added">글쓴날</string>
     <string name="visit_store">가게보기</string>
     <string name="promo_range">행사기간</string>
     <string name="keyword_select_guide">키워드 선택 화면입니다.</string>
@@ -77,5 +77,6 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="set_notice">공지하기</string>
+    <string name="from_until">~</string>
 
 </resources>

@@ -48,11 +48,18 @@ class PostDetail : Fragment() {
                 b.managerMenu.visibility = View.VISIBLE
             }
 
+            if (post!!.isPromo) {
+
+                b.promoRange.visibility = View.VISIBLE
+                b.promoStart.text = post!!.promoStart
+                b.promoEnd.text = post!!.promoEnd
+            }
+
             // 이부분 (밑에 열줄 정도) 좀 다듬기
 
             val bucket = "https://whoasys-queda-bucket-real193930-ksrmac.s3.ap-northeast-2.amazonaws.com/public/"
 
-            var key0 = post!!.attached0
+            val key0 = post!!.attached0
             val key1 = post!!.attached1
             val key2 = post!!.attached2
 
@@ -69,12 +76,12 @@ class PostDetail : Fragment() {
                 b.image2.load(bucket + key2)
             }
 
-            b.postDetailTitle.text = post!!.title
-            b.postDetailAuthor.text = post!!.author.id
-            b.postDetailContent.text = post!!.content
+            b.titleView.text = post!!.title
+            b.authorView.text = post!!.author.id
+            b.contentView.text = post!!.content
             val formatter = DateFormat.getDateInstance(DateFormat.DEFAULT, Locale.KOREA)
             val added = formatter.format(post!!.addedMillis)
-            b.postDetailAdded.text = added
+            b.addedView.text = added
         }
 
         return b.root
