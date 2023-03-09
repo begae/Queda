@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "queda2b41d19e_identitypool_2b41d19e",
-    "allowUnauthenticatedIdentities": true,
-    "resourceNameTruncated": "queda2b41d19e",
-    "userPoolName": "queda2b41d19e_userpool_2b41d19e",
+    "identityPoolName": "queda1cddc657_identitypool_1cddc657",
+    "allowUnauthenticatedIdentities": false,
+    "resourceNameTruncated": "queda1cddc657",
+    "userPoolName": "queda1cddc657_userpool_1cddc657",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -31,29 +31,15 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "queda22b41d19e_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "queda11cddc657_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "2b41d19e",
-    "resourceName": "queda2b41d19e",
+    "sharedId": "1cddc657",
+    "resourceName": "queda1cddc657",
     "authSelections": "identityPoolAndUserPool",
     "useDefault": "default",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
-    "useEnabledMfas": true,
-    "authRoleArn": {
-      "Fn::GetAtt": [
-        "AuthRole",
-        "Arn"
-      ]
-    },
-    "unauthRoleArn": {
-      "Fn::GetAtt": [
-        "UnauthRole",
-        "Arn"
-      ]
-    },
-    "breakCircularDependency": true,
-    "dependsOn": []
+    "useEnabledMfas": true
   }
 }
