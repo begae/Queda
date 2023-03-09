@@ -1,6 +1,6 @@
 {
   "auth": {
-    "quedad6d7acb9": {
+    "queda1edb354c": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -23,13 +23,6 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
-    }
-  },
-  "storage": {
-    "storage": {
-      "dependsOn": [],
-      "providerPlugin": "awscloudformation",
-      "service": "S3"
     }
   }
 }

@@ -9,6 +9,7 @@ import com.whoasys.queda.databinding.PostDetailBinding
 import com.whoasys.queda.entities.NetworkService
 import com.whoasys.queda.entities.Post
 import java.text.DateFormat
+import java.util.*
 
 class PostDetail : Fragment() {
 
@@ -51,7 +52,7 @@ class PostDetail : Fragment() {
             b.postDetailTitle.text = post!!.title
             b.postDetailAuthor.text = post!!.author.id
             b.postDetailContent.text = post!!.content
-            val formatter = DateFormat.getDateInstance()
+            val formatter = DateFormat.getDateInstance(DateFormat.DEFAULT, Locale.KOREA)
             val added = formatter.format(post!!.addedMillis)
             b.postDetailAdded.text = added
         }
