@@ -14,6 +14,13 @@
     "categories": {
       "auth": {
         "queda1edb354c": {}
+      },
+      "storage": {
+        "queda23fe7ed1": {
+          "bucketName": "whoasys-queda-bucket",
+          "region": "ap-northeast-2"
+        },
+        "storageReal": {}
       }
     }
   }
