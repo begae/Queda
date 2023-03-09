@@ -23,5 +23,29 @@
         "storageReal": {}
       }
     }
+  },
+  "ksywindows": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-queda-ksywindows-222932-authRole",
+      "UnauthRoleArn": "arn:aws:iam::242014611427:role/amplify-queda-ksywindows-222932-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::242014611427:role/amplify-queda-ksywindows-222932-authRole",
+      "Region": "ap-northeast-2",
+      "DeploymentBucketName": "amplify-queda-ksywindows-222932-deployment",
+      "UnauthRoleName": "amplify-queda-ksywindows-222932-unauthRole",
+      "StackName": "amplify-queda-ksywindows-222932",
+      "StackId": "arn:aws:cloudformation:ap-northeast-2:242014611427:stack/amplify-queda-ksywindows-222932/6db10d70-be7e-11ed-b6e6-06d456820504",
+      "AmplifyAppId": "d1qsdnqc6waoq3"
+    },
+    "categories": {
+      "auth": {
+        "queda1edb354c": {}
+      },
+      "storage": {
+        "queda23fe7ed1": {
+          "bucketName": "whoasys-queda-bucket-real193930-ksrmac",
+          "region": "ap-northeast-2"
+        }
+      }
+    }
   }
 }
