@@ -25,7 +25,7 @@ import java.net.URL
 class Posting : Fragment() {
 
     private lateinit var pickImages: ActivityResultLauncher<PickVisualMediaRequest>
-    private var userId: String? = null
+    private var userId: String? = "begae"
     private lateinit var networkThread: Thread
     private var urls: Array<URL?> = emptyArray()
     private var loggedIn: User? = null
@@ -175,7 +175,7 @@ class Posting : Fragment() {
                     networkThread.join()
                 }
 
-                val pair = Pair("id", postId)
+                val pair = Pair("post_id", postId)
                 val bundle = bundleOf(pair)
 
                 view?.findNavController()
