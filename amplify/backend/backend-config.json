@@ -1,69 +1,35 @@
 {
   "auth": {
-    "quedaa1ff7bc8": {
+    "queda2b41d19e": {
       "customAuth": false,
       "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
       "providerPlugin": "awscloudformation",
-      "service": "Cognito",
-      "serviceType": "imported"
-    }
-  },
-  "parameters": {
-    "AMPLIFY_auth_quedaa1ff7bc8_nativeClientId": {
-      "usedBy": [
-        {
-          "category": "auth",
-          "resourceName": "quedaa1ff7bc8"
-        }
-      ]
-    },
-    "AMPLIFY_auth_quedaa1ff7bc8_userPoolId": {
-      "usedBy": [
-        {
-          "category": "auth",
-          "resourceName": "quedaa1ff7bc8"
-        }
-      ]
-    },
-    "AMPLIFY_auth_quedaa1ff7bc8_userPoolName": {
-      "usedBy": [
-        {
-          "category": "auth",
-          "resourceName": "quedaa1ff7bc8"
-        }
-      ]
-    },
-    "AMPLIFY_auth_quedaa1ff7bc8_webClientId": {
-      "usedBy": [
-        {
-          "category": "auth",
-          "resourceName": "quedaa1ff7bc8"
-        }
-      ]
-    },
-    "AMPLIFY_storage_queda916fbe45_bucketName": {
-      "usedBy": [
-        {
-          "category": "storage",
-          "resourceName": "queda916fbe45"
-        }
-      ]
-    },
-    "AMPLIFY_storage_queda916fbe45_region": {
-      "usedBy": [
-        {
-          "category": "storage",
-          "resourceName": "queda916fbe45"
-        }
-      ]
+      "service": "Cognito"
     }
   },
   "storage": {
-    "queda916fbe45": {
+    "storage": {
       "dependsOn": [],
       "providerPlugin": "awscloudformation",
-      "service": "S3",
-      "serviceType": "imported"
+      "service": "S3"
     }
   }
 }
