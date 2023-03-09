@@ -1,6 +1,6 @@
 {
   "auth": {
-    "queda1cddc657": {
+    "quedad6d7acb9": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -25,30 +25,11 @@
       "service": "Cognito"
     }
   },
-  "parameters": {
-    "AMPLIFY_storage_queda12595930_bucketName": {
-      "usedBy": [
-        {
-          "category": "storage",
-          "resourceName": "queda12595930"
-        }
-      ]
-    },
-    "AMPLIFY_storage_queda12595930_region": {
-      "usedBy": [
-        {
-          "category": "storage",
-          "resourceName": "queda12595930"
-        }
-      ]
-    }
-  },
   "storage": {
-    "queda12595930": {
+    "storage": {
       "dependsOn": [],
       "providerPlugin": "awscloudformation",
-      "service": "S3",
-      "serviceType": "imported"
+      "service": "S3"
     }
   }
 }
