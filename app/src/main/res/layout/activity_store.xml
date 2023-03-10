@@ -173,7 +173,7 @@
             android:id="@+id/store_nav_container"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             app:navGraph="@navigation/store_navigation" />
 
 

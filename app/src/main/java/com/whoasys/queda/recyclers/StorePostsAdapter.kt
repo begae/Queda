@@ -6,9 +6,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import coil.load
+import com.google.android.material.timepicker.TimeFormat
 import com.whoasys.queda.databinding.StorePostsBinding
 import com.whoasys.queda.entities.Post
 import java.text.DateFormat
+import java.util.*
 
 class StorePostsAdapter(postList: List<Post>) : RecyclerView.Adapter<StorePostsAdapter.ViewHolder>() {
 
@@ -28,7 +30,7 @@ class StorePostsAdapter(postList: List<Post>) : RecyclerView.Adapter<StorePostsA
     override fun onBindViewHolder(holder: ViewHolder, i: Int) {
         val post = list[i]
         holder.titleView.text = post.title
-        val formatter = DateFormat.getDateTimeInstance()
+        val formatter = DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.SHORT, Locale.KOREAN)
         val added = formatter.format(post.addedMillis)
         holder.addedView.text = added
 

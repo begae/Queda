@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.whoasys.queda.R
 import com.whoasys.queda.entities.Post
 import com.whoasys.queda.entities.PostService
@@ -39,7 +40,7 @@ class StorePosts : Fragment() {
 
         if (view is RecyclerView) {
             with(view) {
-                layoutManager = GridLayoutManager(context, 2)
+                layoutManager = LinearLayoutManager(context)
                 adapter = StorePostsAdapter(postList?: emptyList())
             }
         }

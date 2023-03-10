@@ -42,7 +42,7 @@ class PostDetail : Fragment() {
 
         if (post != null) {
 
-            if (post!!.author?.id == userId) {
+            if (post!!.author.id == userId) {
 
                 b.customerMenu.visibility = View.GONE
                 b.managerMenu.visibility = View.VISIBLE
@@ -77,9 +77,9 @@ class PostDetail : Fragment() {
             }
 
             b.titleView.text = post!!.title
-            b.authorView.text = post!!.author?.id
+            b.authorView.text = post!!.author.id
             b.contentView.text = post!!.content
-            val formatter = DateFormat.getDateInstance(DateFormat.DEFAULT, Locale.KOREA)
+            val formatter = DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.SHORT, Locale.KOREAN)
             val added = formatter.format(post!!.addedMillis)
             b.addedView.text = added
         }
