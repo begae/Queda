@@ -7,8 +7,8 @@ class User (
     var pw: String,
     val name: String,
     var email: String,
-    var latitude: Double?,
-    var longitude: Double?,
+    var latitude: Double? = null,
+    var longitude: Double? = null,
     var isManager: Boolean = false,
     var store: Store? = null
 )

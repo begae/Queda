@@ -11,8 +11,8 @@ class Store (
     var phone: String,
     var openTime: String,
     var noticeId: Int? = null,
-    var profilePic: URL? = null,
-    var backgroundPic: URL? = null,
+    var profilePic: String? = null,
+    var backgroundPic: String? = null,
     var onPromotion: Boolean = false,
     var id: Int? = null
 )

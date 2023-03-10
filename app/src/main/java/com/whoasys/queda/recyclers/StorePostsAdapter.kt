@@ -36,7 +36,7 @@ class StorePostsAdapter(postIterable: Iterable<Post>) : RecyclerView.Adapter<Sto
             val bucket =
                 "https://whoasys-queda-bucket-real193930-ksrmac.s3.ap-northeast-2.amazonaws.com/public/"
             val key0 = post.attached0
-            holder.imageView.load(bucket + key0)
+            holder.thumbView.load(bucket + key0)
         }
     }
 
@@ -46,7 +46,7 @@ class StorePostsAdapter(postIterable: Iterable<Post>) : RecyclerView.Adapter<Sto
         RecyclerView.ViewHolder(binding.root) {
         val titleView: TextView = binding.storePostsItemTitle
         val addedView: TextView = binding.storePostsItemAdded
-        val imageView: ImageView = binding.thumbnail
+        val thumbView: ImageView = binding.thumbnail
     }
 
 }

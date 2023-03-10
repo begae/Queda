@@ -9,7 +9,7 @@ import java.io.IOException
 
 object UserService {
 
-    private const val SERVER = "http://118.67.129.26:8080"
+    private const val SERVER = "http://118.67.129.26:8080/user/"
 
     @Throws(IOException::class)
     @JvmStatic
@@ -27,29 +27,29 @@ object UserService {
 
     interface Http {
 
-        @GET("/user/id")
+        @GET("id")
         fun findUserById(
             @Query("id") id: String
         ): Call<User?>
 
-        @GET("/user/with")
+        @GET("with")
         fun findUserByStoreId(
             @Query("storeId") storeId: Int
         ): Call<User?>
 
-        @POST("/user/join")
+        @POST("join")
         fun join(
             @Body user: User
         ): Call<User?>
 
-        @GET("/user/login")
+        @GET("login")
         fun login(
             @Query("id") id: String,
             @Query("pw") pw: String
         ): Call<User?>
 
         @FormUrlEncoded
-        @POST("/user/manager")
+        @POST("manager")
         fun updateUserAsManager(
             @Field("userId") userId: String,
             @Field("storeId") storeId: Int

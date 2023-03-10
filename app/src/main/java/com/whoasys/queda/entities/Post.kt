@@ -1,9 +1,9 @@
 package com.whoasys.queda.entities
 
 class Post(
-    val title: String = "",
-    val author: User? = null,
-    var content: String = "",
+    val title: String,
+    val author: User,
+    var content: String,
     val isPromo: Boolean = false,
     val promoStart: String? = null,
     val promoEnd: String? = null,
