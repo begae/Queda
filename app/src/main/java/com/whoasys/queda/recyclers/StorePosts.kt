@@ -15,7 +15,7 @@ import com.whoasys.queda.entities.PostService
 class StorePosts : Fragment() {
 
     private var authorId = "begae"
-    private lateinit var postIterable: Iterable<Post>
+    private var postList: List<Post>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +24,7 @@ class StorePosts : Fragment() {
         sharedPref?.getString("manager_id", authorId)
 
         val networkThread = Thread {
-            postIterable = PostService.call().getAllPostsBy(authorId).execute().body()!!
+            postList = PostService.call().getAllPostsBy(authorId).execute().body()
         }
 
         networkThread.start()
@@ -40,7 +40,7 @@ class StorePosts : Fragment() {
         if (view is RecyclerView) {
             with(view) {
                 layoutManager = GridLayoutManager(context, 2)
-                adapter = StorePostsAdapter(postIterable)
+                adapter = StorePostsAdapter(postList?: emptyList())
             }
         }
         return view

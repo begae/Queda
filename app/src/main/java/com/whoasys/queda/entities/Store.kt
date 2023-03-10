@@ -1,7 +1,5 @@
 package com.whoasys.queda.entities
 
-import java.net.URL
-
 class Store (
     val name: String,
     val registration: String,

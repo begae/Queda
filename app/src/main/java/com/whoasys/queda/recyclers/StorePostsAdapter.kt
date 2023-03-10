@@ -10,9 +10,9 @@ import com.whoasys.queda.databinding.StorePostsBinding
 import com.whoasys.queda.entities.Post
 import java.text.DateFormat
 
-class StorePostsAdapter(postIterable: Iterable<Post>) : RecyclerView.Adapter<StorePostsAdapter.ViewHolder>() {
+class StorePostsAdapter(postList: List<Post>) : RecyclerView.Adapter<StorePostsAdapter.ViewHolder>() {
 
-    private val list = postIterable.toList()
+    private val list = postList
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 

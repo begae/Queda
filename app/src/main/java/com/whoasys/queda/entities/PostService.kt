@@ -55,7 +55,7 @@ object PostService {
         @GET("by")
         fun getAllPostsBy(
             @Query("author") author: String
-        ): Call<Iterable<Post>?>
+        ): Call<List<Post>?>
 
     }
 }
