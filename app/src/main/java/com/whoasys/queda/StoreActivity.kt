@@ -11,6 +11,7 @@ import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupWithNavController
 import com.whoasys.queda.databinding.ActivityStoreBinding
 import com.whoasys.queda.entities.Store
+import com.whoasys.queda.entities.StoreService
 import com.whoasys.queda.entities.User
 import com.whoasys.queda.entities.UserService
 
@@ -24,7 +25,7 @@ class StoreActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         var networkThread = Thread {
-            store = UserService.call().getOneStore(storeId).execute().body()
+            store = StoreService.call().getOneStore(storeId).execute().body()
         }
 
         networkThread.start()

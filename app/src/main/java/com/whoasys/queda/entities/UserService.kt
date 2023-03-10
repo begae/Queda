@@ -27,29 +27,6 @@ object UserService {
 
     interface Http {
 
-        @POST("/post/new")
-        fun savePost(
-            @Body post: Post
-        ): Call<Int?>
-
-        @FormUrlEncoded
-        @POST("/post/attach")
-        fun attach(
-            @Field("num") num: Int,
-            @Field("id") id: Int,
-            @Field("key") key: String
-        ): Call<Int?>
-
-        @GET("/post/id")
-        fun getOnePost(
-            @Query("id") id: Int
-        ): Call<Post?>
-
-        @GET("/store/id")
-        fun getOneStore(
-            @Query("id") id: Int
-        ): Call<Store?>
-
         @GET("/user/id")
         fun findUserById(
             @Query("id") id: String
@@ -59,11 +36,6 @@ object UserService {
         fun findUserByStoreId(
             @Query("storeId") storeId: Int
         ): Call<User?>
-
-        @GET("/post/by")
-        fun getAllPostsBy(
-            @Query("author") author: String
-        ): Call<Iterable<Post>?>
 
         @POST("/user/join")
         fun join(
@@ -75,11 +47,6 @@ object UserService {
             @Query("id") id: String,
             @Query("pw") pw: String
         ): Call<User?>
-
-        @POST("/store/register")
-        fun register(
-            @Body store: Store
-        ): Call<Int?>
 
         @FormUrlEncoded
         @POST("/user/manager")
