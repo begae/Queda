@@ -17,7 +17,6 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:fontFamily="@font/east_sea_dokdo"
         android:gravity="center"
         android:text="@string/queda"
         android:textColor="@color/teal_700"
@@ -30,7 +29,6 @@
         android:layout_height="50dp"
         android:layout_margin="5dp"
         android:autofillHints="ID"
-        android:fontFamily="@font/east_sea_dokdo"
         android:hint="@string/id"
         android:inputType="text"
         android:textSize="24sp" />
@@ -41,7 +39,6 @@
         android:layout_height="50dp"
         android:layout_margin="5dp"
         android:autofillHints="Password"
-        android:fontFamily="@font/east_sea_dokdo"
         android:hint="@string/pw"
         android:inputType="textPassword"
         android:textSize="24sp" />
@@ -57,7 +54,6 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:backgroundTint="@color/purple_700"
-            android:fontFamily="@font/east_sea_dokdo"
             android:insetTop="0dp"
             android:insetBottom="0dp"
             android:text="@string/join"
@@ -71,7 +67,6 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:fontFamily="@font/east_sea_dokdo"
             android:insetTop="0dp"
             android:insetBottom="0dp"
             android:text="@string/login"

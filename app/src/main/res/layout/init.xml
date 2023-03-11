@@ -20,7 +20,6 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/purple_700"
-                android:fontFamily="@font/east_sea_dokdo"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:text="@string/join"
@@ -35,7 +34,6 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/purple_700"
-                android:fontFamily="@font/east_sea_dokdo"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:text="@string/register"
@@ -56,7 +54,6 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/purple_700"
-                android:fontFamily="@font/east_sea_dokdo"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:text="@string/updateAsManager"
@@ -71,12 +68,11 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/purple_700"
-                android:fontFamily="@font/east_sea_dokdo"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:text="@string/error_page"
                 android:textColor="@color/white"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 app:cornerRadius="15dp" />
         </TableRow>
 

@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import com.whoasys.queda.R
-
 import com.whoasys.queda.recyclers.PlaceholderContent.PlaceholderItem
 import com.whoasys.queda.databinding.FeedBinding
 import com.whoasys.queda.entities.Post
@@ -30,8 +29,8 @@ class FeedAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.feed_name.text = itemList[position].author?.store!!.name
-        holder.feed_location.text = itemList[position].author?.store!!.address
+        holder.feed_name.text = itemList[position].author.store!!.name
+        holder.feed_location.text = itemList[position].author.store!!.address
         //holder.feed_time.text = itemList[position].addedMillis.toString()
         holder.feed_postTitle.text = itemList[position].title
         //val imgUrl =

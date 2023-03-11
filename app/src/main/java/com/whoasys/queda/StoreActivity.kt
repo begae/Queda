@@ -59,6 +59,8 @@ class StoreActivity : AppCompatActivity() {
         b.storeOpenTime.text = store!!.openTime
 
         fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+
             return item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
         }
     }

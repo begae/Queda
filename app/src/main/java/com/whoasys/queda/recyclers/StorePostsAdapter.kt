@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import coil.load
-import com.google.android.material.timepicker.TimeFormat
 import com.whoasys.queda.databinding.StorePostsBinding
 import com.whoasys.queda.entities.Post
 import java.text.DateFormat
@@ -30,6 +29,7 @@ class StorePostsAdapter(postList: List<Post>) : RecyclerView.Adapter<StorePostsA
     override fun onBindViewHolder(holder: ViewHolder, i: Int) {
         val post = list[i]
         holder.titleView.text = post.title
+        holder.contentView.text = post.content
         val formatter = DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.SHORT, Locale.KOREAN)
         val added = formatter.format(post.addedMillis)
         holder.addedView.text = added
@@ -47,6 +47,7 @@ class StorePostsAdapter(postList: List<Post>) : RecyclerView.Adapter<StorePostsA
     inner class ViewHolder(binding: StorePostsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         val titleView: TextView = binding.storePostsItemTitle
+        val contentView: TextView = binding.storePostsItemContent
         val addedView: TextView = binding.storePostsItemAdded
         val thumbView: ImageView = binding.thumbnail
     }
