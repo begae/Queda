@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/posting">
+    app:startDestination="@id/storeProfile">
     <fragment
         android:id="@+id/feed"
         android:name="com.whoasys.queda.recyclers.Feed"
@@ -21,8 +21,8 @@
         android:label="PostDetail"
         tools:layout="@layout/post_detail">
         <action
-            android:id="@+id/action_postDetail_to_storeActivity"
-            app:destination="@id/storeActivity" />
+            android:id="@+id/action_postDetail_to_storeProfile2"
+            app:destination="@id/storeProfile" />
     </fragment>
 
     <fragment
@@ -33,16 +33,16 @@
             android:id="@+id/action_map_to_searchResult"
             app:destination="@id/searchResult" />
         <action
-            android:id="@+id/action_map_to_storeActivity"
-            app:destination="@id/storeActivity" />
+            android:id="@+id/action_map_to_storeProfile2"
+            app:destination="@id/storeProfile" />
     </fragment>
     <fragment
         android:id="@+id/searchResult"
         android:name="com.whoasys.queda.recyclers.SearchResult"
         android:label="SearchResult">
         <action
-            android:id="@+id/action_searchResult_to_storeActivity"
-            app:destination="@id/storeActivity" />
+            android:id="@+id/action_searchResult_to_storeProfile2"
+            app:destination="@id/storeProfile" />
     </fragment>
     <fragment
         android:id="@+id/myPage"
@@ -61,9 +61,6 @@
         <action
             android:id="@+id/action_myPage_to_register"
             app:destination="@id/register" />
-        <action
-            android:id="@+id/action_myPage_to_storeActivity"
-            app:destination="@id/storeActivity" />
     </fragment>
     <fragment
         android:id="@+id/scraps"
@@ -78,16 +75,16 @@
         android:name="com.whoasys.queda.recyclers.ForYou"
         android:label="ForYou">
         <action
-            android:id="@+id/action_forYou_to_storeActivity"
-            app:destination="@id/storeActivity" />
+            android:id="@+id/action_forYou_to_storeProfile2"
+            app:destination="@id/storeProfile" />
     </fragment>
     <fragment
         android:id="@+id/following"
         android:name="com.whoasys.queda.recyclers.Following"
         android:label="Following">
         <action
-            android:id="@+id/action_following_to_storeActivity"
-            app:destination="@id/storeActivity" />
+            android:id="@+id/action_following_to_storeProfile2"
+            app:destination="@id/storeProfile" />
     </fragment>
     <fragment
         android:id="@+id/editKeyword"
@@ -136,8 +133,8 @@
             android:id="@+id/action_register_to_editKeyword"
             app:destination="@id/editKeyword" />
         <action
-            android:id="@+id/action_register_to_storeActivity"
-            app:destination="@id/storeActivity" />
+            android:id="@+id/action_register_to_storeProfile2"
+            app:destination="@id/storeProfile" />
     </fragment>
     <fragment
         android:id="@+id/verify"
@@ -164,14 +161,21 @@
             android:id="@+id/action_posting_to_postDetail"
             app:destination="@id/postDetail" />
     </fragment>
-    <activity
-        android:id="@+id/storeActivity"
-        android:name="com.whoasys.queda.StoreActivity"
-        android:label="StoreActivity" />
     <fragment
         android:id="@+id/init"
         android:name="com.whoasys.queda.etc.Init"
         android:label="init"
         tools:layout="@layout/init" />
+    <fragment
+        android:id="@+id/storeProfile"
+        android:name="com.whoasys.queda.StoreProfile"
+        android:label="StoreProfile" >
+        <action
+            android:id="@+id/action_storeProfile_to_postDetail"
+            app:destination="@id/postDetail" />
+        <action
+            android:id="@+id/action_storeProfile_to_register"
+            app:destination="@id/register" />
+    </fragment>
 
 </navigation>

@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="700dp"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:orientation="vertical">
 
@@ -151,7 +151,7 @@
             android:text="@string/post_content"
             android:textColor="@color/black"
             android:textLocale="Korean"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <Space
             android:layout_width="match_parent"
@@ -201,7 +201,7 @@
                 android:insetBottom="0dp"
                 android:text="@string/visit_store"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 app:cornerRadius="15dp" />
 
             <Button
@@ -215,7 +215,7 @@
                 android:insetBottom="0dp"
                 android:text="@string/scrap"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 app:cornerRadius="15dp" />
         </TableRow>
 
@@ -236,7 +236,7 @@
                 android:insetBottom="0dp"
                 android:text="@string/delete"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="16sp"
                 app:cornerRadius="15dp" />
 
             <Button
@@ -250,7 +250,7 @@
                 android:insetBottom="0dp"
                 android:text="@string/modify"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="16sp"
                 app:cornerRadius="15dp" />
 
             <Button
@@ -264,10 +264,14 @@
                 android:insetBottom="0dp"
                 android:text="@string/set_notice"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="16sp"
                 app:cornerRadius="15dp" />
 
         </TableRow>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="20dp" />
 
     </LinearLayout>
     </ScrollView>
