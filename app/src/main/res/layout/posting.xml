@@ -39,7 +39,7 @@
                 android:textColor="@color/black"
                 android:textColorHint="@color/purple_700"
                 android:textLocale="Korean"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/post_content"
@@ -54,7 +54,7 @@
                 android:textColor="@color/black"
                 android:textColorHint="@color/purple_700"
                 android:textLocale="Korean"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <CheckBox
                 android:id="@+id/promo_checkbox"
@@ -64,7 +64,7 @@
                 android:buttonTint="@color/black"
                 android:text="@string/promoCheckGuide"
                 android:textColor="@color/black"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <TableRow
                 android:id="@+id/date_pickers"
@@ -101,7 +101,7 @@
                 android:buttonTint="@color/black"
                 android:text="@string/attachCheckGuide"
                 android:textColor="@color/black"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/attach_images_btn"

@@ -26,34 +26,29 @@
     }
   },
   "parameters": {
-    "AMPLIFY_storage_queda23fe7ed1_bucketName": {
+    "AMPLIFY_storage_queda2e0b8da0_bucketName": {
       "usedBy": [
         {
           "category": "storage",
-          "resourceName": "queda23fe7ed1"
+          "resourceName": "queda2e0b8da0"
         }
       ]
     },
-    "AMPLIFY_storage_queda23fe7ed1_region": {
+    "AMPLIFY_storage_queda2e0b8da0_region": {
       "usedBy": [
         {
           "category": "storage",
-          "resourceName": "queda23fe7ed1"
+          "resourceName": "queda2e0b8da0"
         }
       ]
     }
   },
   "storage": {
-    "queda23fe7ed1": {
+    "queda2e0b8da0": {
       "dependsOn": [],
       "providerPlugin": "awscloudformation",
       "service": "S3",
       "serviceType": "imported"
-    },
-    "storageReal": {
-      "dependsOn": [],
-      "providerPlugin": "awscloudformation",
-      "service": "S3"
     }
   }
 }

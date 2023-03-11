@@ -8,271 +8,266 @@
         android:layout_height="match_parent"
     tools:context=".PostDetail">
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <Space
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_height="20dp" />
 
-            <ImageView
-                android:id="@+id/image0"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_margin="5dp"
-                android:scaleType="centerCrop"
-                android:visibility="gone" />
+        <TextView
+            android:id="@+id/title_view"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@string/post_title"
+            android:textColor="@color/black"
+            android:textLocale="Korean"
+            android:textSize="24sp" />
 
-            <ImageView
-                android:id="@+id/image1"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_margin="5dp"
-                android:scaleType="centerCrop"
-                android:visibility="gone" />
-
-            <ImageView
-                android:id="@+id/image2"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_margin="5dp"
-                android:scaleType="centerCrop"
-                android:visibility="gone" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
+        <TableRow
+            android:id="@+id/post_detail_meta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/title_view"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
+                android:id="@+id/post_detail_author"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:singleLine="true"
-                android:text="@string/post_title"
+                android:text="@string/post_author"
                 android:textColor="@color/black"
                 android:textLocale="Korean"
-                android:textSize="34sp" />
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/post_detail_author"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:singleLine="true"
-                    android:text="@string/post_author"
-                    android:textColor="@color/black"
-                    android:textLocale="Korean"
-                    android:textSize="28sp" />
-
-                <TextView
-                    android:id="@+id/author_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:singleLine="true"
-                    android:text="@string/post_author"
-                    android:textColor="@color/black"
-                    android:textLocale="Korean"
-                    android:textSize="28sp" />
-
-                <TextView
-                    android:id="@+id/post_detail_added"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:singleLine="true"
-                    android:text="@string/post_added"
-                    android:textColor="@color/black"
-                    android:textLocale="Korean"
-                    android:textSize="28sp" />
-
-                <TextView
-                    android:id="@+id/added_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:singleLine="true"
-                    android:text="@string/post_added"
-                    android:textColor="@color/black"
-                    android:textLocale="Korean"
-                    android:textSize="28sp" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/promo_range"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="gone">
-
-                <TextView
-                    android:id="@+id/post_detail_promo_range"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:singleLine="true"
-                    android:text="@string/promo_range"
-                    android:textColor="@color/black"
-                    android:textLocale="Korean"
-                    android:textSize="28sp" />
-
-                <TextView
-                    android:id="@+id/promo_start"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:singleLine="true"
-                    android:text="@string/promo_range"
-                    android:textColor="@color/black"
-                    android:textLocale="Korean"
-                    android:textSize="28sp" />
-
-                <TextView
-                    android:id="@+id/from_until"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:singleLine="true"
-                    android:text="@string/from_until"
-                    android:textColor="@color/black"
-                    android:textLocale="Korean"
-                    android:textSize="28sp" />
-
-                <TextView
-                    android:id="@+id/promo_end"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:singleLine="true"
-                    android:text="@string/promo_range"
-                    android:textColor="@color/black"
-                    android:textLocale="Korean"
-                    android:textSize="28sp" />
-
-            </TableRow>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
+                android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/content_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
+                android:id="@+id/author_view"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:singleLine="false"
-                android:text="@string/post_content"
+                android:singleLine="true"
+                android:text="@string/post_author"
+                android:textColor="@color/black"
+                android:textLocale="Korean"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/post_detail_added"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/post_added"
+                android:textColor="@color/black"
+                android:textLocale="Korean"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/added_view"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/post_added"
+                android:textColor="@color/black"
+                android:textLocale="Korean"
+                android:textSize="16sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/promo_range"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/post_detail_promo_range"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/promo_range"
                 android:textColor="@color/black"
                 android:textLocale="Korean"
                 android:textSize="28sp" />
 
-            <Space
+            <TextView
+                android:id="@+id/promo_start"
                 android:layout_width="match_parent"
-                android:layout_height="40dp" />
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/promo_range"
+                android:textColor="@color/black"
+                android:textLocale="Korean"
+                android:textSize="28sp" />
 
-            <TableRow
-                android:id="@+id/customer_menu"
+            <TextView
+                android:id="@+id/from_until"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/from_until"
+                android:textColor="@color/black"
+                android:textLocale="Korean"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/promo_end"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/promo_range"
+                android:textColor="@color/black"
+                android:textLocale="Korean"
+                android:textSize="28sp" />
+
+        </TableRow>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/content_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="start"
+            android:text="@string/post_content"
+            android:textColor="@color/black"
+            android:textLocale="Korean"
+            android:textSize="20sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <ImageView
+            android:id="@+id/image0"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="5dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="5dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/image2"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="5dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+        <TableRow
+            android:id="@+id/customer_menu"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <Button
+                android:id="@+id/visit"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_margin="5dp">
+                android:layout_marginEnd="3dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/purple_700"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/visit_store"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:cornerRadius="15dp" />
 
-                <Button
-                    android:id="@+id/visit"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginEnd="3dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/purple_700"
-                    android:insetTop="0dp"
-                    android:insetBottom="0dp"
-                    android:text="@string/visit_store"
-                    android:textColor="@color/white"
-                    android:textSize="24sp"
-                    app:cornerRadius="15dp" />
-
-                <Button
-                    android:id="@+id/scrap"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="2dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/purple_500"
-                    android:insetTop="0dp"
-                    android:insetBottom="0dp"
-                    android:text="@string/scrap"
-                    android:textColor="@color/white"
-                    android:textSize="24sp"
-                    app:cornerRadius="15dp" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/manager_menu"
+            <Button
+                android:id="@+id/scrap"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_margin="5dp"
-                android:visibility="gone">
+                android:layout_marginStart="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/purple_500"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/scrap"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:cornerRadius="15dp" />
+        </TableRow>
 
-                <Button
-                    android:id="@+id/delete"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginEnd="2dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/purple_700"
-                    android:insetTop="0dp"
-                    android:insetBottom="0dp"
-                    android:text="@string/delete"
-                    android:textColor="@color/white"
-                    android:textSize="24sp"
-                    app:cornerRadius="15dp" />
+        <TableRow
+            android:id="@+id/manager_menu"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:visibility="gone">
 
-                <Button
-                    android:id="@+id/modify"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="3dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/purple_500"
-                    android:insetTop="0dp"
-                    android:insetBottom="0dp"
-                    android:text="@string/modify"
-                    android:textColor="@color/white"
-                    android:textSize="24sp"
-                    app:cornerRadius="15dp" />
+            <Button
+                android:id="@+id/delete"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginEnd="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/purple_700"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/delete"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:cornerRadius="15dp" />
 
-                <Button
-                    android:id="@+id/set_as_notice"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/purple"
-                    android:insetTop="0dp"
-                    android:insetBottom="0dp"
-                    android:text="@string/set_notice"
-                    android:textColor="@color/white"
-                    android:textSize="24sp"
-                    app:cornerRadius="15dp" />
+            <Button
+                android:id="@+id/modify"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="3dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/purple_500"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/modify"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:cornerRadius="15dp" />
 
-            </TableRow>
+            <Button
+                android:id="@+id/set_as_notice"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/purple"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/set_notice"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:cornerRadius="15dp" />
 
-        </LinearLayout>
+        </TableRow>
+
+    </LinearLayout>
     </ScrollView>

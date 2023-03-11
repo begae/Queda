@@ -20,7 +20,7 @@
         android:gravity="center"
         android:text="@string/join"
         android:textColor="@color/purple"
-        android:textSize="60sp"
+        android:textSize="48sp"
         android:textStyle="bold" />
 
     <EditText
@@ -71,7 +71,7 @@
         android:buttonTint="@color/black"
         android:text="@string/agree"
         android:textColor="@color/black"
-        android:textSize="24sp" />
+        android:textSize="16sp" />
 
     <TableRow
         android:layout_width="match_parent"

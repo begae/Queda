@@ -55,8 +55,6 @@ class PostDetail : Fragment() {
                 b.promoEnd.text = post!!.promoEnd
             }
 
-            // 이부분 (밑에 열줄 정도) 좀 다듬기
-
             val bucket = "https://whoasys-queda-bucket-real193930-ksrmac.s3.ap-northeast-2.amazonaws.com/public/"
 
             val key0 = post!!.attached0

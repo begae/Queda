@@ -16,8 +16,8 @@
         "queda1edb354c": {}
       },
       "storage": {
-        "queda23fe7ed1": {
-          "bucketName": "whoasys-queda-bucket-real193930-ksrmac",
+        "queda2e0b8da0": {
+          "bucketName": "queda",
           "region": "ap-northeast-2"
         }
       }
@@ -40,8 +40,8 @@
         "queda1edb354c": {}
       },
       "storage": {
-        "queda23fe7ed1": {
-          "bucketName": "whoasys-queda-bucket-real193930-ksrmac",
+        "queda2e0b8da0": {
+          "bucketName": "queda",
           "region": "ap-northeast-2"
         }
       }

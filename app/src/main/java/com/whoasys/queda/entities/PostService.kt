@@ -39,7 +39,7 @@ object PostService {
             @Field("num") num: Int,
             @Field("id") id: Int,
             @Field("key") key: String
-        ): Call<Int?>
+        ): Call<Void>
 
         @GET("id")
         fun getOnePost(

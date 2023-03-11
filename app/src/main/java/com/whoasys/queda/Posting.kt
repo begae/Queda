@@ -61,7 +61,7 @@ class Posting : Fragment() {
         }
 
         networkThread = Thread {
-            loggedIn = UserService.call().findUserById(userId?:"5").execute().body()
+            loggedIn = UserService.call().findUserById(userId?:"admin").execute().body()
         }
 
         networkThread.start()
@@ -172,9 +172,7 @@ class Posting : Fragment() {
 
                     for (j: Int in keys.indices) {
                         networkThread = Thread {
-                            postId =
-                                PostService.call().attach(j, postId, keys[j]).execute()
-                                    .body() ?: 3
+                            PostService.call().attach(j, postId, keys[j]).execute()
                         }
                         networkThread.start()
                         networkThread.join()
@@ -205,11 +203,7 @@ class Posting : Fragment() {
 
     private fun uploadFile(key: String, file: File) {
 
-        val options = StorageUploadFileOptions.builder()
-            .accessLevel(StorageAccessLevel.PUBLIC)
-            .build()
-
-        Amplify.Storage.uploadFile(key, file, options,
+        Amplify.Storage.uploadFile(key, file,
             { println("업로드에 성공했습니다: ${it.key}") },
             { println("업로드에 실패했습니다: $it") }
         )
