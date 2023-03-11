@@ -36,7 +36,7 @@ class StorePostsAdapter(postList: List<Post>) : RecyclerView.Adapter<StorePostsA
 
         if (post.attached0 != null) {
             val bucket =
-                "https://whoasys-queda-bucket-real193930-ksrmac.s3.ap-northeast-2.amazonaws.com/public/"
+                "https://queda193930-ksrmac.s3.ap-northeast-2.amazonaws.com/public/"
             val key0 = post.attached0
             holder.thumbView.load(bucket + key0)
         }

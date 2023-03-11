@@ -55,7 +55,7 @@ class PostDetail : Fragment() {
                 b.promoEnd.text = post!!.promoEnd
             }
 
-            val bucket = "https://whoasys-queda-bucket-real193930-ksrmac.s3.ap-northeast-2.amazonaws.com/public/"
+            val bucket = "https://queda193930-ksrmac.s3.ap-northeast-2.amazonaws.com/public/"
 
             val key0 = post!!.attached0
             val key1 = post!!.attached1

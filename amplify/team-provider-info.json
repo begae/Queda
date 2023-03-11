@@ -16,10 +16,7 @@
         "queda1edb354c": {}
       },
       "storage": {
-        "queda2e0b8da0": {
-          "bucketName": "queda",
-          "region": "ap-northeast-2"
-        }
+        "s3resource": {}
       }
     }
   },
@@ -40,10 +37,7 @@
         "queda1edb354c": {}
       },
       "storage": {
-        "queda2e0b8da0": {
-          "bucketName": "queda",
-          "region": "ap-northeast-2"
-        }
+        "s3resource": {}
       }
     }
   }
