@@ -78,6 +78,9 @@
             <action
                 android:id="@+id/action_myPage_to_editKeyword"
                 app:destination="@id/editKeyword" />
+            <action
+                android:id="@+id/action_myPage_to_storeProfile"
+                app:destination="@id/storeProfile" />
         </fragment>
         <fragment
             android:id="@+id/editKeyword"

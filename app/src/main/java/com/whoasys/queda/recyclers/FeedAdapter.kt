@@ -14,7 +14,7 @@ import com.whoasys.queda.entities.Post
  * TODO: Replace the implementation with code for your data type.
  */
 class FeedAdapter(
-    private val itemList: ArrayList<Post>
+    private val itemList: List<Post>
 ) : RecyclerView.Adapter<FeedAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
@@ -29,16 +29,19 @@ class FeedAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.feed_name.text = itemList[position].author.store!!.name
-        holder.feed_location.text = itemList[position].author.store!!.address
+
+        val post = itemList[position]
+
+        holder.feed_name.text = post.author.id
+        holder.feed_location.text = post.title
         //holder.feed_time.text = itemList[position].addedMillis.toString()
-        holder.feed_postTitle.text = itemList[position].title
+        holder.feed_postTitle.text = post.content
         //val imgUrl =
         //holder.feed_postImg.setImageURI()
-        holder.feed_postId.text = itemList[position].id.toString()
+        holder.feed_postId.text = post.id.toString()
     }
 
-    override fun getItemCount(): Int{
+    override fun getItemCount(): Int {
         return itemList.count()
     }
 
@@ -47,13 +50,14 @@ class FeedAdapter(
         val feed_location = itemView.findViewById<TextView>(R.id.feed_location)
         val feed_time = itemView.findViewById<TextView>(R.id.feed_time)
         val feed_postTitle = itemView.findViewById<TextView>(R.id.feed_postTitle)
+
         //val tv_postImg = itemView.findViewById<ImageView>(R.id.feed_postImg)
         val feed_postId = itemView.findViewById<TextView>(R.id.feed_postId)
 
         override fun toString(): String {
             return super.toString() //+ " '" + contentView.text + "'"
         }
-        init {
+        /*init {
             itemView.setOnClickListener {
                 itemClickListener?.onItemClick(adapterPosition)
             }
@@ -64,7 +68,8 @@ class FeedAdapter(
         fun onItemClick(position: Int) {}
     }
 
-    var itemClickListener: OnItemClickListener? = null
+    var itemClickListener: OnItemClickListener? = null*/
 
 
+    }
 }
