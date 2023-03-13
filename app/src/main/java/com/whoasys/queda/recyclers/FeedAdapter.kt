@@ -3,16 +3,15 @@ package com.whoasys.queda.recyclers
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.TextView
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
+import coil.load
 import com.whoasys.queda.R
-import com.whoasys.queda.recyclers.PlaceholderContent.PlaceholderItem
 import com.whoasys.queda.databinding.FeedBinding
 import com.whoasys.queda.entities.Post
+import java.text.DateFormat
+import java.util.*
 
-/**
- * [RecyclerView.Adapter] that can display a [PlaceholderItem].
- * TODO: Replace the implementation with code for your data type.
- */
 class FeedAdapter(
     private val itemList: List<Post>
 ) : RecyclerView.Adapter<FeedAdapter.ViewHolder>() {
@@ -32,13 +31,28 @@ class FeedAdapter(
 
         val post = itemList[position]
 
-        holder.feed_name.text = post.author.id
-        holder.feed_location.text = post.title
-        //holder.feed_time.text = itemList[position].addedMillis.toString()
-        holder.feed_postTitle.text = post.content
-        //val imgUrl =
-        //holder.feed_postImg.setImageURI()
-        holder.feed_postId.text = post.id.toString()
+        holder.storeName.text = post.author.store?.name
+        holder.storeAddr.text = post.author.store?.address
+
+        val formatter = DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.SHORT, Locale.KOREAN)
+        val added = formatter.format(post.addedMillis)
+        holder.postAdded.text = added
+
+        holder.postTitle.text = post.title
+
+        if (post.attached0 != null) {
+            val bucket =
+                "https://queda193930-ksrmac.s3.ap-northeast-2.amazonaws.com/public/"
+            val key0 = post.attached0
+            holder.postThumb.load(bucket + key0)
+        }
+
+        holder.item.setOnClickListener {
+
+            val pair = Pair("post_id", post.id)
+            val bundle = bundleOf(pair)
+            it.findNavController().navigate(R.id.action_feed_to_postDetail, bundle)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -46,18 +60,17 @@ class FeedAdapter(
     }
 
     inner class ViewHolder(binding: FeedBinding) : RecyclerView.ViewHolder(binding.root) {
-        val feed_name = itemView.findViewById<TextView>(R.id.feed_name)
-        val feed_location = itemView.findViewById<TextView>(R.id.feed_location)
-        val feed_time = itemView.findViewById<TextView>(R.id.feed_time)
-        val feed_postTitle = itemView.findViewById<TextView>(R.id.feed_postTitle)
+        val storeName = binding.feedItemStoreName
+        val storeAddr = binding.feedItemStoreAddr
+        val postAdded = binding.feedItemPostAdded
+        val postTitle = binding.feedItemPostTitle
+        val postThumb = binding.feedItemPostThumb
+        val item = binding.feedItem
 
-        //val tv_postImg = itemView.findViewById<ImageView>(R.id.feed_postImg)
-        val feed_postId = itemView.findViewById<TextView>(R.id.feed_postId)
-
-        override fun toString(): String {
+        /*override fun toString(): String {
             return super.toString() //+ " '" + contentView.text + "'"
         }
-        /*init {
+        init {
             itemView.setOnClickListener {
                 itemClickListener?.onItemClick(adapterPosition)
             }

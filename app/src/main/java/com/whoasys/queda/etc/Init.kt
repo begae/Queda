@@ -8,6 +8,13 @@ import android.view.ViewGroup
 import com.whoasys.queda.databinding.InitBinding
 import com.whoasys.queda.entities.*
 
+
+// DB에 데이터가 하나도 없을때 본 프래그먼트를 실행하면 최소한의 데이터를 생성합니다.
+// 회원가입: 5명 가입시킴. 또 가입하면 아이디 중복으로 인해 Null을 받게 되고 앱 팅김.
+// 매장등록: 5개 등록시킴. 또 등록하면 계속 등록됨.
+// 관리자등록: 회원 5명에 대하여 관리자로 승격(isManager=true) 하고 매장id와 연결함
+// 오류안내페이지 생성: PostId를 1,2,3으로 가지는 오류안내 게시물 생성. 예외처리용 데이터. 계속 누르면 계속 생성됨.
+
 class Init : Fragment() {
 
     override fun onCreateView(

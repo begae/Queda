@@ -11,7 +11,7 @@
         android:label="init"
         tools:layout="@layout/init" />
     <navigation android:id="@+id/join_nav"
-        app:startDestination="@id/login">
+        app:startDestination="@id/feed">
         <fragment
             android:id="@+id/join"
             android:name="com.whoasys.queda.Join"
@@ -44,7 +44,11 @@
         <fragment
             android:id="@+id/feed"
             android:name="com.whoasys.queda.recyclers.Feed"
-            android:label="Feed" />
+            android:label="Feed" >
+            <action
+                android:id="@+id/action_feed_to_login"
+                app:destination="@id/login" />
+        </fragment>
     </navigation>
     <navigation android:id="@+id/customer_nav"
         app:startDestination="@id/myPage">
@@ -94,7 +98,11 @@
         <fragment
             android:id="@+id/storeProfile"
             android:name="com.whoasys.queda.StoreProfile"
-            android:label="StoreProfile" />
+            android:label="StoreProfile" >
+            <action
+                android:id="@+id/action_storeProfile_to_postDetail"
+                app:destination="@id/postDetail" />
+        </fragment>
         <fragment
             android:id="@+id/following"
             android:name="com.whoasys.queda.recyclers.Following"
@@ -124,6 +132,9 @@
             <action
                 android:id="@+id/action_storeProfile_to_posting"
                 app:destination="@id/posting" />
+            <action
+                android:id="@+id/action_storeProfile_to_postDetail"
+                app:destination="@id/postDetail" />
         </fragment>
         <fragment
             android:id="@+id/address"
@@ -154,7 +165,11 @@
             android:id="@+id/postDetail"
             android:name="com.whoasys.queda.PostDetail"
             android:label="PostDetail"
-            tools:layout="@layout/post_detail" />
+            tools:layout="@layout/post_detail" >
+            <action
+                android:id="@+id/action_postDetail_to_posting"
+                app:destination="@id/posting" />
+        </fragment>
         <fragment
             android:id="@+id/register"
             android:name="com.whoasys.queda.Register"

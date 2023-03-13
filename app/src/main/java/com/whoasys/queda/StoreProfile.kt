@@ -23,6 +23,9 @@ class StoreProfile : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        arguments?.let {
+            storeId = it.getInt("store_id")
+        }
 
         var networkThread = Thread {
             store = StoreService.call().getOneStore(storeId).execute().body()
@@ -30,8 +33,6 @@ class StoreProfile : Fragment() {
 
         networkThread.start()
         networkThread.join()
-
-        storeId = store?.id ?: 1
 
         networkThread = Thread {
             manager = UserService.call().findUserByStoreId(storeId).execute().body()
@@ -59,5 +60,16 @@ class StoreProfile : Fragment() {
         b.storeOpenTime.text = store!!.openTime
 
         return b.root
+    }
+
+    companion object {
+
+        @JvmStatic
+        fun newInstance(storeId: Int) =
+            Posting().apply {
+                arguments = Bundle().apply {
+                    putInt("store_id", storeId)
+                }
+            }
     }
 }

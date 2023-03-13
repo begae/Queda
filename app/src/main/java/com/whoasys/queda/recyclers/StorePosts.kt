@@ -35,6 +35,7 @@ class StorePosts : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         val view = inflater.inflate(R.layout.store_posts_list, container, false)
 
         if (view is RecyclerView) {
