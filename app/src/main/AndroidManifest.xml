@@ -17,10 +17,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Queda"
         android:usesCleartextTraffic="true">
-
+        <activity
+            android:name=".KeywordChoice"
+            android:exported="true" />
+        <activity
+            android:name=".BusinessRegister"
+            android:exported="true" />
+        <activity
+            android:name=".StoreRegister"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".StoreActivity"
             android:exported="true">
