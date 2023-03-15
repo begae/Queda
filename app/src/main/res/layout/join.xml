@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Join">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text="@string/join"
+        android:textColor="@color/purple"
+        android:textSize="48sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/id"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:autofillHints="ID"
+        android:hint="@string/id"
+        android:inputType="text"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/pw"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:autofillHints="Password"
+        android:hint="@string/pw"
+        android:inputType="textPassword"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:autofillHints="Password"
+        android:hint="@string/name"
+        android:inputType="textPersonName"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:autofillHints="Password"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:textSize="24sp" />
+
+    <CheckBox
+        android:id="@+id/personalInfoAgree"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:buttonTint="@color/black"
+        android:text="@string/agree"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/purple_700"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/cancel"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:cornerRadius="15dp" />
+
+        <Button
+            android:id="@+id/join_real"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/join"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:cornerRadius="15dp" />
+
+    </TableRow>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="1" />
+
+</LinearLayout>
+

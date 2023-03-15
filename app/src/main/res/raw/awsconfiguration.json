@@ -1,0 +1,49 @@
+{
+    "UserAgent": "aws-amplify-cli/0.1.0",
+    "Version": "0.1.0",
+    "IdentityManager": {
+        "Default": {}
+    },
+    "CredentialsProvider": {
+        "CognitoIdentity": {
+            "Default": {
+                "PoolId": "ap-northeast-2:844bc2c8-50b0-4d20-8fa2-0c6b1d52793b",
+                "Region": "ap-northeast-2"
+            }
+        }
+    },
+    "CognitoUserPool": {
+        "Default": {
+            "PoolId": "ap-northeast-2_fxUkQA2tg",
+            "AppClientId": "63gj5m6lntiqq0d2o89o8pjipu",
+            "Region": "ap-northeast-2"
+        }
+    },
+    "Auth": {
+        "Default": {
+            "authenticationFlowType": "USER_SRP_AUTH",
+            "mfaConfiguration": "OFF",
+            "mfaTypes": [
+                "SMS"
+            ],
+            "passwordProtectionSettings": {
+                "passwordPolicyMinLength": 8,
+                "passwordPolicyCharacters": []
+            },
+            "signupAttributes": [
+                "EMAIL"
+            ],
+            "socialProviders": [],
+            "usernameAttributes": [],
+            "verificationMechanisms": [
+                "EMAIL"
+            ]
+        }
+    },
+    "S3TransferUtility": {
+        "Default": {
+            "Bucket": "queda193930-ksrmac",
+            "Region": "ap-northeast-2"
+        }
+    }
+}
