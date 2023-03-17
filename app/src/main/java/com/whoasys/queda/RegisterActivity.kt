@@ -5,13 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.whoasys.queda.databinding.RegisterBinding
 import com.whoasys.queda.entities.Store
 import com.whoasys.queda.entities.StoreService
 import com.whoasys.queda.entities.UserService
 
-class Register : Fragment() {
+class RegisterActivity : AppCompatActivity() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

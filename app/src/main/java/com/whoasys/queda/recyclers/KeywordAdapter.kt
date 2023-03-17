@@ -8,9 +8,9 @@ import com.whoasys.queda.databinding.EditKeywordBinding
 import com.whoasys.queda.recyclers.PlaceholderContent.PlaceholderItem
 
 
-class EditKeywordAdapter(
+class KeywordAdapter(
     private val values: List<PlaceholderItem>
-) : RecyclerView.Adapter<EditKeywordAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<KeywordAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 

@@ -8,13 +8,12 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import com.amplifyframework.core.Amplify
-import com.amplifyframework.storage.StorageAccessLevel
-import com.amplifyframework.storage.options.StorageUploadFileOptions
 import com.whoasys.queda.databinding.PostingBinding
 import com.whoasys.queda.entities.Post
 import com.whoasys.queda.entities.PostService
@@ -24,7 +23,7 @@ import com.whoasys.queda.etc.getPath
 import kotlinx.coroutines.launch
 import java.io.File
 
-class Posting : Fragment() {
+class PostingActivity : AppCompatActivity() {
 
     private lateinit var pickImages: ActivityResultLauncher<PickVisualMediaRequest>
     private var userId: String? = "begae"
@@ -194,7 +193,7 @@ class Posting : Fragment() {
 
         @JvmStatic
         fun newInstance(userId: String) =
-            Posting().apply {
+            PostingActivity().apply {
                 arguments = Bundle().apply {
                     putString("user_id", userId)
                 }

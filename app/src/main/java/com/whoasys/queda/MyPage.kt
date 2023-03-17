@@ -95,9 +95,9 @@ class MyPage : Fragment() {
 
         b.myPageLogout.setOnClickListener {
 
-            if (userId != "admin") {
+            if (userId != "admin") { //이거 뭔가 문제가 있다
 
-                popUp("로그아웃 하시겠습니까?", R.id.action_myPage_to_login)
+                popUp("로그아웃 하시겠습니까?", 0)
 
                 sharedPref?.edit {
                     putString("user_id", "admin")

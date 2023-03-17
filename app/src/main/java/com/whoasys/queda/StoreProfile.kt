@@ -4,11 +4,9 @@ import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.edit
-import androidx.navigation.ui.onNavDestinationSelected
 import com.whoasys.queda.databinding.StoreProfileBinding
 import com.whoasys.queda.entities.Store
 import com.whoasys.queda.entities.StoreService
@@ -66,7 +64,7 @@ class StoreProfile : Fragment() {
 
         @JvmStatic
         fun newInstance(storeId: Int) =
-            Posting().apply {
+            PostingActivity().apply {
                 arguments = Bundle().apply {
                     putInt("store_id", storeId)
                 }

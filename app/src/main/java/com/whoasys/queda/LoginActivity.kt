@@ -6,37 +6,35 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.core.os.bundleOf
-import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.whoasys.queda.databinding.LoginBinding
+import com.whoasys.queda.databinding.ActivityLoginBinding
 import com.whoasys.queda.entities.User
 import com.whoasys.queda.entities.UserService
 
-class Login : Fragment() {
+class LoginActivity : AppCompatActivity() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
         var loggedIn: User? = null
-        val b = LoginBinding.inflate(layoutInflater)
+        val b = ActivityLoginBinding.inflate(layoutInflater)
 
         b.joinFirst.setOnClickListener {
 
             val pair1 = Pair("entered_id", b.id.text.toString())
             val pair2 = Pair("entered_pw", b.pw.text.toString())
             val bundle = bundleOf(pair1, pair2)
-            view?.findNavController()?.navigate(R.id.action_login_to_join, bundle)
+            this.findNavController(R.id.main_nav_container).navigate(R.id.action_login_to_join, bundle)
         }
 
         b.loginBtn.setOnClickListener {
 
             if (b.id.text.isEmpty() || b.pw.text.isEmpty()) {
                 b.loginBtn.isSelected = false
-                Toast.makeText(activity, "아이디와 비밀번호를 다시 확인해주세요.", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "아이디와 비밀번호를 다시 확인해주세요.", Toast.LENGTH_LONG).show()
             }
             else {
 
@@ -53,7 +51,7 @@ class Login : Fragment() {
                     val store = loggedIn!!.store
                     val storeId = if (store != null) store.id else 0
 
-                    val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
+                    val sharedPref = this.getPreferences(Context.MODE_PRIVATE)
                     sharedPref?.edit {
                         putString("user_id", loggedIn!!.id)
                         putString("user_name", loggedIn!!.name)
@@ -62,19 +60,19 @@ class Login : Fragment() {
                         apply()
                     }
 
-                    Toast.makeText(activity, "환영합니다, " +
+                    Toast.makeText(this, "환영합니다, " +
                             "${loggedIn!!.name} 님.", Toast.LENGTH_LONG).show()
 
                     val pair1 = Pair("user_latitude", loggedIn!!.latitude)
                     val pair2 = Pair("user_longitude", loggedIn!!.longitude)
                     val bundle = bundleOf(pair1, pair2)
-                    view?.findNavController()
-                        ?.navigate(R.id.action_login_to_feed, bundle)
+                    this.findNavController()
+                        .navigate(R.id.action_login_to_feed, bundle)
                 }
 
                 else {
                     b.loginBtn.isSelected = false
-                    Toast.makeText(activity, "일치하는 정보가 없어요.", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "일치하는 정보가 없어요.", Toast.LENGTH_LONG).show()
                 }
             }
         }

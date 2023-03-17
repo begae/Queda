@@ -13,7 +13,7 @@ import com.whoasys.queda.R
 /**
  * A fragment representing a list of Items.
  */
-class EditKeyword : Fragment() {
+class Keyword : Fragment() {
 
     private var columnCount = 2
 
@@ -29,7 +29,7 @@ class EditKeyword : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.edit_keyword_list, container, false)
+        val view = inflater.inflate(R.layout.keyword_list, container, false)
 
         // Set the adapter
         if (view is RecyclerView) {
@@ -38,7 +38,7 @@ class EditKeyword : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                adapter = EditKeywordAdapter(PlaceholderContent.ITEMS)
+                adapter = KeywordAdapter(PlaceholderContent.ITEMS)
             }
         }
         return view
@@ -52,7 +52,7 @@ class EditKeyword : Fragment() {
         // TODO: Customize parameter initialization
         @JvmStatic
         fun newInstance(columnCount: Int) =
-            EditKeyword().apply {
+            Keyword().apply {
                 arguments = Bundle().apply {
                     putInt(ARG_COLUMN_COUNT, columnCount)
                 }
