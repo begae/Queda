@@ -2,25 +2,24 @@ package com.whoasys.queda.recyclers
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
 import com.whoasys.queda.R
-import com.whoasys.queda.entities.Post
-import com.whoasys.queda.entities.PostService
+import com.whoasys.queda.entities.Keyword
+import com.whoasys.queda.entities.KeywordService
 
-class Feed : Fragment() {
+class Keywords : Fragment() {
 
-    private var userId = "kimsmj"
-    private var postList: List<Post>? = null
+    private var keywordsList: List<Keyword>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         val networkThread = Thread {
-            postList = PostService.call().getAllPostsNearby().execute().body()
+            keywordsList = KeywordService.call().getAllKeywords().execute().body()
         }
 
         networkThread.start()
@@ -32,13 +31,12 @@ class Feed : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        val view = inflater.inflate(R.layout.feed_item_list, container, false)
+        val layout = inflater.inflate(R.layout.activity_keyword, container, false)
+        val view = layout.findViewById<RecyclerView>(R.id.keywords_list_view)
 
-        if (view is RecyclerView) {
-            with(view) {
-                layoutManager = LinearLayoutManager(context)
-                adapter = FeedAdapter(postList?: emptyList())
-            }
+        with(view) {
+            layoutManager = GridLayoutManager(context, 3)
+            adapter = KeywordsAdapter(keywordsList?: emptyList())
         }
         return view
     }

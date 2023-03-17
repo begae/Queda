@@ -10,4 +10,4 @@
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
     tools:context=".recyclers.ForYou"
-    tools:listitem="@layout/for_you" />
+    tools:listitem="@layout/for_you_item" />

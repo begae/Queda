@@ -9,4 +9,4 @@
     android:layout_margin="10dp"
     app:layoutManager="LinearLayoutManager"
     tools:context=".recyclers.Feed"
-    tools:listitem="@layout/feed" />
+    tools:listitem="@layout/feed_item" />

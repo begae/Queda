@@ -29,7 +29,7 @@ class ForYou : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.for_you_list, container, false)
+        val view = inflater.inflate(R.layout.for_you_item_list, container, false)
 
         // Set the adapter
         if (view is RecyclerView) {

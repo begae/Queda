@@ -8,7 +8,8 @@ import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import coil.load
 import com.whoasys.queda.R
-import com.whoasys.queda.databinding.FeedBinding
+import com.whoasys.queda.databinding.FeedItemBinding
+import com.whoasys.queda.entities.BUCKET
 import com.whoasys.queda.entities.Post
 import java.text.DateFormat
 import java.util.*
@@ -19,7 +20,7 @@ class FeedAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         return ViewHolder(
-            FeedBinding.inflate(
+            FeedItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -45,10 +46,8 @@ class FeedAdapter(
 
             holder.postThumb.visibility = View.VISIBLE
 
-            val bucket =
-                "https://queda193930-ksrmac.s3.ap-northeast-2.amazonaws.com/public/"
             val key0 = post.attached0
-            holder.postThumb.load(bucket + key0)
+            holder.postThumb.load(BUCKET + key0)
         }
 
         else {
@@ -68,30 +67,13 @@ class FeedAdapter(
         return itemList.size
     }
 
-    inner class ViewHolder(binding: FeedBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(binding: FeedItemBinding) : RecyclerView.ViewHolder(binding.root) {
         val storeName = binding.feedItemStoreName
         val storeAddr = binding.feedItemStoreAddr
         val postAdded = binding.feedItemPostAdded
         val postTitle = binding.feedItemPostTitle
         val postThumb = binding.feedItemPostThumb
         val item = binding.feedItem
-
-        /*override fun toString(): String {
-            return super.toString() //+ " '" + contentView.text + "'"
-        }
-        init {
-            itemView.setOnClickListener {
-                itemClickListener?.onItemClick(adapterPosition)
-            }
-        }
-    }
-
-    interface OnItemClickListener {
-        fun onItemClick(position: Int) {}
-    }
-
-    var itemClickListener: OnItemClickListener? = null*/
-
 
     }
 }

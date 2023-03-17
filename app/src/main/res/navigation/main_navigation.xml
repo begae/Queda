@@ -8,7 +8,7 @@
         android:id="@+id/feed"
         android:name="com.whoasys.queda.recyclers.Feed"
         android:label="feed_list"
-        tools:layout="@layout/feed_list" >
+        tools:layout="@layout/feed_item_list" >
         <action
             android:id="@+id/action_feed_to_postDetail"
             app:destination="@id/postDetail" />
@@ -86,7 +86,7 @@
         android:id="@+id/forYou"
         android:name="com.whoasys.queda.recyclers.ForYou"
         android:label="for_you_list"
-        tools:layout="@layout/for_you_list" >
+        tools:layout="@layout/for_you_item_list" >
         <action
             android:id="@+id/action_forYou_to_storeProfile"
             app:destination="@id/storeProfile" />
@@ -109,7 +109,7 @@
         android:id="@+id/following"
         android:name="com.whoasys.queda.recyclers.Following"
         android:label="following_list"
-        tools:layout="@layout/following_list" >
+        tools:layout="@layout/following_item_list" >
         <action
             android:id="@+id/action_following_to_storeProfile"
             app:destination="@id/storeProfile" />
