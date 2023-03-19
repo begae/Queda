@@ -1,9 +1,12 @@
 package com.whoasys.queda.recyclers
 
+import android.content.res.Resources
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat.getColor
 import coil.load
+import com.whoasys.queda.R
 import com.whoasys.queda.databinding.KeywordItemBinding
 import com.whoasys.queda.entities.BUCKET
 import com.whoasys.queda.entities.Keyword
@@ -20,22 +23,23 @@ class KeywordsAdapter(
                 false
             )
         )
-
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         val item = itemList[position]
+        val selected = listOf<Keyword>()
 
         holder.keywordName.text = item.value
         holder.keywordImage.load(BUCKET + item.value + ".png")
 
         holder.item.setOnClickListener {
 
-            // TODO: List += item
+            val green = getColor(Resources.getSystem(), R.color.teal_200, null)
+            holder.keywordImage.setBackgroundColor(green)
+
+            selected.plusElement(item)
         }
-
-
     }
 
     override fun getItemCount(): Int {
