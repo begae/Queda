@@ -154,6 +154,30 @@ class Init : Fragment() {
 
         }
 
+        val key1 = Keyword("cvs")
+        val key2 = Keyword("laundry")
+        val key3 = Keyword("spa")
+        val key4 = Keyword("nail")
+        val key5 = Keyword("gym")
+        val key6 = Keyword("cafe")
+        val key7 = Keyword("dining")
+
+        val keywords = arrayOf(key1, key2, key3, key4, key5, key6, key7)
+
+        b.initKeyword.setOnClickListener {
+
+            for (key in keywords) {
+
+                networkThread = Thread {
+                    val id = KeywordService.call().saveKeyword(key).execute().body()
+                    print(key.value + "as $id saved.\n")
+                }
+                networkThread.start()
+                networkThread.join()
+            }
+
+        }
+
         return b.root
     }
 }

@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 
 import com.whoasys.queda.recyclers.PlaceholderContent.PlaceholderItem
-import com.whoasys.queda.databinding.ForYouBinding
+import com.whoasys.queda.databinding.ForYouItemBinding
 
 /**
  * [RecyclerView.Adapter] that can display a [PlaceholderItem].
@@ -19,7 +19,7 @@ class ForYouAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         return ViewHolder(
-            ForYouBinding.inflate(
+            ForYouItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -36,7 +36,7 @@ class ForYouAdapter(
 
     override fun getItemCount(): Int = values.size
 
-    inner class ViewHolder(binding: ForYouBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(binding: ForYouItemBinding) : RecyclerView.ViewHolder(binding.root) {
         val idView: TextView = binding.itemNumber
         val contentView: TextView = binding.content
 

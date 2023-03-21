@@ -10,7 +10,7 @@ import java.io.IOException
 
 object KeywordService {
 
-    private const val SERVER = "http://118.67.129.26:8080/post/"
+    private const val SERVER = "http://118.67.129.26:8080/keyword/"
 
     @Throws(IOException::class)
     @JvmStatic
@@ -32,7 +32,6 @@ object KeywordService {
         fun saveKeyword(
             @Body keyword: Keyword
         ): Call<Int?>
-
 
         @GET("all")
         fun getAllKeywords(): Call<List<Keyword>?>

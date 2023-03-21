@@ -2,9 +2,6 @@ package com.whoasys.queda
 
 import android.content.Context
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
@@ -19,6 +16,9 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         var loggedIn: User? = null
         val b = ActivityLoginBinding.inflate(layoutInflater)
 
@@ -27,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
             val pair1 = Pair("entered_id", b.id.text.toString())
             val pair2 = Pair("entered_pw", b.pw.text.toString())
             val bundle = bundleOf(pair1, pair2)
-            this.findNavController(R.id.main_nav_container).navigate(R.id.action_login_to_join, bundle)
+            //this.findNavController(R.id.main_nav_container).navigate(R.id.action_login_to_join, bundle)
         }
 
         b.loginBtn.setOnClickListener {
@@ -66,8 +66,8 @@ class LoginActivity : AppCompatActivity() {
                     val pair1 = Pair("user_latitude", loggedIn!!.latitude)
                     val pair2 = Pair("user_longitude", loggedIn!!.longitude)
                     val bundle = bundleOf(pair1, pair2)
-                    this.findNavController()
-                        .navigate(R.id.action_login_to_feed, bundle)
+                    //this.findNavController()
+                    //    .navigate(R.id.action_login_to_feed, bundle)
                 }
 
                 else {
@@ -76,7 +76,5 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
-
-        return b.root
     }
 }

@@ -59,15 +59,4 @@ class StoreProfile : Fragment() {
 
         return b.root
     }
-
-    companion object {
-
-        @JvmStatic
-        fun newInstance(storeId: Int) =
-            PostingActivity().apply {
-                arguments = Bundle().apply {
-                    putInt("store_id", storeId)
-                }
-            }
-    }
 }

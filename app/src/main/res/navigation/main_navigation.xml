@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/feed">
+    app:startDestination="@id/init">
     <fragment
         android:id="@+id/feed"
         android:name="com.whoasys.queda.recyclers.Feed"
@@ -129,4 +129,9 @@
         android:name="com.whoasys.queda.EditInfoActivity"
         android:label="activity_edit_info"
         tools:layout="@layout/activity_edit_info" />
+    <fragment
+        android:id="@+id/init"
+        android:name="com.whoasys.queda.etc.Init"
+        android:label="init"
+        tools:layout="@layout/init" />
 </navigation>

@@ -8,13 +8,79 @@
     android:orientation="vertical">
 
 
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <TableRow
+        <Button
+            android:id="@+id/init_join"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/purple_700"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/join"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:cornerRadius="15dp" />
+
+        <Button
+            android:id="@+id/init_register"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/purple_700"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/register"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:cornerRadius="15dp" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/init_update"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/purple_700"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/updateAsManager"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:cornerRadius="15dp" />
+
+        <Button
+            android:id="@+id/init_posts"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/purple_700"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/error_pages"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:cornerRadius="15dp" />
+    </TableRow>
+
+    <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/init_join"
+                android:id="@+id/init_keyword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
@@ -22,13 +88,13 @@
                 android:backgroundTint="@color/purple_700"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
-                android:text="@string/join"
+                android:text="@string/init_keyword"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:cornerRadius="15dp" />
 
             <Button
-                android:id="@+id/init_register"
+                android:id="@+id/init_something"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
@@ -36,44 +102,11 @@
                 android:backgroundTint="@color/purple_700"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
-                android:text="@string/register"
+                android:text="@string/something"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:cornerRadius="15dp" />
 
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/init_update"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/purple_700"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:text="@string/updateAsManager"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                app:cornerRadius="15dp" />
-
-            <Button
-                android:id="@+id/init_posts"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/purple_700"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:text="@string/error_page"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                app:cornerRadius="15dp" />
         </TableRow>
 
 </LinearLayout>

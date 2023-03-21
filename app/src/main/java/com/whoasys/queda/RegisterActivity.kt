@@ -1,25 +1,21 @@
 package com.whoasys.queda
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import com.whoasys.queda.databinding.RegisterBinding
+import com.whoasys.queda.databinding.ActivityRegisterBinding
 import com.whoasys.queda.entities.Store
 import com.whoasys.queda.entities.StoreService
 import com.whoasys.queda.entities.UserService
 
 class RegisterActivity : AppCompatActivity() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-        val b = RegisterBinding.inflate(layoutInflater)
+        val b = ActivityRegisterBinding.inflate(layoutInflater)
+        setContentView(b.root)
+
         var response: Int? = null
         lateinit var networkThread: Thread
 
@@ -38,7 +34,7 @@ class RegisterActivity : AppCompatActivity() {
 
             networkThread.start()
             networkThread.join()
-            Toast.makeText(activity, "Store id: $response saved.", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Store id: $response saved.", Toast.LENGTH_LONG).show()
         }
 
         b.updateUserStore.setOnClickListener {
@@ -53,14 +49,12 @@ class RegisterActivity : AppCompatActivity() {
             networkThread.join()
 
             if (pass == true) {
-                Toast.makeText(activity, "User id: ?? updated.", Toast.LENGTH_LONG)
+                Toast.makeText(this, "User id: ?? updated.", Toast.LENGTH_LONG)
                     .show()
             } else {
-                Toast.makeText(activity, "User id: ?? update failed.", Toast.LENGTH_LONG)
+                Toast.makeText(this, "User id: ?? update failed.", Toast.LENGTH_LONG)
                     .show()
             }
         }
-
-        return b.root
     }
 }

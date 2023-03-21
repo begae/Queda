@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.whoasys.queda.databinding.FollowingBinding
+import com.whoasys.queda.databinding.FollowingItemBinding
 
 /**
  * [RecyclerView.Adapter] that can display a [PlaceholderItem].
@@ -18,7 +18,7 @@ class FollowingAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         return ViewHolder(
-            FollowingBinding.inflate(
+            FollowingItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -35,7 +35,7 @@ class FollowingAdapter(
 
     override fun getItemCount(): Int = values.size
 
-    inner class ViewHolder(binding: FollowingBinding) :
+    inner class ViewHolder(binding: FollowingItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         val idView: TextView = binding.itemNumber
         val contentView: TextView = binding.content

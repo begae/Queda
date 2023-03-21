@@ -63,7 +63,7 @@ class JoinActivity : AppCompatActivity() {
                         apply()
                     }
 
-                    this.findNavController()?.navigate(R.id.action_join_to_editKeyword)
+                    //this.findNavController().navigate(R.id.action_join_to_editKeyword)
 
                 } else {
 

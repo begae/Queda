@@ -76,11 +76,11 @@ class MyPage : Fragment() {
                 ?.navigate(R.id.action_myPage_to_following, bundle)
         }
 
-        b.myPageEditKeyword.setOnClickListener {
+        /*b.myPageEditKeyword.setOnClickListener {
 
             view?.findNavController()
                 ?.navigate(R.id.action_myPage_to_editKeyword, bundle)
-        }
+        }*/
 
         b.myPageMyStore.setOnClickListener {
 
@@ -89,7 +89,7 @@ class MyPage : Fragment() {
                     ?.navigate(R.id.action_myPage_to_storeProfile, bundle)
             }
             else {
-                popUp("등록된 내 매장이 없습니다.\n등록하시겠습니까?", R.id.action_myPage_to_register)
+                //popUp("등록된 내 매장이 없습니다.\n등록하시겠습니까?", R.id.action_myPage_to_register)
             }
         }
 

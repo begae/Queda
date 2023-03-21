@@ -10,11 +10,12 @@ import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
-import androidx.fragment.app.Fragment
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import com.amplifyframework.core.Amplify
-import com.whoasys.queda.databinding.PostingBinding
+import com.whoasys.queda.databinding.ActivityMainBinding
+import com.whoasys.queda.databinding.ActivityPostingBinding
 import com.whoasys.queda.entities.Post
 import com.whoasys.queda.entities.PostService
 import com.whoasys.queda.entities.User
@@ -30,16 +31,14 @@ class PostingActivity : AppCompatActivity() {
     private lateinit var networkThread: Thread
     private var keys: Array<String> = emptyArray()
     private var loggedIn: User? = null
-    private lateinit var b: PostingBinding
+    private lateinit var b: ActivityPostingBinding
     private var paths: Array<String> = emptyArray()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            userId = it.getString("user_id")
-        }
 
-        b = PostingBinding.inflate(layoutInflater)
+        val binding = ActivityPostingBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         pickImages = registerForActivityResult(
             ActivityResultContracts
@@ -49,7 +48,7 @@ class PostingActivity : AppCompatActivity() {
 
                 for (i in uris.indices) {
 
-                    val path = getPath(requireContext(), uris[i])
+                    val path = getPath(this, uris[i])
                     paths = paths.plus(path!!)
                 }
 
@@ -65,12 +64,6 @@ class PostingActivity : AppCompatActivity() {
 
         networkThread.start()
         networkThread.join()
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
 
         val today = System.currentTimeMillis()
         var promoStart: String? = null
@@ -130,13 +123,13 @@ class PostingActivity : AppCompatActivity() {
                 if (promoStart.isNullOrEmpty() || promoEnd.isNullOrEmpty()) {
                     b.promoCheckbox.isChecked = false
                     b.finishPostiing.isSelected = false
-                    Toast.makeText(activity, "행사 시작일과 종료일을 설정해주세요.", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "행사 시작일과 종료일을 설정해주세요.", Toast.LENGTH_LONG).show()
                 }
 
             } else if (b.postTitle.text.isEmpty() || b.postContent.text.isEmpty()) {
 
                 b.finishPostiing.isSelected = false
-                Toast.makeText(activity, "제목과 내용을 입력해주세요.", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "제목과 내용을 입력해주세요.", Toast.LENGTH_LONG).show()
 
             } else {
 
@@ -159,14 +152,12 @@ class PostingActivity : AppCompatActivity() {
                 if (b.attachCheckbox.isChecked) {
 
                     for (i: Int in paths.indices) {
-                        viewLifecycleOwner.lifecycleScope.launch {
 
                             val now = System.currentTimeMillis()
                             val file = File(paths[i])
                             val key = "${now.toString()}$i.jpeg"
                             uploadFile(key, file)
                             keys = keys.plus(key)
-                        }
                     }
 
                     for (j: Int in keys.indices) {
@@ -181,23 +172,10 @@ class PostingActivity : AppCompatActivity() {
                 val pair = Pair("post_id", postId)
                 val bundle = bundleOf(pair)
 
-                view?.findNavController()
-                    ?.navigate(R.id.action_posting_to_postDetail, bundle)
+                //view?.findNavController()
+                //    ?.navigate(R.id.action_posting_to_postDetail, bundle)
             }
         }
-
-        return b.root
-    }
-
-    companion object {
-
-        @JvmStatic
-        fun newInstance(userId: String) =
-            PostingActivity().apply {
-                arguments = Bundle().apply {
-                    putString("user_id", userId)
-                }
-            }
     }
 
     private fun uploadFile(key: String, file: File) {

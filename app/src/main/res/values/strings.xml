@@ -80,5 +80,8 @@
     <string name="from_until">~</string>
     <string name="thumbnail">Thumbnail</string>
     <string name="close">닫기</string>
+    <string name="error_pages">기본 게시물</string>
+    <string name="init_keyword">키워드 등록</string>
+    <string name="something">something</string>
 
 </resources>
