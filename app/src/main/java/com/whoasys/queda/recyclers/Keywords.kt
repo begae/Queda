@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.whoasys.queda.R
 import com.whoasys.queda.entities.Keyword
 import com.whoasys.queda.entities.KeywordService
@@ -31,12 +32,13 @@ class Keywords : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        val layout = inflater.inflate(R.layout.activity_keyword, container, false)
-        val view = layout.findViewById<RecyclerView>(R.id.keywords_list_view)
+        val view = inflater.inflate(R.layout.keyword_item_list, container, false)
 
-        with(view) {
-            layoutManager = GridLayoutManager(context, 3)
-            adapter = KeywordsAdapter(keywordsList?: emptyList())
+        if (view is RecyclerView) {
+            with(view) {
+                layoutManager = GridLayoutManager(context, 3)
+                adapter = KeywordsAdapter(keywordsList?: emptyList())
+            }
         }
         return view
     }

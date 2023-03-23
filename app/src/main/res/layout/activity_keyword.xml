@@ -44,13 +44,11 @@
         android:layout_width="match_parent"
         android:layout_height="30dp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/keywords_list_view"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="com.whoasys.queda.recyclers.Keywords"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="3"
-        tools:listitem="@layout/keyword_item_list" />
+        android:layout_height="wrap_content" />
 
     <Space
         android:layout_width="match_parent"
