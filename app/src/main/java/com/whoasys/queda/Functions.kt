@@ -1,5 +1,6 @@
-package com.whoasys.queda.etc
+package com.whoasys.queda
 
+import android.app.AlertDialog
 import android.content.ContentUris
 import android.content.Context
 import android.database.Cursor
@@ -8,6 +9,25 @@ import android.os.Environment
 import android.provider.DocumentsContract
 import android.provider.MediaStore
 
+// popup notification module (in fragments)
+fun PopUp(context: Context, dialog: String, actionYes: Function<Void>, actionNo: Function<Void>) {
+
+    val builder = AlertDialog.Builder(context).setTitle("알림")
+    builder.setMessage(dialog)
+    builder.setCancelable(false)
+
+    builder.setPositiveButton(
+        "응"
+    ) { _, _ -> actionYes }
+
+    builder.setNegativeButton(
+        "아니"
+    ) { _, _ -> actionNo }
+
+    builder.show()
+}
+
+// function used to convert uri to absolute path of image file
 fun getPath(context: Context, uri: Uri): String? {
     val isKitKat = true
 
@@ -84,11 +104,11 @@ fun getDataColumn(
             )
         }
         if (cursor != null && cursor.moveToFirst()) {
-            val column_index: Int = cursor.getColumnIndexOrThrow(column)
-            return cursor.getString(column_index)
+            val columnIndex: Int = cursor.getColumnIndexOrThrow(column)
+            return cursor.getString(columnIndex)
         }
     } finally {
-        if (cursor != null) cursor.close()
+        cursor?.close()
     }
     return null
 }

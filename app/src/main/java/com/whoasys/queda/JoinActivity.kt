@@ -24,6 +24,11 @@ class JoinActivity : AppCompatActivity() {
         b.id.setText(idFromLogin)
         b.pw.setText(pwFromLogin)
 
+        b.cancel.setOnClickListener {
+
+            //popUp(this, "회원가입을 취소하시겠어요?", exit(), )
+        }
+
         b.joinReal.setOnClickListener {
 
             if (b.id.text.isEmpty() || b.pw.text.isEmpty()

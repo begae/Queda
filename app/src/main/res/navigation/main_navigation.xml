@@ -131,7 +131,7 @@
         tools:layout="@layout/activity_edit_info" />
     <fragment
         android:id="@+id/init"
-        android:name="com.whoasys.queda.etc.Init"
+        android:name="com.whoasys.queda.InitDatabase"
         android:label="init"
         tools:layout="@layout/init" />
 </navigation>

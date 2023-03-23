@@ -35,34 +35,6 @@ class MyPage : Fragment() {
         val pair = Pair("user_id", userId)
         val bundle = bundleOf(pair)
 
-        // 1. 각 페이지마다 sharedPref 에 접근해서 아이디를 얻어오기
-        // 2. 중요한 페이지에서만 sharedPref (앱 내부에 저장된 유저 정보. 로그인/회원가입 때 기록됨) 에 접근하고
-        // 나머지에서는 bundle 로 아이디만 사용하기
-        // 3. ViewModel 이라는 거 사용하기
-        // 라는 세가지 방법이 있습니다. 3번은 잘 모르고, 1~2번은 비슷합니다.
-        // 대신 1번은 자동로그인 느낌이라 앱 껐다가 켜도 계속 있음 (추정)
-        // 왜냐면 어차피 아이디만 가지고는 아무것도 못하고 서버에 아이디를 보내서 뭔가 객체를 받아와야하거든요.
-        // sharedPref 에도 별로 중요한 데이터는 없습니다. Login 프래그먼트 보시면 그냥 기본적인 정보만 기록하고 있습니다.
-
-        fun popUp(content: String, action: Int) {
-
-            val builder = AlertDialog.Builder(activity).setTitle("알림")
-            builder.setMessage(content)
-
-            builder.setPositiveButton(
-                "확인"
-            ) { _, _ ->
-                view?.findNavController()
-                    ?.navigate(action, bundle)
-            }
-
-            builder.setNegativeButton(
-                "취소"
-            ) { _, _ -> }
-
-            builder.show()
-        }
-
 
         b.myPageScraps.setOnClickListener {
 
@@ -95,9 +67,9 @@ class MyPage : Fragment() {
 
         b.myPageLogout.setOnClickListener {
 
-            if (userId != "admin") { //이거 뭔가 문제가 있다
+            if (userId != "admin") {
 
-                popUp("로그아웃 하시겠습니까?", 0)
+                //popUp("로그아웃 하시겠습니까?", 0)
 
                 sharedPref?.edit {
                     putString("user_id", "admin")
