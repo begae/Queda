@@ -1,12 +1,13 @@
 package com.whoasys.queda
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.provider.AlarmClock
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.core.os.bundleOf
-import androidx.navigation.findNavController
 import com.whoasys.queda.databinding.ActivityLoginBinding
 import com.whoasys.queda.entities.User
 import com.whoasys.queda.entities.UserService
@@ -16,18 +17,21 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding = ActivityLoginBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        val b = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(b.root)
 
         var loggedIn: User? = null
-        val b = ActivityLoginBinding.inflate(layoutInflater)
 
         b.joinFirst.setOnClickListener {
 
             val pair1 = Pair("entered_id", b.id.text.toString())
             val pair2 = Pair("entered_pw", b.pw.text.toString())
             val bundle = bundleOf(pair1, pair2)
-            //this.findNavController(R.id.main_nav_container).navigate(R.id.action_login_to_join, bundle)
+
+            val intent = Intent(this, JoinActivity::class.java).apply {
+                putExtra(AlarmClock.EXTRA_MESSAGE, bundle)
+            }
+            startActivity(intent)
         }
 
         b.loginBtn.setOnClickListener {

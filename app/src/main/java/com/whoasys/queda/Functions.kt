@@ -1,5 +1,6 @@
 package com.whoasys.queda
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.content.ContentUris
 import android.content.Context
@@ -8,24 +9,24 @@ import android.net.Uri
 import android.os.Environment
 import android.provider.DocumentsContract
 import android.provider.MediaStore
+import android.widget.Toast
+import androidx.activity.addCallback
 
-// popup notification module (in fragments)
-fun PopUp(context: Context, dialog: String, actionYes: Unit, actionNo: Unit) {
+/* popup notification module (in fragments)
+fun popUp(activity: Activity, dialog: String, actionYes: Unit, actionNo: Unit) {
 
-    val builder = AlertDialog.Builder(context).setTitle("알림")
+    val builder = AlertDialog.Builder(activity).setTitle("알림")
     builder.setMessage(dialog)
     builder.setCancelable(false)
+    builder.setPositiveButton("네") { _, _ ->
 
-    builder.setPositiveButton(
-        "응"
-    ) { _, _ -> actionYes }
-
-    builder.setNegativeButton(
-        "아니"
-    ) { _, _ -> actionNo }
-
+        val dispatcher = activity.onBackPressedDispatcher
+        dispatcher.addCallback(this) {
+            Toast.makeText(activity, "이전 화면으로 돌아갈게요.", Toast.LENGTH_LONG).show()
+        } }
+    builder.setNegativeButton("아니요") { _, _ -> actionNo }
     builder.show()
-}
+}*/
 
 // function used to convert uri to absolute path of image file
 fun getPath(context: Context, uri: Uri): String? {

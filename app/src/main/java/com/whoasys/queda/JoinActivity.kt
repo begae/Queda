@@ -1,21 +1,20 @@
 package com.whoasys.queda
 
+import android.app.Activity
+import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
-import androidx.navigation.findNavController
 import com.whoasys.queda.databinding.ActivityJoinBinding
 import com.whoasys.queda.entities.User
 import com.whoasys.queda.entities.UserService
 
 class JoinActivity : AppCompatActivity() {
-
-    private var idFromLogin: String? = null
-    private var pwFromLogin: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,12 +24,16 @@ class JoinActivity : AppCompatActivity() {
 
         var loggedIn: User? = null
 
+        val bundle = intent.getBundleExtra(EXTRA_MESSAGE)
+        val idFromLogin = bundle?.getString("entered_id")
+        val pwFromLogin = bundle?.getString("entered_pw")
+
         b.id.setText(idFromLogin)
         b.pw.setText(pwFromLogin)
 
         b.cancel.setOnClickListener {
 
-            PopUp(this, "회원가입을 취소하시겠어요?", onDestroy(), Unit)
+            popUp(this, "회원가입을 취소하시겠어요?")
         }
 
         b.joinReal.setOnClickListener {
@@ -85,5 +88,25 @@ class JoinActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun popUp(activity: Activity, dialog: String) {
+
+        val builder = AlertDialog.Builder(activity).setTitle("알림")
+        builder.setMessage(dialog)
+        builder.setCancelable(false)
+
+        builder.setPositiveButton("네") { _, _ ->
+
+            val dispatcher = this.onBackPressedDispatcher
+            dispatcher.addCallback(this) {
+                //Toast.makeText(activity, "이전 화면으로 돌아갈게요.", Toast.LENGTH_LONG).show()
+                finish()
+            }
+            dispatcher.onBackPressed()
+        }
+
+        builder.setNegativeButton("아니요") { _, _ -> }
+        builder.show()
     }
 }
