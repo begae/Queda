@@ -1,27 +1,19 @@
 package com.whoasys.queda
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.lifecycleScope
-import androidx.navigation.findNavController
 import com.amplifyframework.core.Amplify
-import com.whoasys.queda.databinding.ActivityMainBinding
 import com.whoasys.queda.databinding.ActivityPostingBinding
 import com.whoasys.queda.entities.Post
 import com.whoasys.queda.entities.PostService
 import com.whoasys.queda.entities.User
 import com.whoasys.queda.entities.UserService
-import com.whoasys.queda.etc.getPath
-import kotlinx.coroutines.launch
 import java.io.File
 
 class PostingActivity : AppCompatActivity() {

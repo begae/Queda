@@ -1,7 +1,9 @@
 package com.whoasys.queda
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
@@ -19,6 +21,8 @@ class JoinActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val b = ActivityJoinBinding.inflate(layoutInflater)
+        setContentView(b.root)
+
         var loggedIn: User? = null
 
         b.id.setText(idFromLogin)
@@ -26,7 +30,7 @@ class JoinActivity : AppCompatActivity() {
 
         b.cancel.setOnClickListener {
 
-            //popUp(this, "회원가입을 취소하시겠어요?", exit(), )
+            PopUp(this, "회원가입을 취소하시겠어요?", onDestroy(), Unit)
         }
 
         b.joinReal.setOnClickListener {
@@ -61,14 +65,18 @@ class JoinActivity : AppCompatActivity() {
 
                     val sharedPref = this.getPreferences(Context.MODE_PRIVATE)
                     sharedPref?.edit {
-                        putString("saved_id", loggedIn!!.id)
-                        putString("saved_name", loggedIn!!.name)
-                        putBoolean("saved_is_manager", false)
-                        putInt("saved_store", 0)
+                        putString("user_id", loggedIn!!.id)
+                        putString("user_name", loggedIn!!.name)
+                        putBoolean("user_is_manager", false)
+                        putInt("user_store", 0)
                         apply()
                     }
 
-                    //this.findNavController().navigate(R.id.action_join_to_editKeyword)
+                    val userId = loggedIn!!.id
+                    val intent = Intent(this, KeywordActivity::class.java).apply {
+                        putExtra(EXTRA_MESSAGE, userId)
+                    }
+                    startActivity(intent)
 
                 } else {
 

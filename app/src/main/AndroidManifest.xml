@@ -18,6 +18,9 @@
         android:theme="@style/Theme.Queda"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".JoinActivity"
+            android:exported="true" />
+        <activity
             android:name=".KeywordActivity"
             android:exported="true" />
         <activity

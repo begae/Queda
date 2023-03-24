@@ -10,7 +10,7 @@ import android.provider.DocumentsContract
 import android.provider.MediaStore
 
 // popup notification module (in fragments)
-fun PopUp(context: Context, dialog: String, actionYes: Function<Void>, actionNo: Function<Void>) {
+fun PopUp(context: Context, dialog: String, actionYes: Unit, actionNo: Unit) {
 
     val builder = AlertDialog.Builder(context).setTitle("알림")
     builder.setMessage(dialog)
