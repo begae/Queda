@@ -13,11 +13,15 @@ import com.whoasys.queda.entities.PostService
 
 class Feed : Fragment() {
 
-    private var userId = "kimsmj"
+    private var userId = "admin"
     private var postList: List<Post>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        arguments?.let {
+            userId = it.getString("user_id")?: "admin"
+        }
 
         val networkThread = Thread {
             postList = PostService.call().getAllPostsNearby().execute().body()
@@ -37,9 +41,20 @@ class Feed : Fragment() {
         if (view is RecyclerView) {
             with(view) {
                 layoutManager = LinearLayoutManager(context)
-                adapter = FeedAdapter(postList?: emptyList())
+                adapter = FeedAdapter(postList?: emptyList(), userId)
             }
         }
         return view
+    }
+
+    companion object {
+
+        @JvmStatic
+        fun newInstance(userId: String) =
+            Feed().apply {
+                arguments = Bundle().apply {
+                    putString("user_id", userId)
+                }
+            }
     }
 }

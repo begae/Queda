@@ -3,7 +3,7 @@ package com.whoasys.queda
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.provider.AlarmClock
+import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
@@ -29,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
             val bundle = bundleOf(pair1, pair2)
 
             val intent = Intent(this, JoinActivity::class.java).apply {
-                putExtra(AlarmClock.EXTRA_MESSAGE, bundle)
+                putExtra(EXTRA_MESSAGE, bundle)
             }
             startActivity(intent)
         }
@@ -38,7 +38,7 @@ class LoginActivity : AppCompatActivity() {
 
             if (b.id.text.isEmpty() || b.pw.text.isEmpty()) {
                 b.loginBtn.isSelected = false
-                Toast.makeText(this, "아이디와 비밀번호를 다시 확인해주세요.", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "아이디와 비밀번호를 확인해주세요.", Toast.LENGTH_LONG).show()
             }
             else {
 
@@ -67,11 +67,15 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(this, "환영합니다, " +
                             "${loggedIn!!.name} 님.", Toast.LENGTH_LONG).show()
 
+                    // 실시간 현위치 데이터 넘겨야하는데 일단 회원가입때 등록된 데이터로 구현함
+                    val pair0 = Pair("user_id", loggedIn!!.id)
                     val pair1 = Pair("user_latitude", loggedIn!!.latitude)
                     val pair2 = Pair("user_longitude", loggedIn!!.longitude)
-                    val bundle = bundleOf(pair1, pair2)
-                    //this.findNavController()
-                    //    .navigate(R.id.action_login_to_feed, bundle)
+                    val bundle = bundleOf(pair0, pair1, pair2)
+                    val intent = Intent(this, MainActivity::class.java).apply {
+                        putExtra(EXTRA_MESSAGE, bundle)
+                    }
+                    startActivity(intent)
                 }
 
                 else {

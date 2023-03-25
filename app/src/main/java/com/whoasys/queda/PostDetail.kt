@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import coil.load
 import com.whoasys.queda.databinding.PostDetailBinding
+import com.whoasys.queda.entities.BUCKET
 import com.whoasys.queda.entities.Post
 import com.whoasys.queda.entities.PostService
 import java.text.DateFormat
@@ -55,23 +56,21 @@ class PostDetail : Fragment() {
                 b.promoEnd.text = post!!.promoEnd
             }
 
-            val bucket = "https://queda193930-ksrmac.s3.ap-northeast-2.amazonaws.com/public/"
-
             val key0 = post!!.attached0
             val key1 = post!!.attached1
             val key2 = post!!.attached2
 
             if (key0 != null) {
                 b.image0.visibility = View.VISIBLE
-                b.image0.load(bucket + key0)
+                b.image0.load(BUCKET + key0)
             }
             if (key1 != null) {
                 b.image1.visibility = View.VISIBLE
-                b.image1.load(bucket + key1)
+                b.image1.load(BUCKET + key1)
             }
             if (key2 != null) {
                 b.image2.visibility = View.VISIBLE
-                b.image2.load(bucket + key2)
+                b.image2.load(BUCKET + key2)
             }
 
             b.titleView.text = post!!.title

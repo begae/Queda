@@ -1,26 +1,25 @@
 package com.whoasys.queda
 
 import android.os.Bundle
+import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.view.MenuItem
-import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupWithNavController
-import com.amplifyframework.AmplifyException
-import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin
-import com.amplifyframework.core.Amplify
-import com.amplifyframework.storage.s3.AWSS3StoragePlugin
-//import com.kakao.util.maps.helper.Utility.getKeyHash
 import com.whoasys.queda.databinding.ActivityMainBinding
+//import com.kakao.util.maps.helper.Utility.getKeyHash
 //import net.daum.mf.map.api.MapView
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val bundle = intent.getBundleExtra(EXTRA_MESSAGE)
+        val userId = bundle?.getString("user_id")
 
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -33,7 +32,8 @@ class MainActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(
             topLevelDestinationIds = setOf(
                 R.id.feed, R.id.forYou,
-                R.id.map, R.id.myPage),
+                R.id.map, R.id.myPage
+            ),
             fallbackOnNavigateUpListener = ::onSupportNavigateUp
         )
 
@@ -43,15 +43,5 @@ class MainActivity : AppCompatActivity() {
 
         //val hashKey = getKeyHash(this)
         //println("해시키: $hashKey")
-
-        try {
-            Amplify.addPlugin(AWSCognitoAuthPlugin())
-            Amplify.addPlugin(AWSS3StoragePlugin())
-            Amplify.configure(applicationContext)
-
-            println("앰플리파이를 기동했습니다.")
-        } catch (error: AmplifyException) {
-            println("앰플리파이를 기동하지 못했습니다: $error")
-        }
     }
 }

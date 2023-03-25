@@ -8,7 +8,10 @@ import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
+import com.amplifyframework.AmplifyException
+import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin
 import com.amplifyframework.core.Amplify
+import com.amplifyframework.storage.s3.AWSS3StoragePlugin
 import com.whoasys.queda.databinding.ActivityPostingBinding
 import com.whoasys.queda.entities.Post
 import com.whoasys.queda.entities.PostService
@@ -31,6 +34,16 @@ class PostingActivity : AppCompatActivity() {
 
         val binding = ActivityPostingBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        try {
+            Amplify.addPlugin(AWSCognitoAuthPlugin())
+            Amplify.addPlugin(AWSS3StoragePlugin())
+            Amplify.configure(applicationContext)
+
+            println("앰플리파이를 기동했습니다.")
+        } catch (error: AmplifyException) {
+            println("앰플리파이를 기동하지 못했습니다: $error")
+        }
 
         pickImages = registerForActivityResult(
             ActivityResultContracts

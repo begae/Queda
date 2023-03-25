@@ -15,7 +15,7 @@ import java.text.DateFormat
 import java.util.*
 
 class FeedAdapter(
-    private val itemList: List<Post>
+    private val itemList: List<Post>, private val userId: String
 ) : RecyclerView.Adapter<FeedAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
@@ -57,8 +57,9 @@ class FeedAdapter(
 
         holder.item.setOnClickListener {
 
-            val pair = Pair("post_id", post.id)
-            val bundle = bundleOf(pair)
+            val pair0 = Pair("user_id", userId)
+            val pair1 = Pair("post_id", post.id)
+            val bundle = bundleOf(pair0, pair1)
             it.findNavController().navigate(R.id.action_feed_to_postDetail, bundle)
         }
     }
