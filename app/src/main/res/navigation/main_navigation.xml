@@ -11,7 +11,7 @@
         android:label="init"
         tools:layout="@layout/init" />
     <navigation android:id="@+id/join_nav"
-        app:startDestination="@id/feed">
+        app:startDestination="@id/feed_page">
         <fragment
             android:id="@+id/join"
             android:name="com.whoasys.queda.Join"
@@ -27,7 +27,7 @@
             android:label="EditKeyword" >
             <action
                 android:id="@+id/action_editKeyword_to_feed"
-                app:destination="@id/feed" />
+                app:destination="@id/feed_page" />
         </fragment>
         <fragment
             android:id="@+id/login"
@@ -39,11 +39,11 @@
                 app:destination="@id/join" />
             <action
                 android:id="@+id/action_login_to_feed"
-                app:destination="@id/feed" />
+                app:destination="@id/feed_page" />
         </fragment>
         <fragment
-            android:id="@+id/feed"
-            android:name="com.whoasys.queda.recyclers.Feed"
+            android:id="@+id/feed_page"
+            android:name="com.whoasys.queda.recyclers.FeedPage"
             android:label="Feed" >
             <action
                 android:id="@+id/action_feed_to_login"
@@ -186,7 +186,7 @@
             tools:layout="@layout/edit_info" />
     </navigation>
     <navigation android:id="@+id/browse_nav"
-        app:startDestination="@id/feed">
+        app:startDestination="@id/feed_page">
         <fragment
             android:id="@+id/searchResult"
             android:name="com.whoasys.queda.recyclers.SearchResult"
@@ -232,8 +232,8 @@
                 app:destination="@id/storeProfile" />
         </fragment>
         <fragment
-            android:id="@+id/feed"
-            android:name="com.whoasys.queda.recyclers.Feed"
+            android:id="@+id/feed_page"
+            android:name="com.whoasys.queda.recyclers.FeedPage"
             android:label="Feed">
             <action
                 android:id="@+id/action_feed_to_postDetail"
