@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -163,11 +161,20 @@
             android:layout_width="match_parent"
             android:layout_height="10dp" />
 
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/store_nav_bar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:menu="@menu/store_nav_menu">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/store_posts_container"
-            android:name="com.whoasys.queda.recyclers.StorePosts"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="700dp"
+            app:navGraph="@navigation/store_navigation"/>
 
     </LinearLayout>
 </ScrollView>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StoreNotice">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/attached1"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="5dp"
+            android:contentDescription="@string/attached"
+            android:scaleType="centerCrop"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/attached2"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="5dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/attached3"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="5dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/store_notice_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:text="@string/post_title"
+            android:textColor="@color/black"
+            android:textLocale="Korean"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/store_notice_added"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:text="@string/post_added"
+            android:textColor="@color/black"
+            android:textLocale="Korean"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/store_notice_promo_range"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:text="@string/promo_range"
+            android:textColor="@color/black"
+            android:textLocale="Korean"
+            android:textSize="20sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/store_notice_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="start|center_vertical"
+            android:singleLine="false"
+            android:text="@string/post_content"
+            android:textColor="@color/black"
+            android:textLocale="Korean"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -4,9 +4,13 @@ import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.edit
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.onNavDestinationSelected
+import androidx.navigation.ui.setupWithNavController
 import com.whoasys.queda.databinding.StoreProfileBinding
 import com.whoasys.queda.entities.Store
 import com.whoasys.queda.entities.StoreService
@@ -52,11 +56,21 @@ class StoreProfile : Fragment() {
     ): View {
         val b = StoreProfileBinding.inflate(layoutInflater)
 
+//        val navHostFragment = b.storeNavContainer.getFragment<Fragment>()
+//        val navController = navHostFragment.findNavController()
+//        b.storeNavBar.setupWithNavController(navController)
+
         b.storeName.text = store!!.name
         b.storeAddress.text = store!!.address
         b.storePhone.text = store!!.phone
         b.storeOpenTime.text = store!!.openTime
 
         return b.root
+
+//        fun onOptionsItemSelected(item: MenuItem): Boolean {
+//            return item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
+//        }
+
+
     }
 }
