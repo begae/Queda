@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BusinessRegister"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:text="사업자등록번호 조회"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:background="#d3d3d3"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:background="@drawable/radius3"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="60dp">
+
+        <EditText
+            android:id="@+id/businessNum"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:hint="사업자등록번호"
+            android:gravity="left|center"
+            android:textSize="18sp"
+            android:background="#00ff0000"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:background="@drawable/radius3"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="60dp">
+
+        <EditText
+            android:id="@+id/businessName"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:hint="대표자성명"
+            android:gravity="left|center"
+            android:textSize="18sp"
+            android:background="#00ff0000"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:background="@drawable/radius3"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="60dp">
+
+        <EditText
+            android:id="@+id/openNum"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:hint="개업일자"
+            android:gravity="left|center"
+            android:textSize="18sp"
+            android:background="#00ff0000"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="60dp">
+
+        <Button
+            android:id="@+id/inquiryBtn"
+            android:background="@drawable/radius3"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:text="조회" />
+
+        <Button
+            android:id="@+id/backBtn"
+            android:background="@drawable/radius3"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:text="뒤로" />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

@@ -3,6 +3,7 @@ package com.whoasys.queda
 import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -62,6 +63,29 @@ class MyPage : Fragment() {
             }
             else {
                 //popUp("등록된 내 매장이 없습니다.\n등록하시겠습니까?", R.id.action_myPage_to_register)
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setTitle("알림")
+                builder.setMessage("등록된 내 매장이 없습니다.\n등록하시겠습니까?")
+                builder.setCancelable(false)
+
+                fun skipPage() {
+                    val intent = Intent(requireContext(), StoreRegister::class.java)
+                    startActivity(intent)
+                }
+
+                builder.setPositiveButton("확인", object : DialogInterface.OnClickListener {
+                    override fun onClick(dialog: DialogInterface, which: Int) {
+                        when(which){
+                            DialogInterface.BUTTON_POSITIVE -> skipPage()
+                        }
+                    }
+                })
+
+                builder.setNegativeButton("뒤로", object : DialogInterface.OnClickListener {
+                    override fun onClick(dialog: DialogInterface, which: Int) {
+                    }
+                })
+                builder.show()
             }
         }
 
@@ -70,6 +94,7 @@ class MyPage : Fragment() {
             if (userId != "admin") {
 
                 //popUp("로그아웃 하시겠습니까?", 0)
+
 
                 sharedPref?.edit {
                     putString("user_id", "admin")
