@@ -17,6 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Queda"
         android:usesCleartextTraffic="true">
+
+        <activity
+            android:name=".SearchActivity"
+            android:exported="true" />
         <activity
             android:name=".KeywordChoice"
             android:exported="true" />

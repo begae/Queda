@@ -24,7 +24,7 @@ class SearchActivity : AppCompatActivity() {
         }
 
         //최초 웹뷰 로드
-        webView.loadUrl("https://searchaddress-af004.web.app/")
+        webView.loadUrl("https://dbp5645120.000webhostapp.com/")
     }
 
 
