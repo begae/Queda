@@ -25,10 +25,10 @@
             android:name=".KeywordChoice"
             android:exported="true" />
         <activity
-            android:name=".BusinessRegister"
+            android:name=".VerifyActivity"
             android:exported="true" />
         <activity
-            android:name=".StoreRegister"
+            android:name=".RegisterActivity"
             android:exported="true" />
         <activity
             android:name=".LoginActivity"

@@ -2,7 +2,6 @@ package com.whoasys.queda
 
 import android.app.AlertDialog
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -21,6 +20,7 @@ class MyPage : Fragment() {
 
     private var userId: String? = null
     private var isManager: Boolean = false
+    private lateinit var intent: Intent
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,11 +49,11 @@ class MyPage : Fragment() {
                 ?.navigate(R.id.action_myPage_to_following, bundle)
         }
 
-        /*b.myPageEditKeyword.setOnClickListener {
+        b.myPageEditKeyword.setOnClickListener {
 
-            view?.findNavController()
-                ?.navigate(R.id.action_myPage_to_editKeyword, bundle)
-        }*/
+            intent = Intent(requireContext(), KeywordActivity::class.java)
+            jumpTo(intent, "관심 키워드를 수정하시겠어요?")
+        }
 
         b.myPageMyStore.setOnClickListener {
 
@@ -62,30 +62,8 @@ class MyPage : Fragment() {
                     ?.navigate(R.id.action_myPage_to_storeProfile, bundle)
             }
             else {
-                //popUp("등록된 내 매장이 없습니다.\n등록하시겠습니까?", R.id.action_myPage_to_register)
-                val builder = AlertDialog.Builder(requireContext())
-                builder.setTitle("알림")
-                builder.setMessage("등록된 내 매장이 없습니다.\n등록하시겠습니까?")
-                builder.setCancelable(false)
-
-                fun skipPage() {
-                    val intent = Intent(requireContext(), StoreRegister::class.java)
-                    startActivity(intent)
-                }
-
-                builder.setPositiveButton("확인", object : DialogInterface.OnClickListener {
-                    override fun onClick(dialog: DialogInterface, which: Int) {
-                        when(which){
-                            DialogInterface.BUTTON_POSITIVE -> skipPage()
-                        }
-                    }
-                })
-
-                builder.setNegativeButton("뒤로", object : DialogInterface.OnClickListener {
-                    override fun onClick(dialog: DialogInterface, which: Int) {
-                    }
-                })
-                builder.show()
+                intent = Intent(requireContext(), RegisterActivity::class.java)
+                jumpTo(intent,"매장이 등록되어있지 않아요.\n등록하시겠어요?")
             }
         }
 
@@ -93,8 +71,8 @@ class MyPage : Fragment() {
 
             if (userId != "admin") {
 
-                //popUp("로그아웃 하시겠습니까?", 0)
-
+                intent = Intent(requireContext(), LoginActivity::class.java)
+                jumpTo(intent, "로그아웃 하시겠어요?")
 
                 sharedPref?.edit {
                     putString("user_id", "admin")
@@ -112,5 +90,19 @@ class MyPage : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _b = null
+    }
+
+    private fun jumpTo(intent: Intent, dialog: String) {
+
+        val builder = AlertDialog.Builder(requireContext()).setTitle("알림")
+        builder.setMessage(dialog)
+        builder.setCancelable(false)
+
+        builder.setPositiveButton("네") { _, _ ->
+            startActivity(intent)
+        }
+
+        builder.setNegativeButton("아니요") { _, _ -> }
+        builder.show()
     }
 }

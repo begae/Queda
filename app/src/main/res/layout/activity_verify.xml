@@ -1,14 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VerifyActivity">
+    tools:context=".VerifyActivity"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <Space
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_weight="1" />
 
-</FrameLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="사업자등록번호 조회"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+
+    <EditText
+        android:id="@+id/biz_number"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:gravity="left|center"
+        android:hint="사업자등록번호"
+        android:inputType="number"
+        android:singleLine="true"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/biz_owner"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:gravity="left|center"
+        android:hint="대표자성명"
+        android:inputType="text|textPersonName"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/biz_founded"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:gravity="left|center"
+        android:hint="개업일자"
+        android:inputType="datetime|date"
+        android:textSize="20sp" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="5dp">
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/purple_700"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="취소"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:cornerRadius="15dp" />
+
+        <Button
+            android:id="@+id/continue_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="다음"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:cornerRadius="15dp" />
+
+        <Button
+            android:id="@+id/look_up"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="조회"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:cornerRadius="15dp" />
+
+    </TableRow>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+
+</LinearLayout>
