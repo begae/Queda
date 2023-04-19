@@ -24,7 +24,7 @@ class SearchActivity : AppCompatActivity() {
         }
 
         //최초 웹뷰 로드
-        webView.loadUrl("https://dbp5645120.000webhostapp.com/")
+        webView.loadUrl("http://118.67.129.26:8080/address")
     }
 
 
