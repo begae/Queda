@@ -3,15 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/myPage">
+    app:startDestination="@id/login">
     <fragment
         android:id="@+id/feed"
         android:name="com.whoasys.queda.recyclers.Feed"
         android:label="feed_list"
         tools:layout="@layout/feed_item_list" >
+        <argument
+            android:name="user_id"
+            app:argType="string"
+            android:defaultValue="@null" />
         <action
             android:id="@+id/action_feed_to_postDetail"
             app:destination="@id/postDetail" />
+        <action
+            android:id="@+id/action_feed_to_login"
+            app:destination="@id/login" />
     </fragment>
     <fragment
         android:id="@+id/postDetail"
@@ -70,9 +77,6 @@
             android:id="@+id/action_myPage_to_following"
             app:destination="@id/following" />
         <action
-            android:id="@+id/action_myPage_to_loginActivity"
-            app:destination="@id/loginActivity" />
-        <action
             android:id="@+id/action_myPage_to_registerActivity"
             app:destination="@id/registerActivity" />
         <action
@@ -112,11 +116,6 @@
             app:destination="@id/storeProfile" />
     </fragment>
     <activity
-        android:id="@+id/loginActivity"
-        android:name="com.whoasys.queda.LoginActivity"
-        android:label="activity_login"
-        tools:layout="@layout/activity_login" />
-    <activity
         android:id="@+id/registerActivity"
         android:name="com.whoasys.queda.RegisterActivity"
         android:label="activity_register"
@@ -131,4 +130,12 @@
         android:name="com.whoasys.queda.InitDatabase"
         android:label="init"
         tools:layout="@layout/init" />
+    <fragment
+        android:id="@+id/login"
+        android:name="com.whoasys.queda.Login"
+        android:label="Login" >
+        <action
+            android:id="@+id/action_login_to_feed"
+            app:destination="@id/feed" />
+    </fragment>
 </navigation>

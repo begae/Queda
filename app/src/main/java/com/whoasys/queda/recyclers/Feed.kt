@@ -7,13 +7,14 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import com.whoasys.queda.R
 import com.whoasys.queda.entities.Post
 import com.whoasys.queda.entities.PostService
 
 class Feed : Fragment() {
 
-    private var userId = "admin"
+    private lateinit var userId: String
     private var postList: List<Post>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,9 +24,14 @@ class Feed : Fragment() {
             userId = it.getString("user_id")?: "admin"
         }
 
-        val networkThread = Thread {
-            postList = PostService.call().getAllPostsNearby().execute().body()
+        if (userId == "admin") {
+            view?.findNavController()
+                ?.navigate(R.id.action_feed_to_login)
         }
+
+        val networkThread = Thread {
+                postList = PostService.call().getAllPostsNearby(userId).execute().body()
+            }
 
         networkThread.start()
         networkThread.join()

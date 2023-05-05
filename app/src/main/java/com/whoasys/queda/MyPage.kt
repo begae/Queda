@@ -67,7 +67,7 @@ class MyPage : Fragment() {
             }
         }
 
-        b.myPageLogout.setOnClickListener {
+        /*b.myPageLogout.setOnClickListener {
 
             if (userId != "admin") {
 
@@ -83,6 +83,8 @@ class MyPage : Fragment() {
                 }
             }
         }
+
+         */
 
         return b.root
     }

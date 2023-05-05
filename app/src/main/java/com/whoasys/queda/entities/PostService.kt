@@ -48,8 +48,7 @@ object PostService {
 
         @GET("nearby")
         fun getAllPostsNearby(
-            //@Query("latitude") latitude: Double,
-            //@Query("longitude") longitude: Double
+            @Query("user_id") user_id: String
         ): Call<List<Post>?>
 
         @GET("by")

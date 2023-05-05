@@ -19,17 +19,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val bundle = intent.getBundleExtra(EXTRA_MESSAGE)
-        val userId = bundle?.getString("user_id")
 
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val navHostFragment = binding.mainNavContainer.getFragment<Fragment>()
         val navController = navHostFragment.findNavController()
+        navController.setGraph(R.navigation.main_navigation, bundle)
         val bottomNavBar = binding.bottomNavBar
         bottomNavBar.setupWithNavController(navController)
 
-        val appBarConfiguration = AppBarConfiguration(
+        /*val appBarConfiguration = AppBarConfiguration(
             topLevelDestinationIds = setOf(
                 R.id.feed, R.id.forYou,
                 R.id.map, R.id.myPage
@@ -41,7 +41,8 @@ class MainActivity : AppCompatActivity() {
             return item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
         }
 
-        //val hashKey = getKeyHash(this)
-        //println("해시키: $hashKey")
+        val hashKey = getKeyHash(this)
+        println("해시키: $hashKey")
+        */
     }
 }
