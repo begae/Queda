@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import coil.load
 import com.whoasys.queda.databinding.PostDetailBinding
 import com.whoasys.queda.entities.BUCKET
@@ -17,6 +19,7 @@ class PostDetail : Fragment() {
 
     private var userId: String = "admin"
     private var postId: Int = 8
+    private var storeId: Int = 1
     private var post: Post? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +50,22 @@ class PostDetail : Fragment() {
 
                 b.customerMenu.visibility = View.GONE
                 b.managerMenu.visibility = View.VISIBLE
+
+                // TODO: 게시물 삭제, 수정, 공지로 설정 기능
+            }
+
+            else {
+
+                b.visit.setOnClickListener {
+
+                    storeId = post!!.author.store!!.id!!
+                    val pair = Pair("store_id", storeId)
+                    val bundle = bundleOf(pair)
+                    view?.findNavController()
+                        ?.navigate(R.id.action_postDetail_to_storeProfile, bundle)
+                }
+
+                // TODO: 게시물 스크랩 기능
             }
 
             if (post!!.isPromo) {
