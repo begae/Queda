@@ -10,6 +10,7 @@ import androidx.navigation.findNavController
 import coil.load
 import com.whoasys.queda.databinding.PostDetailBinding
 import com.whoasys.queda.entities.BUCKET
+import com.whoasys.queda.entities.LikesService
 import com.whoasys.queda.entities.Post
 import com.whoasys.queda.entities.PostService
 import java.text.DateFormat
@@ -65,7 +66,21 @@ class PostDetail : Fragment() {
                         ?.navigate(R.id.action_postDetail_to_storeProfile, bundle)
                 }
 
-                // TODO: 게시물 스크랩 기능
+                b.scrap.setOnClickListener {
+
+                    var flag: Boolean? = false
+
+                    val networkThread = Thread {
+                        flag = LikesService.call().scrap(userId, postId).execute().body()
+                    }
+
+                    networkThread.start()
+                    networkThread.join()
+
+                    if (flag == true) {
+                        b.scrap.text = "스크랩 완료!"
+                    }
+                }
             }
 
             if (post!!.isPromo) {

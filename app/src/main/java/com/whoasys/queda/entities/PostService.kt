@@ -48,7 +48,7 @@ object PostService {
 
         @GET("nearby")
         fun getAllPostsNearby(
-            @Query("user_id") user_id: String
+            @Query("userId") userId: String
         ): Call<List<Post>?>
 
         @GET("by")
