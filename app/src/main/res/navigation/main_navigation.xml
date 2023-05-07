@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/login">
+    app:startDestination="@id/myPage">
     <fragment
         android:id="@+id/feed"
         android:name="com.whoasys.queda.recyclers.Feed"
@@ -82,6 +82,9 @@
         <action
             android:id="@+id/action_myPage_to_storeProfile"
             app:destination="@id/storeProfile" />
+        <action
+            android:id="@+id/action_myPage_to_login"
+            app:destination="@id/login" />
     </fragment>
     <fragment
         android:id="@+id/forYou"

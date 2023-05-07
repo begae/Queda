@@ -7,14 +7,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    tools:context=".Login">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
+
 
     <TextView
+        android:layout_marginTop="150dp"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:gravity="center"
@@ -75,10 +73,6 @@
             app:cornerRadius="15dp" />
 
     </TableRow>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
+    
 
 </LinearLayout>

@@ -6,13 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/keywordActivity"
     tools:context=".KeywordActivity">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="30dp" />
-
     <TextView
+        android:layout_marginTop="70dp"
         android:id="@+id/keyword_guide"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,9 +38,7 @@
         android:textColor="@color/black"
         android:textSize="18sp" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="30dp" />
+
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
@@ -50,9 +46,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="30dp" />
 
     <TableRow
         android:layout_width="match_parent"
@@ -88,8 +81,5 @@
             app:cornerRadius="15dp" />
     </TableRow>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="30dp" />
 
 </LinearLayout>

@@ -23,14 +23,12 @@ class KeywordChoice : AppCompatActivity() {
         listkey.layoutManager = GridLayoutManager(this, 3)
         listkey.adapter = adapter
 
-        val fragment = MyPage()
-
         val saveBtn = findViewById<Button>(R.id.saveBtn)
         saveBtn.setOnClickListener {
 //            val intent = Intent(this, MyPage::class.java)
 //            startActivity(intent)
             supportFragmentManager.beginTransaction()
-                .replace(R.id.keywordchoice, fragment)
+                .replace(R.id.keywordchoice, MyPage())
                 .addToBackStack(null)
                 .commit()
         }

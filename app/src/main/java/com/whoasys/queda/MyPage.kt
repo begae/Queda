@@ -2,6 +2,7 @@ package com.whoasys.queda
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -67,24 +68,35 @@ class MyPage : Fragment() {
             }
         }
 
-        /*b.myPageLogout.setOnClickListener {
-
-            if (userId != "admin") {
-
-                intent = Intent(requireContext(), LoginActivity::class.java)
-                jumpTo(intent, "로그아웃 하시겠어요?")
-
-                sharedPref?.edit {
-                    putString("user_id", "admin")
-                    putString("user_name", "admin")
-                    putBoolean("user_is_manager", false)
-                    putInt("user_store", 5)
-                    apply()
+        b.myPageLogout.setOnClickListener {
+            val builder= androidx.appcompat.app.AlertDialog.Builder(requireContext())
+            builder.setTitle("알림")
+            builder.setMessage("로그아웃 하시겠습니까?")
+            builder.setCancelable(false)
+            builder.setPositiveButton("확인", object : DialogInterface.OnClickListener {
+                override fun onClick(dialog: DialogInterface?, which: Int) {
+                    view?.findNavController()
+                        ?.navigate(R.id.action_myPage_to_login, bundle)
                 }
-            }
-        }
+            })
+            builder.setNegativeButton("뒤로", object : DialogInterface.OnClickListener {
+                override fun onClick(dialog: DialogInterface?, which: Int) {}
+            })
+            builder.show()
 
-         */
+//            if (userId != "admin") {
+//
+//                intent = Intent(requireContext(), LoginActivity::class.java)
+//                jumpTo(intent, "로그아웃 하시겠어요?")
+
+//                sharedPref?.edit {
+//                    putString("user_id", "admin")
+//                    putString("user_name", "admin")
+//                    putBoolean("user_is_manager", false)
+//                    putInt("user_store", 5)
+//                    apply()
+//                }
+            }
 
         return b.root
     }
