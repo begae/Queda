@@ -40,8 +40,8 @@ class KeywordChoice : AppCompatActivity() {
     private fun getData(): ArrayList<KeywordModel>{
         val itemList: ArrayList<KeywordModel> = ArrayList()
 
-//        itemList.add(KeywordModel(ContextCompat.getDrawable(this,R.drawable.coffee)!!, "차, 커피", false))
-//        itemList.add(KeywordModel(ContextCompat.getDrawable(this,R.drawable.nail)!!, "네일아트", false))
+        itemList.add(KeywordModel(ContextCompat.getDrawable(this,R.drawable.coffee)!!, "차, 커피", false))
+        itemList.add(KeywordModel(ContextCompat.getDrawable(this,R.drawable.nail)!!, "네일아트", false))
 //        itemList.add(KeywordModel(ContextCompat.getDrawable(this,R.drawable.health)!!, "헬스장", false))
 //        itemList.add(KeywordModel(ContextCompat.getDrawable(this,R.drawable.store)!!, "편의점, 마트", false))
 //        itemList.add(KeywordModel(ContextCompat.getDrawable(this,R.drawable.hair)!!, "미용실", false))

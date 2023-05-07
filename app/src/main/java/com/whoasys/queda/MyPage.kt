@@ -6,6 +6,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.edit
@@ -118,5 +119,22 @@ class MyPage : Fragment() {
 
         builder.setNegativeButton("아니요") { _, _ -> }
         builder.show()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("정말로 종료하시겠습니까?")
+                    .setCancelable(false)
+                    .setPositiveButton("네") { dialog, id -> requireActivity().onBackPressed() }
+                    .setNegativeButton("아니요", null)
+
+                val alert = builder.create()
+                alert.show()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

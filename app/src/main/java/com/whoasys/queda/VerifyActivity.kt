@@ -1,6 +1,7 @@
 package com.whoasys.queda
 
 import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -21,6 +22,11 @@ class VerifyActivity : AppCompatActivity() {
             popUp(this, "매장 등록을 취소하시겠어요?")
             //val intent = Intent(this, MainActivity::class.java)
             //startActivity(intent)
+        }
+
+        b.continueBtn.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
 
         b.lookUp.setOnClickListener {

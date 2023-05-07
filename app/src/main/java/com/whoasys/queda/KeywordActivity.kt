@@ -39,7 +39,13 @@ class KeywordActivity : AppCompatActivity() {
                 }
             })
             builder.setNegativeButton("뒤로", object : DialogInterface.OnClickListener {
-                override fun onClick(dialog: DialogInterface?, which: Int) {}
+                override fun onClick(dialog: DialogInterface?, which: Int) {
+                    supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.keywordActivity, MyPage())
+                        .addToBackStack(null)
+                        .commit()
+                }
             })
             builder.show()
         }

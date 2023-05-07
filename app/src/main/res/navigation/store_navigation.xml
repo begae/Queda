@@ -11,12 +11,25 @@
             <action
                 android:id="@+id/action_storePromos_to_postDetail"
                 app:destination="@id/postDetail" />
+            <action
+                android:id="@+id/action_storePromos_to_storeNotice"
+                app:destination="@id/storeNotice" />
+            <action
+                android:id="@+id/action_storePromos_to_storePosts"
+                app:destination="@id/storePosts" />
         </fragment>
     <fragment
         android:id="@+id/storeNotice"
         android:name="com.whoasys.queda.StoreNotice"
         android:label="StoreNotice"
-        tools:layout="@layout/store_notice" />
+        tools:layout="@layout/store_notice" >
+        <action
+            android:id="@+id/action_storeNotice_to_storePromos"
+            app:destination="@id/storePromos" />
+        <action
+            android:id="@+id/action_storeNotice_to_storePosts"
+            app:destination="@id/storePosts" />
+    </fragment>
         <fragment
             android:id="@+id/storePosts"
             android:name="com.whoasys.queda.recyclers.StorePosts"
@@ -24,6 +37,12 @@
             <action
                 android:id="@+id/action_storePosts_to_postDetail"
                 app:destination="@id/postDetail" />
+            <action
+                android:id="@+id/action_storePosts_to_storeNotice"
+                app:destination="@id/storeNotice" />
+            <action
+                android:id="@+id/action_storePosts_to_storePromos"
+                app:destination="@id/storePromos" />
         </fragment>
     </navigation>
 

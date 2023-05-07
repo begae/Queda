@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.edit
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupWithNavController
@@ -56,9 +57,17 @@ class StoreProfile : Fragment() {
     ): View {
         val b = StoreProfileBinding.inflate(layoutInflater)
 
+
 //        val navHostFragment = b.storeNavContainer.getFragment<Fragment>()
 //        val navController = navHostFragment.findNavController()
 //        b.storeNavBar.setupWithNavController(navController)
+
+//        val navHostFragment = childFragmentManager.findFragmentById(R.id.mainNavContainer) as NavHostFragment
+//        val navController = navHostFragment.navController
+//        b.storeNavBar.setupWithNavController(navController)
+
+
+
 
         b.storeName.text = store!!.name
         b.storeAddress.text = store!!.address
