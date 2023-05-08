@@ -2,12 +2,11 @@
 <androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/list"
-    android:name="com.whoasys.queda.recyclers.ScrapsFragment"
+    android:id="@+id/scraps_list"
+    android:name="com.whoasys.queda.Scraps"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
+    android:layout_margin="10dp"
     app:layoutManager="LinearLayoutManager"
     tools:context=".recyclers.Scraps"
-    tools:listitem="@layout/scraps" />
+    tools:listitem="@layout/scraps_item" />
