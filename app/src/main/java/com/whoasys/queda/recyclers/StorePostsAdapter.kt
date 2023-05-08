@@ -1,6 +1,6 @@
 package com.whoasys.queda.recyclers
 
-import androidx.recyclerview.widget.RecyclerView
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -8,12 +8,14 @@ import android.widget.TableRow
 import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.whoasys.queda.R
 import com.whoasys.queda.databinding.StorePostsBinding
 import com.whoasys.queda.entities.Post
 import java.text.DateFormat
 import java.util.*
+
 
 class StorePostsAdapter(postList: List<Post>) : RecyclerView.Adapter<StorePostsAdapter.ViewHolder>() {
 
@@ -48,7 +50,9 @@ class StorePostsAdapter(postList: List<Post>) : RecyclerView.Adapter<StorePostsA
 
             val pair = Pair("post_id", post.id)
             val bundle = bundleOf(pair)
-            it.findNavController().navigate(R.id.action_storeProfile_to_postDetail, bundle)
+            //it.findNavController().navigate(R.id.action_st_to_postDetail, bundle)
+
+
         }
     }
 

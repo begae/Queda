@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/storeProfile">
+    app:startDestination="@id/myPage">
     <fragment
         android:id="@+id/feed"
         android:name="com.whoasys.queda.recyclers.Feed"
@@ -26,8 +26,8 @@
         android:label="post_detail"
         tools:layout="@layout/post_detail" >
         <action
-            android:id="@+id/action_postDetail_to_storeProfile"
-            app:destination="@id/storeProfile" />
+            android:id="@+id/action_postDetail_to_storeActivity"
+            app:destination="@id/storeActivity" />
     </fragment>
     <fragment
         android:id="@+id/map"
@@ -35,23 +35,11 @@
         android:label="map"
         tools:layout="@layout/map" >
         <action
-            android:id="@+id/action_map_to_storeProfile"
-            app:destination="@id/storeProfile" />
-        <action
             android:id="@+id/action_map_to_searchResult"
             app:destination="@id/searchResult" />
-    </fragment>
-    <fragment
-        android:id="@+id/storeProfile"
-        android:name="com.whoasys.queda.StoreProfile"
-        android:label="store_profile"
-        tools:layout="@layout/store_profile" >
         <action
-            android:id="@+id/action_storeProfile_to_postDetail"
-            app:destination="@id/postDetail" />
-        <action
-            android:id="@+id/action_storeProfile_to_editInfoActivity"
-            app:destination="@id/editInfoActivity" />
+            android:id="@+id/action_map_to_storeActivity"
+            app:destination="@id/storeActivity" />
     </fragment>
     <fragment
         android:id="@+id/searchResult"
@@ -59,8 +47,8 @@
         android:label="search_result_list"
         tools:layout="@layout/search_result_list" >
         <action
-            android:id="@+id/action_searchResult_to_storeProfile"
-            app:destination="@id/storeProfile" />
+            android:id="@+id/action_searchResult_to_storeActivity"
+            app:destination="@id/storeActivity" />
     </fragment>
     <fragment
         android:id="@+id/myPage"
@@ -80,11 +68,11 @@
             android:id="@+id/action_myPage_to_registerActivity"
             app:destination="@id/registerActivity" />
         <action
-            android:id="@+id/action_myPage_to_storeProfile"
-            app:destination="@id/storeProfile" />
-        <action
             android:id="@+id/action_myPage_to_login"
             app:destination="@id/login" />
+        <action
+            android:id="@+id/action_myPage_to_storeActivity"
+            app:destination="@id/storeActivity" />
     </fragment>
     <fragment
         android:id="@+id/forYou"
@@ -92,8 +80,8 @@
         android:label="for_you_list"
         tools:layout="@layout/for_you_item_list" >
         <action
-            android:id="@+id/action_forYou_to_storeProfile"
-            app:destination="@id/storeProfile" />
+            android:id="@+id/action_forYou_to_storeActivity"
+            app:destination="@id/storeActivity" />
     </fragment>
     <fragment
         android:id="@+id/scraps"
@@ -115,8 +103,8 @@
         android:label="following_list"
         tools:layout="@layout/following_item_list" >
         <action
-            android:id="@+id/action_following_to_storeProfile"
-            app:destination="@id/storeProfile" />
+            android:id="@+id/action_following_to_storeActivity"
+            app:destination="@id/storeActivity" />
     </fragment>
     <activity
         android:id="@+id/registerActivity"
@@ -141,4 +129,9 @@
             android:id="@+id/action_login_to_feed"
             app:destination="@id/feed" />
     </fragment>
+    <activity
+        android:id="@+id/storeActivity"
+        android:name="com.whoasys.queda.StoreActivity"
+        android:label="activity_store"
+        tools:layout="@layout/activity_store" />
 </navigation>

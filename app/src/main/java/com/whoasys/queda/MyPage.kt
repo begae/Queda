@@ -61,7 +61,7 @@ class MyPage : Fragment() {
 
             if (isManager) {
                 view?.findNavController()
-                    ?.navigate(R.id.action_myPage_to_storeProfile, bundle)
+                    ?.navigate(R.id.action_myPage_to_storeActivity, bundle)
             }
             else {
                 intent = Intent(requireContext(), RegisterActivity::class.java)

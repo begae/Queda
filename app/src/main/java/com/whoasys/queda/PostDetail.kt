@@ -63,7 +63,7 @@ class PostDetail : Fragment() {
                     val pair = Pair("store_id", storeId)
                     val bundle = bundleOf(pair)
                     view?.findNavController()
-                        ?.navigate(R.id.action_postDetail_to_storeProfile, bundle)
+                        ?.navigate(R.id.action_postDetail_to_storeActivity, bundle)
                 }
 
                 b.scrap.setOnClickListener {
