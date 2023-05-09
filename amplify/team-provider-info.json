@@ -1,43 +1,25 @@
 {
   "ksrmac": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-queda-ksrmac-193930-authRole",
-      "UnauthRoleArn": "arn:aws:iam::242014611427:role/amplify-queda-ksrmac-193930-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::242014611427:role/amplify-queda-ksrmac-193930-authRole",
+      "AuthRoleName": "amplify-queda-ksrmac-73303-authRole",
+      "UnauthRoleArn": "arn:aws:iam::242014611427:role/amplify-queda-ksrmac-73303-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::242014611427:role/amplify-queda-ksrmac-73303-authRole",
       "Region": "ap-northeast-2",
-      "DeploymentBucketName": "amplify-queda-ksrmac-193930-deployment",
-      "UnauthRoleName": "amplify-queda-ksrmac-193930-unauthRole",
-      "StackName": "amplify-queda-ksrmac-193930",
-      "StackId": "arn:aws:cloudformation:ap-northeast-2:242014611427:stack/amplify-queda-ksrmac-193930/ad11a5f0-be66-11ed-8e71-0253cf2be14a",
-      "AmplifyAppId": "d1qsdnqc6waoq3"
+      "DeploymentBucketName": "amplify-queda-ksrmac-73303-deployment",
+      "UnauthRoleName": "amplify-queda-ksrmac-73303-unauthRole",
+      "StackName": "amplify-queda-ksrmac-73303",
+      "StackId": "arn:aws:cloudformation:ap-northeast-2:242014611427:stack/amplify-queda-ksrmac-73303/772b24b0-eeb9-11ed-8f14-0a297bde0576",
+      "AmplifyAppId": "d39i04hi8cge0f"
     },
     "categories": {
       "auth": {
-        "queda1edb354c": {}
+        "queda8152fb20": {}
       },
       "storage": {
-        "s3resource": {}
-      }
-    }
-  },
-  "ksywindows": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-queda-ksywindows-222932-authRole",
-      "UnauthRoleArn": "arn:aws:iam::242014611427:role/amplify-queda-ksywindows-222932-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::242014611427:role/amplify-queda-ksywindows-222932-authRole",
-      "Region": "ap-northeast-2",
-      "DeploymentBucketName": "amplify-queda-ksywindows-222932-deployment",
-      "UnauthRoleName": "amplify-queda-ksywindows-222932-unauthRole",
-      "StackName": "amplify-queda-ksywindows-222932",
-      "StackId": "arn:aws:cloudformation:ap-northeast-2:242014611427:stack/amplify-queda-ksywindows-222932/6db10d70-be7e-11ed-b6e6-06d456820504",
-      "AmplifyAppId": "d1qsdnqc6waoq3"
-    },
-    "categories": {
-      "auth": {
-        "queda1edb354c": {}
-      },
-      "storage": {
-        "s3resource": {}
+        "queda677905a9": {
+          "bucketName": "queda193930-ksrmac",
+          "region": "ap-northeast-2"
+        }
       }
     }
   }

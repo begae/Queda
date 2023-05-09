@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/login">
+    app:startDestination="@id/posting">
     <fragment
         android:id="@+id/feed"
         android:name="com.whoasys.queda.recyclers.Feed"
@@ -134,4 +134,13 @@
         android:name="com.whoasys.queda.StoreActivity"
         android:label="activity_store"
         tools:layout="@layout/activity_store" />
+    <fragment
+        android:id="@+id/posting"
+        android:name="com.whoasys.queda.Posting"
+        android:label="posting"
+        tools:layout="@layout/posting" >
+        <action
+            android:id="@+id/action_posting_to_postDetail"
+            app:destination="@id/postDetail" />
+    </fragment>
 </navigation>
