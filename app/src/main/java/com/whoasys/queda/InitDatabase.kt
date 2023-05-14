@@ -43,7 +43,7 @@ class InitDatabase : Fragment() {
             35.85520714, 128.49362696
         )
 
-        val administrator = User("admin", "admin", "admin","admin@whoasys.com",
+        val administrator = User("admin", "admin", "관리자","admin@whoasys.com",
             0.0, 0.0)
 
         val team = arrayOf(begae, kimsmj, hagaji, acctract, administrator)
@@ -154,23 +154,18 @@ class InitDatabase : Fragment() {
 
         }
 
-        val key1 = Keyword("cvs")
-        val key2 = Keyword("laundry")
-        val key3 = Keyword("spa")
-        val key4 = Keyword("nail")
-        val key5 = Keyword("gym")
-        val key6 = Keyword("cafe")
-        val key7 = Keyword("dining")
-
-        val keywords = arrayOf(key1, key2, key3, key4, key5, key6, key7)
+        val listOfKeywords: List<String> = listOf("가구", "가전", "건강식품", "문구서적", "반려동물용품", "스포츠용품", "식료품", "신발", "악기", "악세사리",
+        "약국", "완구취미", "유아용품", "음반DVD", "의류", "자동차", "철물점", "컴퓨터", "피트니스", "화장품")
 
         b.initKeyword.setOnClickListener {
 
-            for (key in keywords) {
+            for (key in listOfKeywords) {
+
+                val kw = Keyword(key)
 
                 networkThread = Thread {
-                    val id = KeywordService.call().saveKeyword(key).execute().body()
-                    print(key.value + "as $id saved.\n")
+                    val id = KeywordService.call().saveKeyword(kw).execute().body()
+                    print(kw.value + "as $id saved.\n")
                 }
                 networkThread.start()
                 networkThread.join()

@@ -143,4 +143,9 @@
             android:id="@+id/action_posting_to_postDetail"
             app:destination="@id/postDetail" />
     </fragment>
+    <fragment
+        android:id="@+id/keywords"
+        android:name="com.whoasys.queda.recyclers.Keywords"
+        android:label="keyword_item_list"
+        tools:layout="@layout/keyword_item_list" />
 </navigation>

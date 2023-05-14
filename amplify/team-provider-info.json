@@ -1,25 +1,22 @@
 {
   "ksrmac": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-queda-ksrmac-73303-authRole",
-      "UnauthRoleArn": "arn:aws:iam::242014611427:role/amplify-queda-ksrmac-73303-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::242014611427:role/amplify-queda-ksrmac-73303-authRole",
+      "AuthRoleName": "amplify-queda-ksrmac-104221-authRole",
+      "UnauthRoleArn": "arn:aws:iam::242014611427:role/amplify-queda-ksrmac-104221-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::242014611427:role/amplify-queda-ksrmac-104221-authRole",
       "Region": "ap-northeast-2",
-      "DeploymentBucketName": "amplify-queda-ksrmac-73303-deployment",
-      "UnauthRoleName": "amplify-queda-ksrmac-73303-unauthRole",
-      "StackName": "amplify-queda-ksrmac-73303",
-      "StackId": "arn:aws:cloudformation:ap-northeast-2:242014611427:stack/amplify-queda-ksrmac-73303/772b24b0-eeb9-11ed-8f14-0a297bde0576",
-      "AmplifyAppId": "d39i04hi8cge0f"
+      "DeploymentBucketName": "amplify-queda-ksrmac-104221-deployment",
+      "UnauthRoleName": "amplify-queda-ksrmac-104221-unauthRole",
+      "StackName": "amplify-queda-ksrmac-104221",
+      "StackId": "arn:aws:cloudformation:ap-northeast-2:242014611427:stack/amplify-queda-ksrmac-104221/e8d31090-eed3-11ed-bf3a-06b1067db3ce",
+      "AmplifyAppId": "d1v126hntg8ox3"
     },
     "categories": {
       "auth": {
-        "queda8152fb20": {}
+        "queda9a9253fc": {}
       },
       "storage": {
-        "queda677905a9": {
-          "bucketName": "queda193930-ksrmac",
-          "region": "ap-northeast-2"
-        }
+        "queda": {}
       }
     }
   }

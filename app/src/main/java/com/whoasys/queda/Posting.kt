@@ -14,6 +14,9 @@ import androidx.navigation.findNavController
 import com.amplifyframework.AmplifyException
 import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin
 import com.amplifyframework.core.Amplify
+import com.amplifyframework.storage.StorageAccessLevel
+import com.amplifyframework.storage.options.StorageUploadFileOptions
+import com.amplifyframework.storage.options.StorageUploadFileOptions.builder
 import com.amplifyframework.storage.s3.AWSS3StoragePlugin
 import com.whoasys.queda.databinding.PostingBinding
 import com.whoasys.queda.entities.Post
@@ -212,7 +215,9 @@ class Posting : Fragment() {
 
     private fun uploadFile(key: String, file: File) {
 
-        Amplify.Storage.uploadFile(key, file,
+        val builder = builder().accessLevel(StorageAccessLevel.PUBLIC)
+        val option = builder.build()
+        Amplify.Storage.uploadFile(key, file, option,
             { println("업로드에 성공했습니다: ${it.key}") },
             { println("업로드에 실패했습니다: $it") }
         )
