@@ -3,6 +3,7 @@ package com.whoasys.queda
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.provider.AlarmClock
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,8 @@ class KeywordChoice : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_keyword_choice)
 
+        val userId = intent.getStringExtra(AlarmClock.EXTRA_MESSAGE)
+
         val listkey = findViewById<RecyclerView>(R.id.listkey)
         val adapter = KeyAdapter(getData())
 
@@ -25,9 +28,8 @@ class KeywordChoice : AppCompatActivity() {
 
         val saveBtn = findViewById<Button>(R.id.saveBtn)
         saveBtn.setOnClickListener {
-//            val intent = Intent(this, MyPage::class.java)
-//            startActivity(intent)
-            supportFragmentManager.beginTransaction()
+            supportFragmentManager
+                .beginTransaction()
                 .replace(R.id.keywordchoice, MyPage())
                 .addToBackStack(null)
                 .commit()

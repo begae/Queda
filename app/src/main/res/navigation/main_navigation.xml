@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/posting">
+    app:startDestination="@id/myPage">
     <fragment
         android:id="@+id/feed"
         android:name="com.whoasys.queda.recyclers.Feed"
@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_postDetail_to_storeActivity"
             app:destination="@id/storeActivity" />
+        <action
+            android:id="@+id/action_postDetail_to_postingModifying"
+            app:destination="@id/postingModifying" />
     </fragment>
     <fragment
         android:id="@+id/map"
@@ -73,6 +76,9 @@
         <action
             android:id="@+id/action_myPage_to_storeActivity"
             app:destination="@id/storeActivity" />
+        <action
+            android:id="@+id/action_myPage_to_keywordChoice"
+            app:destination="@id/keywordChoice" />
     </fragment>
     <fragment
         android:id="@+id/forYou"
@@ -148,4 +154,18 @@
         android:name="com.whoasys.queda.recyclers.Keywords"
         android:label="keyword_item_list"
         tools:layout="@layout/keyword_item_list" />
+    <fragment
+        android:id="@+id/postingModifying"
+        android:name="com.whoasys.queda.PostingModifying"
+        android:label="fragment_posting_modifying"
+        tools:layout="@layout/posting_modifying" >
+        <action
+            android:id="@+id/action_postingModifying_to_postDetail"
+            app:destination="@id/postDetail" />
+    </fragment>
+    <activity
+        android:id="@+id/keywordChoice"
+        android:name="com.whoasys.queda.KeywordChoice"
+        android:label="activity_keyword_choice"
+        tools:layout="@layout/activity_keyword_choice" />
 </navigation>

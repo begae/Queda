@@ -115,6 +115,15 @@ class PostDetail : Fragment() {
             b.addedView.text = added
         }
 
+
+            b.modify.setOnClickListener {
+                view?.findNavController()
+                    ?.navigate(R.id.action_postDetail_to_postingModifying)
+            }
+
+            b.delete.setOnClickListener {
+
+            }
         return b.root
     }
 

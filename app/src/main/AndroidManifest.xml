@@ -24,11 +24,8 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".StoreModifying"
-            android:exported="false" />
+            android:exported="true" />
 
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="" />
 
         <activity
             android:name=".SearchActivity"
