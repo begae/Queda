@@ -209,7 +209,7 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:hint="오전 00:00 ~ 오전 00:00"
+            android:hint="오전 00:00 ~ 오후 00:00"
             android:gravity="center"
             android:textSize="20sp"
             android:background="#00ff0000"

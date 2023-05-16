@@ -1,8 +1,12 @@
 package com.whoasys.queda
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Button
+import android.widget.ImageButton
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.fragment.app.Fragment
@@ -21,8 +25,12 @@ class StoreActivity : AppCompatActivity() {
     private var manager: User? = null
     private var store: Store? = null
 
+    private lateinit var intent: Intent
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
+
 
         var networkThread = Thread {
             store = StoreService.call().getOneStore(storeId).execute().body()
@@ -63,5 +71,52 @@ class StoreActivity : AppCompatActivity() {
 
             return item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
         }
+
+        val write_post_btn = findViewById<Button>(R.id.write_post_btn)
+        write_post_btn.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("알림")
+            builder.setMessage("새 글을 작성하시겠습니까?")
+            builder.setCancelable(false)
+            builder.setPositiveButton("확인") { dialog, which ->
+                val intent = Intent(this, KeywordActivity::class.java)
+                startActivity(intent)
+            }
+            builder.setNegativeButton("뒤로") { dialog, which ->
+
+            }
+            builder.show()
+        }
+
+        val edit_info_btn = findViewById<Button>(R.id.edit_info_btn)
+        edit_info_btn.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("알림")
+            builder.setMessage("정보 수정을 하시겠습니까?")
+            builder.setCancelable(false)
+            builder.setPositiveButton("확인") { dialog, which ->
+                val intent = Intent(this, StoreModifying::class.java)
+                startActivity(intent)
+            }
+            builder.setNegativeButton("뒤로") { dialog, which ->
+
+            }
+            builder.show()
+        }
+
+        var i = true
+        val follow_btn = findViewById<ImageButton>(R.id.follow_btn)
+        follow_btn.setOnClickListener {
+            if(i){
+                follow_btn.setImageResource(R.drawable.h2)
+                i = false
+            }
+            else{
+                follow_btn.setImageResource(R.drawable.h1)
+                i = true
+            }
+        }
+
+
     }
 }
