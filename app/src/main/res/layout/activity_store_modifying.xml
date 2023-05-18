@@ -12,18 +12,19 @@ android:orientation="vertical">
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="15dp"
-    android:layout_marginTop="10dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="20dp"
     android:text="매장 수정"
     android:textStyle="bold"
-    android:textColor="@color/black"
-    android:textSize="25sp"/>
+    android:textColor="@color/sky"
+    android:textSize="30sp"
+    android:fontFamily="@font/light"/>
 
 <TextView
-    android:background="#d3d3d3"
+    android:background="#E6E6E6"
     android:layout_margin="5dp"
     android:layout_width="match_parent"
-    android:layout_height="5dp"/>
+    android:layout_height="3dp"/>
 
 <LinearLayout
     android:layout_marginTop="20dp"
@@ -44,7 +45,8 @@ android:orientation="vertical">
         android:textSize="18sp"
         android:background="#00ff0000"
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp"
+        android:fontFamily="@font/light"/>
 </LinearLayout>
 
 <LinearLayout
@@ -66,7 +68,8 @@ android:orientation="vertical">
         android:textSize="18sp"
         android:background="#00ff0000"
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp"
+        android:fontFamily="@font/light"/>
 </LinearLayout>
 
 <LinearLayout
@@ -83,12 +86,13 @@ android:orientation="vertical">
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:hint="매장 번호"
+        android:hint="전화번호"
         android:gravity="left|center"
         android:textSize="18sp"
         android:background="#00ff0000"
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp"
+        android:fontFamily="@font/light"/>
 </LinearLayout>
 
     <LinearLayout
@@ -110,40 +114,137 @@ android:orientation="vertical">
             android:textSize="18sp"
             android:background="#00ff0000"
             android:layout_width="match_parent"
-            android:layout_height="50dp"/>
+            android:layout_height="50dp"
+            android:fontFamily="@font/light"/>
     </LinearLayout>
 
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="10dp"
+    android:layout_marginTop="30dp"
     android:paddingLeft="35dp"
     android:text="매장 운영 시간"
     android:textSize="18sp"
-    android:textStyle="bold"/>
+    android:textStyle="bold"
+    android:fontFamily="@font/light"/>
 
-<LinearLayout
-    android:layout_marginTop="5dp"
-    android:background="@drawable/radius"
-    android:orientation="vertical"
-    android:layout_gravity="center"
-    android:layout_width="350dp"
-    android:layout_height="100dp">
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:background="@drawable/radius"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="15dp">
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:background="@drawable/radius3"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <Button
+                android:id="@+id/Mon"
+                android:layout_marginLeft="5dp"
+                android:text="월"
+                android:textColor="@color/orange"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:background="#00ff0000"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/middle"/>
+            <Button
+                android:id="@+id/Tue"
+                android:layout_marginLeft="5dp"
+                android:text="화"
+                android:textColor="@color/orange"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:background="#00ff0000"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/middle"/>
+            <Button
+                android:id="@+id/Wen"
+                android:layout_marginLeft="5dp"
+                android:text="수"
+                android:textColor="@color/orange"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:background="#00ff0000"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/middle"/>
+            <Button
+                android:id="@+id/Thu"
+                android:layout_marginLeft="5dp"
+                android:text="목"
+                android:textColor="@color/orange"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:background="#00ff0000"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/middle"/>
+            <Button
+                android:id="@+id/Fri"
+                android:layout_marginLeft="5dp"
+                android:text="금"
+                android:textColor="@color/orange"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:background="#00ff0000"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/middle"/>
+            <Button
+                android:id="@+id/Sat"
+                android:layout_marginLeft="5dp"
+                android:text="토"
+                android:textColor="@color/orange"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:background="#00ff0000"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/middle"/>
+            <Button
+                android:id="@+id/Sun"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="일"
+                android:textColor="@color/orange"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:background="#00ff0000"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/middle"/>
+        </LinearLayout>
 
-    <EditText
-        android:id="@+id/store_open_time"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:ems="10"
-        android:hint="(요일) 오전 00:00 ~ 오후 00:00"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:background="#00ff0000"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"/>
-</LinearLayout>
+        <EditText
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:hint="오전 00:00 ~ 오후 00:00"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:background="#00ff0000"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fontFamily="@font/middle"/>
+    </LinearLayout>
 
 
     <TableRow
@@ -164,7 +265,7 @@ android:orientation="vertical">
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="150dp"
-            android:layout_height="90dp"
+            android:layout_height="150dp"
             />
 
     </TableRow>
@@ -194,7 +295,6 @@ android:orientation="vertical">
             android:text="확인" />
 
     </TableRow>
-
 
 
 </LinearLayout>

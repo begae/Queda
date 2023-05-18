@@ -12,18 +12,19 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:text="매장 등록"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textSize="25sp"/>
+        android:textColor="@color/sky"
+        android:textSize="30sp"
+        android:fontFamily="@font/light"/>
 
     <TextView
-        android:background="#d3d3d3"
+        android:background="#E6E6E6"
         android:layout_margin="5dp"
         android:layout_width="match_parent"
-        android:layout_height="5dp"/>
+        android:layout_height="3dp"/>
 
     <LinearLayout
         android:layout_marginTop="20dp"
@@ -39,12 +40,14 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:text="사업등록자번호 조회"
+            android:text="사업자등록번호 조회"
+            android:textColor="@color/sky"
             android:gravity="center"
             android:textSize="20sp"
             android:background="#00ff0000"
             android:layout_width="match_parent"
-            android:layout_height="50dp"/>
+            android:layout_height="50dp"
+            android:fontFamily="@font/light"/>
 
     </LinearLayout>
 
@@ -67,7 +70,8 @@
             android:textSize="18sp"
             android:background="#00ff0000"
             android:layout_width="match_parent"
-            android:layout_height="50dp"/>
+            android:layout_height="50dp"
+            android:fontFamily="@font/light"/>
     </LinearLayout>
 
     <LinearLayout
@@ -89,7 +93,8 @@
             android:textSize="18sp"
             android:background="#00ff0000"
             android:layout_width="match_parent"
-            android:layout_height="50dp"/>
+            android:layout_height="50dp"
+            android:fontFamily="@font/light"/>
     </LinearLayout>
 
     <LinearLayout
@@ -111,7 +116,8 @@
             android:textSize="18sp"
             android:background="#00ff0000"
             android:layout_width="match_parent"
-            android:layout_height="50dp"/>
+            android:layout_height="50dp"
+            android:fontFamily="@font/light"/>
     </LinearLayout>
 
     <TextView
@@ -121,7 +127,8 @@
         android:paddingLeft="35dp"
         android:text="매장 운영 시간"
         android:textSize="18sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:fontFamily="@font/light"/>
 
     <LinearLayout
         android:layout_marginTop="5dp"
@@ -129,7 +136,8 @@
         android:orientation="vertical"
         android:layout_gravity="center"
         android:layout_width="350dp"
-        android:layout_height="100dp">
+        android:layout_height="100dp"
+        android:layout_marginBottom="15dp">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -144,65 +152,87 @@
                 android:id="@+id/Mon"
                 android:layout_marginLeft="5dp"
                 android:text="월"
+                android:textColor="@color/orange"
                 android:gravity="center"
                 android:textSize="11sp"
                 android:background="#00ff0000"
                 android:layout_width="40dp"
-                android:layout_height="48dp"/>
+                android:layout_height="40dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/middle"/>
             <Button
                 android:id="@+id/Tue"
                 android:layout_marginLeft="5dp"
                 android:text="화"
+                android:textColor="@color/orange"
                 android:gravity="center"
                 android:textSize="11sp"
                 android:background="#00ff0000"
                 android:layout_width="40dp"
-                android:layout_height="48dp"/>
+                android:layout_height="40dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/middle"/>
             <Button
                 android:id="@+id/Wen"
                 android:layout_marginLeft="5dp"
                 android:text="수"
+                android:textColor="@color/orange"
                 android:gravity="center"
                 android:textSize="11sp"
                 android:background="#00ff0000"
                 android:layout_width="40dp"
-                android:layout_height="48dp"/>
+                android:layout_height="40dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/middle"/>
             <Button
                 android:id="@+id/Thu"
                 android:layout_marginLeft="5dp"
                 android:text="목"
+                android:textColor="@color/orange"
                 android:gravity="center"
                 android:textSize="11sp"
                 android:background="#00ff0000"
                 android:layout_width="40dp"
-                android:layout_height="48dp"/>
+                android:layout_height="40dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/middle"/>
             <Button
                 android:id="@+id/Fri"
                 android:layout_marginLeft="5dp"
                 android:text="금"
+                android:textColor="@color/orange"
                 android:gravity="center"
                 android:textSize="11sp"
                 android:background="#00ff0000"
                 android:layout_width="40dp"
-                android:layout_height="48dp"/>
+                android:layout_height="40dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/middle"/>
             <Button
                 android:id="@+id/Sat"
                 android:layout_marginLeft="5dp"
                 android:text="토"
+                android:textColor="@color/orange"
                 android:gravity="center"
                 android:textSize="11sp"
                 android:background="#00ff0000"
                 android:layout_width="40dp"
-                android:layout_height="48dp"/>
+                android:layout_height="40dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/middle"/>
             <Button
                 android:id="@+id/Sun"
                 android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:text="일"
+                android:textColor="@color/orange"
                 android:gravity="center"
                 android:textSize="11sp"
                 android:background="#00ff0000"
                 android:layout_width="40dp"
-                android:layout_height="48dp"/>
+                android:layout_height="40dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/middle"/>
         </LinearLayout>
 
         <EditText
@@ -214,20 +244,27 @@
             android:textSize="20sp"
             android:background="#00ff0000"
             android:layout_width="match_parent"
-            android:layout_height="50dp"/>
+            android:layout_height="50dp"
+            android:fontFamily="@font/middle"/>
     </LinearLayout>
 
 
 
     <Button
         android:id="@+id/nextBtn"
-        android:background="@drawable/radius3"
-        android:layout_width="150dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="30dp"
         android:layout_gravity="center"
-        android:textStyle="bold"
-        android:text="다음" />
+        android:layout_marginHorizontal="100dp"
+
+        android:backgroundTint="@color/sky"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/finish"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:cornerRadius="30dp"
+        android:fontFamily="@font/light"/>
 
 
 

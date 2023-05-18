@@ -11,7 +11,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="30dp"
         android:layout_weight="1" />
 
     <TextView
@@ -19,63 +19,74 @@
         android:layout_height="100dp"
         android:gravity="center"
         android:text="@string/join"
-        android:textColor="@color/purple"
-        android:textSize="48sp"
-        android:textStyle="bold" />
+        android:layout_marginVertical="20dp"
+        android:textColor="@color/sky"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/light"/>
 
     <EditText
         android:id="@+id/id"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="5dp"
+        android:layout_marginHorizontal="50dp"
         android:autofillHints="ID"
         android:hint="@string/id"
         android:inputType="text"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:fontFamily="@font/light"/>
 
     <EditText
         android:id="@+id/pw"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="5dp"
+        android:layout_marginHorizontal="50dp"
         android:autofillHints="Password"
         android:hint="@string/pw"
         android:inputType="textPassword"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:fontFamily="@font/light" />
 
     <EditText
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="5dp"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="10dp"
         android:autofillHints="Password"
         android:hint="@string/name"
         android:inputType="textPersonName"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:fontFamily="@font/light"/>
 
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="5dp"
+        android:layout_marginHorizontal="50dp"
         android:autofillHints="Password"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:fontFamily="@font/light"/>
 
     <CheckBox
         android:id="@+id/personalInfoAgree"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="5dp"
+        android:layout_marginVertical="15dp"
+        android:layout_marginHorizontal="50dp"
         android:buttonTint="@color/black"
         android:text="@string/agree"
         android:textColor="@color/black"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:fontFamily="@font/light"/>
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/cancel"
@@ -83,13 +94,14 @@
             android:layout_height="50dp"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/purple_700"
+            android:backgroundTint="@color/orange"
+            android:fontFamily="@font/light"
             android:insetTop="0dp"
             android:insetBottom="0dp"
             android:text="@string/cancel"
             android:textColor="@color/white"
-            android:textSize="24sp"
-            app:cornerRadius="15dp" />
+            android:textSize="20sp"
+            app:cornerRadius="30dp" />
 
         <Button
             android:id="@+id/join_real"
@@ -97,12 +109,14 @@
             android:layout_height="50dp"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/sky"
+            android:fontFamily="@font/light"
             android:insetTop="0dp"
             android:insetBottom="0dp"
             android:text="@string/join"
             android:textColor="@color/white"
-            android:textSize="24sp"
-            app:cornerRadius="15dp" />
+            android:textSize="20sp"
+            app:cornerRadius="30dp" />
 
     </TableRow>
 
