@@ -94,8 +94,7 @@
                     android:layout_weight="1"
                     android:calendarViewShown="false"
                     android:datePickerMode="calendar"
-                    android:headerBackground="@color/yellow"
-                    android:fontFamily="@font/light"/>
+                    android:headerBackground="@color/yellow" />
             </TableRow>
 
             <CheckBox
