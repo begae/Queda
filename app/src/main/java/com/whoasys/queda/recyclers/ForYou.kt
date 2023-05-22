@@ -10,9 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.whoasys.queda.R
 
-/**
- * A fragment representing a list of Items.
- */
 class ForYou : Fragment() {
 
     private var columnCount = 1
@@ -34,11 +31,8 @@ class ForYou : Fragment() {
         // Set the adapter
         if (view is RecyclerView) {
             with(view) {
-                layoutManager = when {
-                    columnCount <= 1 -> LinearLayoutManager(context)
-                    else -> GridLayoutManager(context, columnCount)
-                }
-                adapter = ForYouAdapter(PlaceholderContent.ITEMS)
+                layoutManager = LinearLayoutManager(context)
+                //adapter = ForYouAdapter(storeList?: emptyList(), userId)
             }
         }
         return view

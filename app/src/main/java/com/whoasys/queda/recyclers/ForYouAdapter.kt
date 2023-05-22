@@ -2,20 +2,23 @@ package com.whoasys.queda.recyclers
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
+import coil.load
+import com.whoasys.queda.R
 
-import com.whoasys.queda.recyclers.PlaceholderContent.PlaceholderItem
 import com.whoasys.queda.databinding.ForYouItemBinding
+import com.whoasys.queda.entities.BUCKET
+import com.whoasys.queda.entities.Store
+import java.text.DateFormat
+import java.util.Locale
 
-/**
- * [RecyclerView.Adapter] that can display a [PlaceholderItem].
- * TODO: Replace the implementation with code for your data type.
- */
 class ForYouAdapter(
-    private val values: List<PlaceholderItem>
+    private val itemList: List<Store>, private val userId: String
 ) : RecyclerView.Adapter<ForYouAdapter.ViewHolder>() {
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         return ViewHolder(
@@ -29,20 +32,41 @@ class ForYouAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = values[position]
-        holder.idView.text = item.id
-        holder.contentView.text = item.content
+        val store = itemList[position]
+
+        holder.storeName.text = store.name
+        holder.storeAddr.text = store.address
+
+        val formatter = DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.SHORT, Locale.KOREAN)
+
+        if (store.profilePic != null) {
+
+            holder.storeThumb.visibility = View.VISIBLE
+
+            val key0 = store.profilePic
+            holder.storeThumb.load(BUCKET + key0)
+        }
+
+        else {
+
+            holder.storeThumb.visibility = View.GONE
+        }
+
+        holder.item.setOnClickListener {
+            //click event
+        }
     }
 
-    override fun getItemCount(): Int = values.size
+    override fun getItemCount(): Int {
+        return itemList.size
+    }
 
     inner class ViewHolder(binding: ForYouItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        val idView: TextView = binding.itemNumber
-        val contentView: TextView = binding.content
-
-        override fun toString(): String {
-            return super.toString() + " '" + contentView.text + "'"
-        }
+        val storeName = binding.storeName
+        val storeAddr = binding.storeAddr
+        val storeKeyword = binding.storeKeyword
+        val storeThumb = binding.storeThumb
+        val item = binding.forYouItem
     }
 
 }

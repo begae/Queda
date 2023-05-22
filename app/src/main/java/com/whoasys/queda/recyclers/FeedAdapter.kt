@@ -75,6 +75,5 @@ class FeedAdapter(
         val postTitle = binding.feedItemPostTitle
         val postThumb = binding.feedItemPostThumb
         val item = binding.feedItem
-
     }
 }
