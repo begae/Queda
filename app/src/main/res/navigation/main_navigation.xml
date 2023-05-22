@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_postDetail_to_postingModifying"
             app:destination="@id/postingModifying" />
+        <action
+            android:id="@+id/action_postDetail_to_feed"
+            app:destination="@id/feed" />
     </fragment>
     <fragment
         android:id="@+id/map"

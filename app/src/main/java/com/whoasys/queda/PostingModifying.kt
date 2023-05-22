@@ -24,18 +24,10 @@ import com.whoasys.queda.entities.User
 import com.whoasys.queda.entities.UserService
 import java.io.File
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Posting.newInstance] factory method to
- * create an instance of this fragment.
- */
 class PostingModifying : Fragment() {
-    // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
     private lateinit var pickImages: ActivityResultLauncher<PickVisualMediaRequest>
@@ -45,12 +37,14 @@ class PostingModifying : Fragment() {
     private var loggedIn: User? = null
     private lateinit var b: PostingBinding
     private var paths: Array<String> = emptyArray()
+    private var postId: Int = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+            postId = it.getInt("post_id", -1) // Get the post ID from arguments if available
         }
     }
 
@@ -58,8 +52,6 @@ class PostingModifying : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
-
         b = PostingBinding.inflate(inflater, container, false)
 
         try {
@@ -67,25 +59,20 @@ class PostingModifying : Fragment() {
             Amplify.addPlugin(AWSS3StoragePlugin())
             Amplify.configure(requireContext())
 
-            println("앰플리파이를 기동했습니다.")
+            println("Amplify initialized.")
         } catch (error: AmplifyException) {
-            println("앰플리파이를 기동하지 못했습니다: $error")
+            println("Failed to initialize Amplify: $error")
         }
 
         pickImages = registerForActivityResult(
-            ActivityResultContracts
-                .PickMultipleVisualMedia(3)
+            ActivityResultContracts.PickMultipleVisualMedia(3)
         ) { uris ->
             if (uris.isNotEmpty()) {
-
                 for (i in uris.indices) {
-
                     val path = getPath(requireContext(), uris[i])
                     paths = paths.plus(path!!)
                 }
-
             } else {
-
                 b.attachCheckbox.isChecked = false
             }
         }
@@ -147,44 +134,49 @@ class PostingModifying : Fragment() {
 
             pickImages.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
         }
+        // Rest of the code...
 
         b.finishPostiing.setOnClickListener {
+            // Validation and update post logic...
 
             if (b.promoCheckbox.isChecked) {
-
                 if (promoStart.isNullOrEmpty() || promoEnd.isNullOrEmpty()) {
                     b.promoCheckbox.isChecked = false
                     b.finishPostiing.isSelected = false
                     Toast.makeText(activity, "행사 시작일과 종료일을 설정해주세요.", Toast.LENGTH_LONG).show()
                 }
-
             } else if (b.postTitle.text.isEmpty() || b.postContent.text.isEmpty()) {
-
                 b.finishPostiing.isSelected = false
                 Toast.makeText(activity, "제목과 내용을 입력해주세요.", Toast.LENGTH_LONG).show()
-
             } else {
 
                 var postId = 1
 
-                val new = Post(
+                val updatedPost = Post(
                     b.postTitle.text.toString(), loggedIn!!,
                     b.postContent.text.toString(), b.promoCheckbox.isChecked,
                     promoStart, promoEnd
                 )
 
                 networkThread = Thread {
-                    postId =
-                        PostService.call().savePost(new).execute().body() ?: 2
+                    postId = PostService.call().savePost(updatedPost).execute().body() ?: 2
                 }
+
+//                val updatedPost = Post(
+//                    b.postTitle.text.toString(), loggedIn!!,
+//                    b.postContent.text.toString(), b.promoCheckbox.isChecked,
+//                    promoStart, promoEnd
+//                )
+//
+//                networkThread = Thread {
+//                    PostService.call().updatePost(postId, updatedPost).execute()
+//                }
 
                 networkThread.start()
                 networkThread.join()
 
                 if (b.attachCheckbox.isChecked) {
-
                     for (i: Int in paths.indices) {
-
                         val now = System.currentTimeMillis()
                         val file = File(paths[i])
                         val key = "${now.toString()}$i.jpeg"
@@ -201,22 +193,19 @@ class PostingModifying : Fragment() {
                     }
                 }
 
-                val pair = Pair("post_id", postId)
-                val bundle = bundleOf(pair)
-
+                val bundle = bundleOf("post_id" to postId)
                 view?.findNavController()
                     ?.navigate(R.id.action_posting_to_postDetail, bundle)
-
             }
         }
         return b.root
     }
 
     private fun uploadFile(key: String, file: File) {
-
         val builder = builder().accessLevel(StorageAccessLevel.PUBLIC)
         val option = builder.build()
-        Amplify.Storage.uploadFile(key, file, option,
+        Amplify.Storage.uploadFile(
+            key, file, option,
             { println("업로드에 성공했습니다: ${it.key}") },
             { println("업로드에 실패했습니다: $it") }
         )

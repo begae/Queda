@@ -1,9 +1,11 @@
 package com.whoasys.queda
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -22,6 +24,17 @@ class PostDetail : Fragment() {
     private var postId: Int = 8
     private var storeId: Int = 1
     private var post: Post? = null
+    private lateinit var networkThread: Thread
+
+    private fun deletePost(postId: Int) {
+        networkThread = Thread {
+            Toast.makeText(requireContext(), "게시물이 삭제되었습니다.", Toast.LENGTH_SHORT).show()
+
+            view?.findNavController()
+                ?.navigate(R.id.action_postDetail_to_feed)
+        }
+        networkThread.start()
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +50,7 @@ class PostDetail : Fragment() {
         networkThread.start()
         networkThread.join()
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -122,10 +136,25 @@ class PostDetail : Fragment() {
             }
 
             b.delete.setOnClickListener {
-
+                if (postId != -1) {
+                    // Confirm with the user before deleting the post
+                    AlertDialog.Builder(requireContext())
+                        .setTitle("알림")
+                        .setMessage("정말 삭제하시겠습니까?")
+                        .setPositiveButton("삭제하기") { _, _ ->
+                            // Call the deletePost function
+                            deletePost(postId)
+                        }
+                        .setNegativeButton("취소", null)
+                        .show()
+                } else {
+                    Toast.makeText(activity, "유효하지않은 post ID", Toast.LENGTH_SHORT).show()
+                }
             }
         return b.root
     }
+
+
 
     companion object {
 
