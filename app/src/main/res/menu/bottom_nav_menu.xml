@@ -4,21 +4,25 @@
     <item
         android:id="@+id/feed"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_feed" />
+        android:title="@string/title_feed"
+        android:fontFamily="@font/light"/>
 
     <item
         android:id="@+id/forYou"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_recommend" />
+        android:title="@string/title_recommend"
+        android:fontFamily="@font/light"/>
 
     <item
         android:id="@+id/map"
         android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_map" />
+        android:title="@string/title_map"
+        android:fontFamily="@font/light"/>
 
     <item
         android:id="@+id/myPage"
         android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_my_page" />
+        android:title="@string/title_my_page"
+        android:fontFamily="@font/light"/>
 
 </menu>

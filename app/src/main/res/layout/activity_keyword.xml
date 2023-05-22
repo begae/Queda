@@ -10,15 +10,17 @@
     tools:context=".KeywordActivity">
 
     <TextView
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="30dp"
         android:id="@+id/keyword_guide"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="키워드 선택"
-        android:textColor="@color/black"
-        android:textSize="34sp"
-        android:textStyle="bold" />
+        android:textColor="@color/sky"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/light"/>
 
     <TextView
         android:id="@+id/keyword_guide_1"
@@ -27,29 +29,32 @@
         android:gravity="center"
         android:text="나 또는 매장과 관련된 키워드를 선택해주세요."
         android:textColor="@color/black"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:fontFamily="@font/light"/>
 
     <TextView
         android:id="@+id/keyword_guide_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_marginBottom="20dp"
         android:text="나중에 마이페이지에서 수정할 수 있어요."
         android:textColor="@color/black"
-        android:textSize="18sp" />
-
+        android:textSize="18sp"
+        android:fontFamily="@font/light"/>
 
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
         android:name="com.whoasys.queda.recyclers.Keywords"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
+        android:layout_height="500dp" />
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="15dp">
 
         <Button
             android:id="@+id/look_up"
@@ -58,13 +63,14 @@
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/purple_700"
+            android:backgroundTint="@color/orange"
             android:insetTop="0dp"
             android:insetBottom="0dp"
             android:text="@string/cancel"
             android:textColor="@color/white"
-            android:textSize="24sp"
-            app:cornerRadius="15dp" />
+            android:textSize="20sp"
+            app:cornerRadius="30dp"
+            android:fontFamily="@font/light"/>
 
         <Button
             android:id="@+id/finish"
@@ -73,12 +79,14 @@
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/sky"
             android:insetTop="0dp"
             android:insetBottom="0dp"
             android:text="@string/finish"
             android:textColor="@color/white"
-            android:textSize="24sp"
-            app:cornerRadius="15dp" />
+            android:textSize="20sp"
+            app:cornerRadius="30dp"
+            android:fontFamily="@font/light"/>
     </TableRow>
 
 

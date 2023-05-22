@@ -25,9 +25,11 @@
             android:gravity="center"
             android:singleLine="true"
             android:text="@string/post_title"
-            android:textColor="@color/black"
+            android:textColor="@color/sky"
             android:textLocale="Korean"
-            android:textSize="24sp" />
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/light"/>
 
         <TableRow
             android:id="@+id/post_detail_meta"
@@ -44,7 +46,8 @@
                 android:text="@string/post_author"
                 android:textColor="@color/black"
                 android:textLocale="Korean"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:fontFamily="@font/middle"/>
 
             <TextView
                 android:id="@+id/author_view"
@@ -56,7 +59,8 @@
                 android:text="@string/post_author"
                 android:textColor="@color/black"
                 android:textLocale="Korean"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:fontFamily="@font/middle"/>
 
             <TextView
                 android:id="@+id/post_detail_added"
@@ -68,7 +72,8 @@
                 android:text="@string/post_added"
                 android:textColor="@color/black"
                 android:textLocale="Korean"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:fontFamily="@font/middle"/>
 
             <TextView
                 android:id="@+id/added_view"
@@ -80,7 +85,8 @@
                 android:text="@string/post_added"
                 android:textColor="@color/black"
                 android:textLocale="Korean"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:fontFamily="@font/middle"/>
         </TableRow>
 
         <TableRow
@@ -99,7 +105,8 @@
                 android:text="@string/promo_range"
                 android:textColor="@color/black"
                 android:textLocale="Korean"
-                android:textSize="28sp" />
+                android:textSize="28sp"
+                android:fontFamily="@font/light"/>
 
             <TextView
                 android:id="@+id/promo_start"
@@ -111,7 +118,8 @@
                 android:text="@string/promo_range"
                 android:textColor="@color/black"
                 android:textLocale="Korean"
-                android:textSize="28sp" />
+                android:textSize="28sp"
+                android:fontFamily="@font/light"/>
 
             <TextView
                 android:id="@+id/from_until"
@@ -123,7 +131,8 @@
                 android:text="@string/from_until"
                 android:textColor="@color/black"
                 android:textLocale="Korean"
-                android:textSize="28sp" />
+                android:textSize="28sp"
+                android:fontFamily="@font/light"/>
 
             <TextView
                 android:id="@+id/promo_end"
@@ -135,27 +144,35 @@
                 android:text="@string/promo_range"
                 android:textColor="@color/black"
                 android:textLocale="Korean"
-                android:textSize="28sp" />
+                android:textSize="28sp"
+                android:fontFamily="@font/light"/>
 
         </TableRow>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="10dp" />
+        <TextView
+            android:background="#E6E6E6"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"/>
 
         <TextView
             android:id="@+id/content_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="10dp"
             android:gravity="start"
             android:text="@string/post_content"
             android:textColor="@color/black"
             android:textLocale="Korean"
-            android:textSize="16sp" />
+            android:textSize="18sp"
+            android:fontFamily="@font/light"/>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="10dp" />
 
         <ImageView
             android:id="@+id/image0"
@@ -188,7 +205,9 @@
         <TableRow
             android:id="@+id/customer_menu"
             android:layout_width="match_parent"
-            android:layout_height="50dp">
+            android:layout_height="50dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="30dp">
 
             <Button
                 android:id="@+id/visit"
@@ -196,13 +215,14 @@
                 android:layout_height="50dp"
                 android:layout_marginEnd="3dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/purple_700"
+                android:backgroundTint="@color/orange"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:text="@string/visit_store"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                app:cornerRadius="15dp" />
+                app:cornerRadius="30dp"
+                android:fontFamily="@font/light"/>
 
             <Button
                 android:id="@+id/scrap"
@@ -216,7 +236,8 @@
                 android:text="@string/scrap"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                app:cornerRadius="15dp" />
+                app:cornerRadius="30dp"
+                android:fontFamily="@font/light"/>
         </TableRow>
 
         <TableRow
@@ -231,13 +252,14 @@
                 android:layout_height="50dp"
                 android:layout_marginEnd="2dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/purple_700"
+                android:backgroundTint="@color/orange"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:text="@string/delete"
                 android:textColor="@color/white"
-                android:textSize="16sp"
-                app:cornerRadius="15dp" />
+                android:textSize="20sp"
+                app:cornerRadius="30dp"
+                android:fontFamily="@font/light"/>
 
             <Button
                 android:id="@+id/modify"
@@ -245,13 +267,14 @@
                 android:layout_height="50dp"
                 android:layout_marginStart="3dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/purple_500"
+                android:backgroundTint="@color/sky"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:text="@string/modify"
                 android:textColor="@color/white"
-                android:textSize="16sp"
-                app:cornerRadius="15dp" />
+                android:textSize="20sp"
+                app:cornerRadius="30dp"
+                android:fontFamily="@font/light"/>
 
             <Button
                 android:id="@+id/set_as_notice"
@@ -259,13 +282,14 @@
                 android:layout_height="50dp"
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/purple"
+                android:backgroundTint="@color/sky"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:text="@string/set_notice"
                 android:textColor="@color/white"
-                android:textSize="16sp"
-                app:cornerRadius="15dp" />
+                android:textSize="20sp"
+                app:cornerRadius="30dp"
+                android:fontFamily="@font/light"/>
 
         </TableRow>
 

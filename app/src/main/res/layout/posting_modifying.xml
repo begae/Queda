@@ -19,15 +19,16 @@ tools:context=".PostingModifying">
         android:gravity="center"
         android:text="게시물 수정하기"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/sky"
         android:textSize="34sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:fontFamily="@font/light"/>
 
     <EditText
         android:id="@+id/post_title"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="5dp"
+        android:layout_marginHorizontal="20dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/titleGuide"
@@ -36,13 +37,14 @@ tools:context=".PostingModifying">
         android:textColor="@color/black"
         android:textColorHint="@color/purple_700"
         android:textLocale="Korean"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:fontFamily="@font/light"/>
 
     <EditText
         android:id="@+id/post_content"
         android:layout_width="match_parent"
         android:layout_height="350dp"
-        android:layout_margin="5dp"
+        android:layout_margin="15dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/contentGuide"
@@ -51,17 +53,19 @@ tools:context=".PostingModifying">
         android:textColor="@color/black"
         android:textColorHint="@color/purple_700"
         android:textLocale="Korean"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:fontFamily="@font/light"/>
 
     <CheckBox
         android:id="@+id/promo_checkbox"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="5dp"
+        android:layout_marginHorizontal="20dp"
         android:buttonTint="@color/black"
         android:text="@string/promoCheckGuide"
         android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:fontFamily="@font/light"/>
 
     <TableRow
         android:id="@+id/date_pickers"
@@ -94,11 +98,12 @@ tools:context=".PostingModifying">
         android:id="@+id/attach_checkbox"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="5dp"
+        android:layout_marginHorizontal="20dp"
         android:buttonTint="@color/black"
-        android:text="첨부(수정)할 사진이 있습니다."
+        android:text="@string/attachCheckGuide"
         android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:fontFamily="@font/light"/>
 
     <Button
         android:id="@+id/attach_images_btn"
@@ -117,7 +122,9 @@ tools:context=".PostingModifying">
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="10dp">
 
         <Button
             android:id="@+id/cancel_posting"
@@ -126,13 +133,14 @@ tools:context=".PostingModifying">
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/purple_700"
+            android:backgroundTint="@color/orange"
             android:insetTop="0dp"
             android:insetBottom="0dp"
             android:text="@string/cancel"
             android:textColor="@color/white"
-            android:textSize="24sp"
-            app:cornerRadius="15dp" />
+            android:textSize="20sp"
+            app:cornerRadius="30dp"
+            android:fontFamily="@font/light"/>
 
         <Button
             android:id="@+id/finish_postiing"
@@ -141,12 +149,14 @@ tools:context=".PostingModifying">
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/sky"
             android:insetTop="0dp"
             android:insetBottom="0dp"
             android:text="수정"
             android:textColor="@color/white"
-            android:textSize="24sp"
-            app:cornerRadius="15dp" />
+            android:textSize="20sp"
+            app:cornerRadius="30dp"
+            android:fontFamily="@font/light"/>
     </TableRow>
 
 </LinearLayout>

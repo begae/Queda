@@ -20,46 +20,54 @@
         android:layout_margin="10dp"
         android:gravity="center"
         android:text="사업자등록번호 조회"
-        android:textColor="@color/black"
+        android:textColor="@color/sky"
         android:textSize="34sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:fontFamily="@font/light"/>
 
 
     <EditText
         android:id="@+id/biz_number"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="10dp"
+        android:layout_marginHorizontal="30dp"
         android:gravity="left|center"
         android:hint="사업자등록번호"
         android:inputType="number"
         android:singleLine="true"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:fontFamily="@font/light"/>
 
     <EditText
         android:id="@+id/biz_owner"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="10dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="5dp"
         android:gravity="left|center"
         android:hint="대표자성명"
         android:inputType="text|textPersonName"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:fontFamily="@font/light"/>
 
     <EditText
         android:id="@+id/biz_founded"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="10dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="5dp"
         android:gravity="left|center"
         android:hint="개업일자"
         android:inputType="datetime|date"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:fontFamily="@font/light"/>
+
 
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_margin="5dp">
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="30dp">
 
         <Button
             android:id="@+id/cancel"
@@ -67,13 +75,14 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/purple_700"
+            android:backgroundTint="@color/orange"
             android:insetTop="0dp"
             android:insetBottom="0dp"
             android:text="취소"
             android:textColor="@color/white"
             android:textSize="20sp"
-            app:cornerRadius="15dp" />
+            app:cornerRadius="30dp"
+            android:fontFamily="@font/light"/>
 
         <Button
             android:id="@+id/continue_btn"
@@ -87,7 +96,8 @@
             android:textColor="@color/white"
             android:textSize="20sp"
             android:visibility="gone"
-            app:cornerRadius="15dp" />
+            app:cornerRadius="15dp"
+            android:fontFamily="@font/light"/>
 
         <Button
             android:id="@+id/look_up"
@@ -100,7 +110,8 @@
             android:text="조회"
             android:textColor="@color/white"
             android:textSize="20sp"
-            app:cornerRadius="15dp" />
+            app:cornerRadius="30dp"
+            android:fontFamily="@font/light"/>
 
     </TableRow>
 
