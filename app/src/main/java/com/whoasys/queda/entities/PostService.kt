@@ -3,6 +3,7 @@ package com.whoasys.queda.entities
 import com.google.gson.GsonBuilder
 import okhttp3.ResponseBody
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
@@ -55,6 +56,17 @@ object PostService {
         fun getAllPostsBy(
             @Query("author") author: String
         ): Call<List<Post>?>
+
+        @PUT("/update/{id}")
+        fun updatePost(
+            @Path("id") id: Int,
+            @Body post: Post
+        ): Call<Response<String>>
+
+        @DELETE("/delete/{id}")
+        fun deletePost(
+            @Path("id") id: Int
+        ): Call<Response<String>>
 
     }
 }

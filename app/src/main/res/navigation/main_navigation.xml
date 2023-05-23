@@ -77,11 +77,14 @@
             android:id="@+id/action_myPage_to_login"
             app:destination="@id/login" />
         <action
-            android:id="@+id/action_myPage_to_storeActivity"
-            app:destination="@id/storeActivity" />
-        <action
             android:id="@+id/action_myPage_to_keywordChoice"
             app:destination="@id/keywordChoice" />
+        <action
+            android:id="@+id/action_myPage_to_forYou"
+            app:destination="@id/forYou" />
+        <action
+            android:id="@+id/action_myPage_to_storeActivity"
+            app:destination="@id/storeActivity" />
     </fragment>
     <fragment
         android:id="@+id/forYou"
