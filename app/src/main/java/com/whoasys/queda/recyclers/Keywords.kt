@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.whoasys.queda.KeyAdapter
 import com.whoasys.queda.R
 import com.whoasys.queda.entities.Keyword
 import com.whoasys.queda.entities.KeywordService
