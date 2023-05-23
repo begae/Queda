@@ -1,6 +1,6 @@
 package com.whoasys.queda.recyclers
 
-import android.content.res.Resources
+    import android.content.res.Resources
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -16,8 +16,8 @@ class KeywordsAdapter(
     private val itemList: List<Keyword>
 ) : RecyclerView.Adapter<KeywordsAdapter.ViewHolder>() {
 
-    // 단일 선택 및 다중 선택을 위한 변수 추가
-    private val selectedItems: MutableList<Keyword> = mutableListOf()
+    // 다중 선택을 위한 MutableSet 사용
+    private val selectedItems: MutableSet<Keyword> = mutableSetOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
@@ -39,28 +39,31 @@ class KeywordsAdapter(
         holder.keywordName.text = item.value
         holder.keywordImage.load(BUCKET + item.value + ".png")
 
-        holder.item.setOnClickListener {
-            val green = getColor(Resources.getSystem(), R.color.teal_200, null)
-            val white = getColor(Resources.getSystem(), R.color.white, null)
+        // 아이템이 선택되었는지 확인하여 UI 업데이트
+        if (selectedItems.contains(item)) {
+            holder.keywordImage.setBackgroundColor(getColor(holder.itemView.context.resources, R.color.teal_200, null))
+        }
+        else {
+            holder.keywordImage.setBackgroundColor(getColor(holder.itemView.context.resources, R.color.white, null))
+        }
 
-            // 아이템이 선택되었는지 확인
+        holder.itemView.setOnClickListener {
             val isSelected = selectedItems.contains(item)
 
             if (isSelected) {
-                // 이미 선택된 아이템인 경우, 선택 해제 처리
                 selectedItems.remove(item)
-                holder.keywordName.setBackgroundColor(white)
+                holder.keywordImage.setBackgroundColor(
+                    getColor(holder.itemView.context.resources, R.color.white, null)
+                )
                 Toast.makeText(it.context, "${item.value}를/을 키워드로 취소했습니다.", Toast.LENGTH_SHORT).show()
-
-            } else {
-                // 선택되지 않은 아이템인 경우, 선택 처리
-                selectedItems.add(item)
-                holder.keywordName.setBackgroundColor(green)
-                Toast.makeText(it.context, "${item.value}를/을 키워드로 선택했습니다.", Toast.LENGTH_SHORT).show()
-
             }
-
-            selected.plusElement(item)
+            else {
+                selectedItems.add(item)
+                holder.keywordImage.setBackgroundColor(
+                    getColor(holder.itemView.context.resources, R.color.teal_200, null)
+                )
+                Toast.makeText(it.context, "${item.value}를/을 키워드로 선택했습니다.", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
