@@ -79,8 +79,13 @@ class StoreActivity : AppCompatActivity() {
             builder.setMessage("새 글을 작성하시겠습니까?")
             builder.setCancelable(false)
             builder.setPositiveButton("확인") { dialog, which ->
-                val intent = Intent(this, KeywordActivity::class.java)
-                startActivity(intent)
+//                val intent = Intent(this, Posting::class.java)
+//                startActivity(intent)
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.StoreActivity, Posting())
+                    .addToBackStack(null)
+                    .commit()
             }
             builder.setNegativeButton("뒤로") { dialog, which ->
 
