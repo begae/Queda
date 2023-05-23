@@ -29,20 +29,20 @@ class FollowingAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = values[position]
-        holder.idView.text = item.id
-        holder.contentView.text = item.content
+        //holder.idView.text = item.id
+       // holder.contentView.text = item.content
     }
 
     override fun getItemCount(): Int = values.size
 
     inner class ViewHolder(binding: FollowingItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        val idView: TextView = binding.itemNumber
-        val contentView: TextView = binding.content
+        //val idView: TextView = binding.itemNumber
+        //val contentView: TextView = binding.content
 
-        override fun toString(): String {
-            return super.toString() + " '" + contentView.text + "'"
-        }
+        //override fun toString(): String {
+           // return super.toString() + " '" + contentView.text + "'"
+        //}
     }
 
 }
