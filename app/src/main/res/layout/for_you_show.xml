@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/for_you_show"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:gravity="left|center_vertical"
+                android:fontFamily="@font/middle"
+                android:textColor="@color/sky"
+                android:textSize="28dp"
+                android:text="내 맞춤 추천"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="5dp"
+                android:gravity="left|center_vertical"
+                android:fontFamily="@font/middle"
+                android:textSize="15dp"
+                android:text="사용자 개인의 활동 데이터를 바탕으로 추천해드립니다."
+                android:layout_weight="1"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_height="3dp"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:background="#E6E6E6"/>
+
+        <fragment
+            android:id="@+id/forYou"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            tools:ignore="MissingConstraints"
+            tools:layout="@layout/for_you_item_list"
+            android:label="for_you_list"
+            android:name="com.whoasys.queda.recyclers.ForYou"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

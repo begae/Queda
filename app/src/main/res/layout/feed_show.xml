@@ -79,13 +79,13 @@ xmlns:android="http://schemas.android.com/apk/res/android">
             android:background="#E6E6E6"/>
 
         <fragment
-            android:id="@+id/forYou"
+            android:id="@+id/feed"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             tools:ignore="MissingConstraints"
-            tools:layout="@layout/for_you_item_list"
-            android:label="for_you_list"
-            android:name="com.whoasys.queda.recyclers.ForYou"/>
+            tools:layout="@layout/feed_item_list"
+            android:label="feed_item_list"
+            android:name="com.whoasys.queda.recyclers.Feed"/>
 
     </LinearLayout>
 
