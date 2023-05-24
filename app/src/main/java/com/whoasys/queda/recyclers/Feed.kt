@@ -24,10 +24,9 @@ class Feed : Fragment() {
             userId = it.getString("user_id")?: "admin"
         }
 
-        if (userId == "admin") {
+        /*if (userId == "admin") {
             view?.findNavController()
-                ?.navigate(R.id.action_feed_to_login)
-        }
+               */
 
         val networkThread = Thread {
                 postList = PostService.call().getAllPostsNearby(userId).execute().body()

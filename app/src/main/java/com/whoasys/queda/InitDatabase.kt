@@ -23,35 +23,32 @@ class InitDatabase : Fragment() {
     ): View {
         val b = InitBinding.inflate(inflater, container, false)
 
-        val begae = User(
-            "begae", "begae", "김세령", "ksr@whoasys.com",
-            35.82655571, 128.63841783
+        val sampleUser1 = User(
+            "stained", "stained", "글라스", "stained@whoasys.com",
+            35.855687, 128.492680
         )
 
-        val kimsmj = User(
-            "kimsmj", "kimsmj", "김서연", "ksy@whoasys.com",
-            35.83151431, 128.54574722
+        val sampleUser2 = User(
+            "hygge", "hygge", "휘게", "hygge@whoasys.com",
+            35.849768, 128.484002
         )
 
-        val hagaji = User(
-            "hagaji", "hagaji", "하남규", "hng@whoasys.com",
-            35.83334861, 128.529161023
+        val sampleUser3 = User(
+            "garden", "garden", "상대", "garden@whoasys.com",
+            35.859104, 128.492707
         )
 
-        val acctract = User(
-            "acctract", "acctract", "김한솔", "khs@whoasys.com",
-            35.85520714, 128.49362696
+        val sampleUser4 = User(
+            "jieun", "jieun", "이지은", "lje@whoasys.com",
+            35.856033, 128.496993
         )
 
-        val joje = User(
-            "joje", "joje", "조재형", "jjh@whoasys.com",
-            35.85520714, 128.49362696
+        val sampleUser5 = User(
+            "best", "best", "베스트", "best@whoasys.com",
+            35.852899, 128.495383
         )
 
-        val administrator = User("admin", "admin", "관리자","admin@whoasys.com",
-            0.0, 0.0)
-
-        val team = arrayOf(begae, kimsmj, hagaji, acctract, administrator, joje)
+        val team = arrayOf(sampleUser1, sampleUser2, sampleUser3, sampleUser4, sampleUser5)
 
         lateinit var networkThread: Thread
         var name: String?
@@ -73,29 +70,27 @@ class InitDatabase : Fragment() {
 
         }
 
-        val library = Store("계명대학교 성서캠퍼스 동산도서관", "012-34-78901",
-            "대구 달서구 달구벌대로 1095", 35.856418, 128.487185,
-            "053-580-5682", "08:00 - 23:00")
+        val library = Store("스테인드 글라스", "689-65-00286",
+            "대구 달서구 서당로9길 51 2층", 35.855867, 128.492680,
+            "010-3146-1149", "12:00 - 22:00")
 
-        val engineeringDept = Store("계명대학교 성서캠퍼스 공학관", "123-45-67890",
-            "대구 달서구 달서대로 675", 35.85933090, 128.48701244,
-            "053-580-5262", "09:00 - 18:00")
+        val engineeringDept = Store("HYGGE 휘게", "503-23-40363",
+            "대구 달서구 달서대로109안길 60", 35.849768, 128.484002,
+            "0507-1472-7790", "09:30 - 24:00")
 
-        val naturalScienceDept = Store("계명대학교 성서캠퍼스 백은관", "012-34-56789",
-            "대구 달서구 달구벌대로 1095", 35.85370115, 128.48243527,
-            "053-580-5031", "09:00 - 18:00")
+        val naturalScienceDept = Store("상대가든", "111-04-01137",
+            "대구 달서구 선원로 4", 35.85370115, 128.48243527,
+            "053-582-0030", "10:00 - 22:00")
 
-        val mainStadium = Store("계명대학교 성서캠퍼스 대운동장", "234-56-78901",
-            "대구 달서구 달구벌대로 1095", 35.85267052, 128.48889710,
-            "053-580-6210", "09:00 - 18:00")
+        val mainStadium = Store("이지은 뷰티샵", "501-77-00223",
+            "대구 달서구 계대동문로9길 9", 35.856033, 128.496993,
+            "010-6809-0315", "10:30 - 20:00")
 
-        val adminStore = Store("오류가 발생했삼", "000-00-00000",
-            "대구 모처", 0.0, 0.0, "000-000-0000",
-            "00:00 - 00:00")
+        val adminStore = Store("베스트 잉크", "000-00-00000",
+            "대구 달서구 서당로 13", 35.852899, 128.495383, "053-591-9511",
+            "13:00 - 19:00")
 
-        val begaeHome = Store("김세령 집", "010-27-83764", "대구 수성구 지산로14길 83", 0.0, 0.0, "010-2789-3764", "00:00 - 24:00")
-
-        val school = arrayOf(begaeHome, library, engineeringDept, naturalScienceDept, mainStadium, adminStore)
+        val school = arrayOf(library, engineeringDept, naturalScienceDept, mainStadium, adminStore)
         var storeId: Int
         var storeIds = emptyArray<Int>()
 
@@ -134,7 +129,7 @@ class InitDatabase : Fragment() {
 
         }
 
-        val postOne = Post("오류가 발생했삼", administrator, "관리자에게 문의하삼",
+        /*val postOne = Post("오류가 발생했삼", administrator, "관리자에게 문의하삼",
             false, null, null, null, null, null)
 
         val postTwo = Post("오류가 발생했삼", administrator, "관리자에게 문의하삼",
@@ -159,7 +154,7 @@ class InitDatabase : Fragment() {
 
             print(" 게시물 생성함!\n")
 
-        }
+        }*/
 
         val listOfKeywords: List<String> = listOf("가구", "가전", "건강식품", "문구서적", "반려동물용품", "스포츠용품", "식료품", "신발", "악기", "악세사리",
         "약국", "완구취미", "유아용품", "음반DVD", "의류", "자동차", "철물점", "컴퓨터", "피트니스", "화장품")

@@ -50,14 +50,13 @@
             android:layout_margin="15dp"
             android:autofillHints=""
             android:ems="10"
+            android:fontFamily="@font/light"
             android:hint="@string/contentGuide"
             android:inputType="text"
-            android:singleLine="false"
             android:textColor="@color/black"
             android:textColorHint="@color/purple_700"
             android:textLocale="Korean"
-            android:textSize="20sp"
-            android:fontFamily="@font/light"/>
+            android:textSize="20sp" />
 
         <CheckBox
             android:id="@+id/promo_checkbox"
