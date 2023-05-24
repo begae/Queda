@@ -6,9 +6,9 @@
     app:startDestination="@id/myPage">
     <fragment
         android:id="@+id/feed"
-        android:name="com.whoasys.queda.feedShow"
+        android:name="com.whoasys.queda.recyclers.Feed"
         android:label="feed_list"
-        tools:layout="@layout/feed_show" >
+        tools:layout="@layout/feed_item_list" >
         <argument
             android:name="user_id"
             app:argType="string"
