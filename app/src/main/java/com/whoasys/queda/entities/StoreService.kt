@@ -1,6 +1,7 @@
 package com.whoasys.queda.entities
 
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
@@ -33,5 +34,12 @@ object StoreService {
         fun register(
             @Body store: Store
         ): Call<Int?>
+
+        @PUT("update/{id}")
+        fun updateStore(
+            @Path("id") id: Int,
+            @Body storeUpdate: Store
+        ): Call<Response<Any>>
+
     }
 }

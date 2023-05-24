@@ -22,11 +22,11 @@ class KeywordChoice : AppCompatActivity() {
         val userId = intent.getStringExtra(EXTRA_MESSAGE)
 
 
-       // val listkey = findViewById<RecyclerView>(R.id.listkey)
-       // val adapter = KeyAdapter(getData())
+        val listkey = findViewById<RecyclerView>(R.id.listkey)
+        val adapter = KeyAdapter(getData())
 
-        //listkey.layoutManager = GridLayoutManager(this, 3)
-        //listkey.adapter = adapter
+        listkey.layoutManager = GridLayoutManager(this, 3)
+        listkey.adapter = adapter
 
         val saveBtn = findViewById<Button>(R.id.saveBtn)
         saveBtn.setOnClickListener {
@@ -43,21 +43,21 @@ class KeywordChoice : AppCompatActivity() {
 
     }
 
-//    private fun getData(): ArrayList<KeywordModel>{
-//        val itemList: ArrayList<KeywordModel> = ArrayList()
-//
-//        itemList.add(KeywordModel(ContextCompat.getDrawable(this,R.drawable.coffee)!!, "차, 커피", false))
-//        itemList.add(KeywordModel(ContextCompat.getDrawable(this,R.drawable.nail)!!, "네일아트", false))
-////        itemList.add(KeywordModel(ContextCompat.getDrawable(this,R.drawable.health)!!, "헬스장", false))
-////        itemList.add(KeywordModel(ContextCompat.getDrawable(this,R.drawable.store)!!, "편의점, 마트", false))
-////        itemList.add(KeywordModel(ContextCompat.getDrawable(this,R.drawable.hair)!!, "미용실", false))
-////        itemList.add(KeywordModel(ContextCompat.getDrawable(this,R.drawable.bathhouse)!!, "목욕탕", false))
-////        itemList.add(KeywordModel(ContextCompat.getDrawable(this,R.drawable.diningroom)!!, "음식점", false))
-////        itemList.add(KeywordModel(ContextCompat.getDrawable(this,R.drawable.shirt)!!, "옷가게", false))
-//
-//        return itemList
-//
-//    }
+    private fun getData(): ArrayList<KeywordModel>{
+        val itemList: ArrayList<KeywordModel> = ArrayList()
+
+        itemList.add(KeywordModel(ContextCompat.getDrawable(this,R.drawable.coffee)!!, "차, 커피", false))
+        itemList.add(KeywordModel(ContextCompat.getDrawable(this,R.drawable.nail)!!, "네일아트", false))
+//        itemList.add(KeywordModel(ContextCompat.getDrawable(this,R.drawable.health)!!, "헬스장", false))
+//        itemList.add(KeywordModel(ContextCompat.getDrawable(this,R.drawable.store)!!, "편의점, 마트", false))
+//        itemList.add(KeywordModel(ContextCompat.getDrawable(this,R.drawable.hair)!!, "미용실", false))
+//        itemList.add(KeywordModel(ContextCompat.getDrawable(this,R.drawable.bathhouse)!!, "목욕탕", false))
+//        itemList.add(KeywordModel(ContextCompat.getDrawable(this,R.drawable.diningroom)!!, "음식점", false))
+//        itemList.add(KeywordModel(ContextCompat.getDrawable(this,R.drawable.shirt)!!, "옷가게", false))
+
+        return itemList
+
+    }
 
 
     override fun onBackPressed() {

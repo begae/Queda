@@ -27,6 +27,7 @@ import java.io.File
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
+//TODO: 게시물 고유 ID 필드 , 이미지 첨부 필드 필요
 class PostingModifying : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
@@ -159,7 +160,11 @@ class PostingModifying : Fragment() {
                 )
 
                 networkThread = Thread {
-                    postId = PostService.call().savePost(updatedPost).execute().body() ?: 2
+//                  postId = PostService.call().savePost(updatedPost).execute().body() ?: 2
+
+                    //수정-- savePost<- 새로운 post를 저장하는 것이라, updatePost로 수정
+                    PostService.call().updatePost(postId, updatedPost).execute()
+
                 }
 
 //                val updatedPost = Post(
