@@ -31,8 +31,11 @@ class ForYou : Fragment() {
         // Set the adapter
         if (view is RecyclerView) {
             with(view) {
-                layoutManager = LinearLayoutManager(context)
-                //adapter = ForYouAdapter(storeList?: emptyList(), userId)
+                layoutManager = when {
+                    columnCount <= 1 -> LinearLayoutManager(context)
+                    else -> GridLayoutManager(context, columnCount)
+                }
+                adapter = FollowingAdapter(PlaceholderContent.ITEMS)
             }
         }
         return view
