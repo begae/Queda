@@ -20,9 +20,12 @@ class Feed : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        /*
         arguments?.let {
             userId = it.getString("user_id")?: "admin"
         }
+         */
+        userId = "110"
 
         if (userId == "admin") {
             view?.findNavController()
