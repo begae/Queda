@@ -43,10 +43,15 @@ class InitDatabase : Fragment() {
             35.85520714, 128.49362696
         )
 
+        val joje = User(
+            "joje", "joje", "조재형", "jjh@whoasys.com",
+            35.85520714, 128.49362696
+        )
+
         val administrator = User("admin", "admin", "관리자","admin@whoasys.com",
             0.0, 0.0)
 
-        val team = arrayOf(begae, kimsmj, hagaji, acctract, administrator)
+        val team = arrayOf(begae, kimsmj, hagaji, acctract, administrator, joje)
 
         lateinit var networkThread: Thread
         var name: String?
@@ -88,7 +93,9 @@ class InitDatabase : Fragment() {
             "대구 모처", 0.0, 0.0, "000-000-0000",
             "00:00 - 00:00")
 
-        val school = arrayOf(library, engineeringDept, naturalScienceDept, mainStadium, adminStore)
+        val begaeHome = Store("김세령 집", "010-27-83764", "대구 수성구 지산로14길 83", 0.0, 0.0, "010-2789-3764", "00:00 - 24:00")
+
+        val school = arrayOf(begaeHome, library, engineeringDept, naturalScienceDept, mainStadium, adminStore)
         var storeId: Int
         var storeIds = emptyArray<Int>()
 

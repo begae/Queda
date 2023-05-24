@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/myPage">
+    app:startDestination="@id/maps">
     <fragment
         android:id="@+id/feed"
         android:name="com.whoasys.queda.recyclers.Feed"
@@ -34,18 +34,6 @@
         <action
             android:id="@+id/action_postDetail_to_feed"
             app:destination="@id/feed" />
-    </fragment>
-    <fragment
-        android:id="@+id/map"
-        android:name="com.whoasys.queda.Map"
-        android:label="map"
-        tools:layout="@layout/map" >
-        <action
-            android:id="@+id/action_map_to_searchResult"
-            app:destination="@id/searchResult" />
-        <action
-            android:id="@+id/action_map_to_storeActivity"
-            app:destination="@id/storeActivity" />
     </fragment>
     <fragment
         android:id="@+id/searchResult"
@@ -171,4 +159,9 @@
         android:name="com.whoasys.queda.KeywordChoice"
         android:label="activity_keyword_choice"
         tools:layout="@layout/activity_keyword_choice" />
+    <fragment
+        android:id="@+id/maps"
+        android:name="com.whoasys.queda.Maps"
+        android:label="maps"
+        tools:layout="@layout/maps" />
 </navigation>
