@@ -26,7 +26,7 @@ xmlns:android="http://schemas.android.com/apk/res/android">
                 android:gravity="right|center_vertical"
                 android:fontFamily="@font/middle"
                 android:textColor="@color/sky"
-                android:textSize="28dp"
+                android:textSize="27dp"
                 android:text="반경"
                 android:layout_weight="1"/>
 
@@ -45,27 +45,34 @@ xmlns:android="http://schemas.android.com/apk/res/android">
 
             <Button
                 android:id="@+id/btn300"
-                android:layout_height="wrap_content" android:layout_width="80dp" android:text="300m" style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+                android:layout_height="wrap_content"
+                android:layout_width="70dp"
+                android:text="300m"
+                android:textSize="13dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
             <Button
                 android:id="@+id/btn500"
                 android:layout_height="wrap_content"
-                android:layout_width="80dp"
+                android:layout_width="70dp"
                 android:text="500m"
+                android:textSize="13dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
             <Button
                 android:id="@+id/btn1"
                 android:layout_height="wrap_content"
-                android:layout_width="80dp"
+                android:layout_width="70dp"
                 android:text="1km"
+                android:textSize="13dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
             <Button
                 android:id="@+id/btn3"
                 android:layout_height="wrap_content"
-                android:layout_width="80dp"
+                android:layout_width="70dp"
                 android:text="3km"
+                android:textSize="13dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
             </com.google.android.material.button.MaterialButtonToggleGroup>
