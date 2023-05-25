@@ -40,7 +40,7 @@ class Posting : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private lateinit var pickImages: ActivityResultLauncher<PickVisualMediaRequest>
-    private var userId: String? = "begae"
+    private var userId: String? = "subpharm"
     private lateinit var networkThread: Thread
     private var keys: Array<String> = emptyArray()
     private var loggedIn: User? = null

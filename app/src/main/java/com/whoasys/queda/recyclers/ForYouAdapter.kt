@@ -17,7 +17,7 @@ import java.text.DateFormat
 import java.util.Locale
 
 class ForYouAdapter(
-    private val itemList: List<Store>, private val userId: String
+    private val itemList: List<Store>
 ) : RecyclerView.Adapter<ForYouAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 

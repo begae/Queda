@@ -81,8 +81,8 @@ class Login : Fragment() {
 
                     val pair0 = Pair("user_id", loggedIn!!.id)
                     val bundle = bundleOf(pair0)
-                    view?.findNavController()
-                        ?.navigate(R.id.action_login_to_feed, bundle)
+                    /*view?.findNavController()
+                        ?.navigate(R.id.action_login_to_feed, bundle)*/
                 }
 
                 else {

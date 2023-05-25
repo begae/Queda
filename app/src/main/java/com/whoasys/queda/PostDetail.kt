@@ -30,8 +30,8 @@ class PostDetail : Fragment() {
         networkThread = Thread {
             Toast.makeText(requireContext(), "게시물이 삭제되었습니다.", Toast.LENGTH_SHORT).show()
 
-            view?.findNavController()
-                ?.navigate(R.id.action_postDetail_to_feed)
+            /*view?.findNavController()
+                ?.navigate(R.id.action_postDetail_to_feed)*/
         }
         networkThread.start()
         }

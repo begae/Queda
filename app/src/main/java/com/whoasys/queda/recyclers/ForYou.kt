@@ -9,10 +9,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.whoasys.queda.R
+import com.whoasys.queda.entities.Store
+import com.whoasys.queda.entities.StoreService
 
 class ForYou : Fragment() {
 
     private var columnCount = 1
+    private var storeList: List<Store>? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,22 +24,26 @@ class ForYou : Fragment() {
         arguments?.let {
             columnCount = it.getInt(ARG_COLUMN_COUNT)
         }
+
+        val networkThread = Thread {
+            storeList = StoreService.call().temporary().execute().body()
+        }
+
+        networkThread.start()
+        networkThread.join()
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+
         val view = inflater.inflate(R.layout.for_you_item_list, container, false)
 
-        // Set the adapter
         if (view is RecyclerView) {
             with(view) {
-                layoutManager = when {
-                    columnCount <= 1 -> LinearLayoutManager(context)
-                    else -> GridLayoutManager(context, columnCount)
-                }
-                adapter = FollowingAdapter(PlaceholderContent.ITEMS)
+                layoutManager = LinearLayoutManager(context)
+                adapter = ForYouAdapter(storeList?: emptyList())
             }
         }
         return view

@@ -24,28 +24,28 @@ class InitDatabase : Fragment() {
         val b = InitBinding.inflate(inflater, container, false)
 
         val sampleUser1 = User(
-            "stained", "stained", "글라스", "stained@whoasys.com",
-            35.855687, 128.492680
+            "solbit", "solbit", "솔빛", "solbit@whoasys.com",
+            35.851605, 128.482332
         )
 
         val sampleUser2 = User(
-            "hygge", "hygge", "휘게", "hygge@whoasys.com",
-            35.849768, 128.484002
+            "mukka", "mukka", "무까", "mukka@whoasys.com",
+            35.852310, 128.494845
         )
 
         val sampleUser3 = User(
-            "garden", "garden", "상대", "garden@whoasys.com",
-            35.859104, 128.492707
+            "seeik", "seeik", "씨익", "seeik@whoasys.com",
+            35.860338, 128.497160
         )
 
         val sampleUser4 = User(
-            "jieun", "jieun", "이지은", "lje@whoasys.com",
-            35.856033, 128.496993
+            "seomoon", "seomoon", "서문", "seomoon@whoasys.com",
+            35.858746, 128.493906
         )
 
         val sampleUser5 = User(
-            "best", "best", "베스트", "best@whoasys.com",
-            35.852899, 128.495383
+            "subpharm", "subpharm", "지하철", "subpharm@whoasys.com",
+            35.858434, 128.492825
         )
 
         val team = arrayOf(sampleUser1, sampleUser2, sampleUser3, sampleUser4, sampleUser5)
@@ -70,25 +70,26 @@ class InitDatabase : Fragment() {
 
         }
 
-        val library = Store("스테인드 글라스", "689-65-00286",
-            "대구 달서구 서당로9길 51 2층", 35.855867, 128.492680,
-            "010-3146-1149", "12:00 - 22:00")
+        val library = Store("솔빛헤어", "292-20-00382",
+            "대구 달서구 호산동로35북길 93", 35.851605, 128.482332,
+            "053-263-0101", "10:00 - 20:30")
 
-        val engineeringDept = Store("HYGGE 휘게", "503-23-40363",
-            "대구 달서구 달서대로109안길 60", 35.849768, 128.484002,
-            "0507-1472-7790", "09:30 - 24:00")
+        val engineeringDept = Store("무까식당", "182-02-01571",
+            "대구 달서구 호산동로35북길 95", 35.851487, 128.482310,
+            "053-592-6663", "10:30 - 21:00")
 
-        val naturalScienceDept = Store("상대가든", "111-04-01137",
-            "대구 달서구 선원로 4", 35.85370115, 128.48243527,
-            "053-582-0030", "10:00 - 22:00")
+        val naturalScienceDept = Store("씨익", "111-04-01137",
+            "대구 달서구 호산동로35북길 99 1층", 35.851276, 128.482319,
+            "0507-1390-1363", "11:00 - 21:00")
 
-        val mainStadium = Store("이지은 뷰티샵", "501-77-00223",
-            "대구 달서구 계대동문로9길 9", 35.856033, 128.496993,
-            "010-6809-0315", "10:30 - 20:00")
+        val mainStadium = Store("서문문화사", "483-11-00481",
+            "대구 달서구 호산동로35길 14-18", 35.851531, 128.485101,
+            "053-554-6622", "10:00 - 20:00")
 
-        val adminStore = Store("베스트 잉크", "000-00-00000",
-            "대구 달서구 서당로 13", 35.852899, 128.495383, "053-591-9511",
-            "13:00 - 19:00")
+        val adminStore = Store("계명지하철약국", "106-28-24056",
+            "대구 달서구 달구벌대로 1014", 35.853132, 128.478077,
+            "053-554-6622",
+            "08:40 - 19:00")
 
         val school = arrayOf(library, engineeringDept, naturalScienceDept, mainStadium, adminStore)
         var storeId: Int

@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import com.bumptech.glide.Glide
+//import com.bumptech.glide.Glide
 import com.whoasys.queda.databinding.ActivityStoreModifyingBinding
 
 class StoreModifying : AppCompatActivity() {
@@ -82,10 +82,10 @@ class StoreModifying : AppCompatActivity() {
             //값 담기
             val uri = it.data!!.data
 
-            //화면에 보여주기
+            /*화면에 보여주기
             Glide.with(this)
                 .load(uri) //이미지
-                .into(binding.imageView) //보여줄 위치
+                .into(binding.imageView) */
         }
     }
 

@@ -25,7 +25,7 @@ class Feed : Fragment() {
             userId = it.getString("user_id")?: "admin"
         }
          */
-        userId = "110"
+        userId = "kimsmj"
 
         /*if (userId == "admin") {
             view?.findNavController()

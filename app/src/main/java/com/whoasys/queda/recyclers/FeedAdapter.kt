@@ -60,7 +60,7 @@ class FeedAdapter(
             val pair0 = Pair("user_id", userId)
             val pair1 = Pair("post_id", post.id)
             val bundle = bundleOf(pair0, pair1)
-            it.findNavController().navigate(R.id.action_feed_to_postDetail, bundle)
+            //it.findNavController().navigate(R.id.action_feed_to_postDetail, bundle)
         }
     }
 
