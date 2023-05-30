@@ -48,7 +48,7 @@
         android:id="@+id/fragmentContainerView"
         android:name="com.whoasys.queda.recyclers.Keywords"
         android:layout_width="match_parent"
-        android:layout_height="500dp" />
+        android:layout_height="400dp" />
 
     <TableRow
         android:layout_width="match_parent"

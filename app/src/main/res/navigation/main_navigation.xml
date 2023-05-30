@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/forYou2">
+    app:startDestination="@id/myPage">
     <fragment
         android:id="@+id/postDetail"
         android:name="com.whoasys.queda.PostDetail"
