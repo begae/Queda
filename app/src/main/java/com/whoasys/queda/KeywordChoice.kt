@@ -30,13 +30,8 @@ class KeywordChoice : AppCompatActivity() {
 
         val saveBtn = findViewById<Button>(R.id.saveBtn)
         saveBtn.setOnClickListener {
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.keywordchoice, MyPage())
-                .addToBackStack(null)
-                .commit()
-//            val navController = Navigation.findNavController(this, R.id.keywordchoice)
-//            navController.navigate(R.id.Mypage)
+            val intent = Intent(this, StoreActivity::class.java)
+            startActivity(intent)
         }
 
 
